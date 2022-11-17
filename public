@@ -52,7 +52,7 @@ Buttons
 			end
 		end
 		passive:multiply smartness yield of moneybag by 0.2
-		class:bigbutton
+		class:bigButton
 	*researchbutton
 		name:makeing RESERCH!
 		text:[?(converttimer < 1e250)|[converttimer] seconds until we earn RESEARCH!|Convert [convertcost] smartness and [convertcost*10] money into RESEARCH!]
