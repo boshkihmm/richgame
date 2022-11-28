@@ -140,7 +140,7 @@ Resources
 		desc:No, Im not Evil!!!#@@!#!#!@#!!!@!!!!!}! STOTP#@P#@P@!PP!@!@#P!@O#P@O@
 		show earned
 		icon:icons1[1,0]
-	*smartness
+	*smartness 
 		name:smartness!
 		desc:i can be smart to do BIG Money!1
 		passive:multiply yield of this by 1+(0.03*book2)
@@ -261,7 +261,7 @@ Buildings
 //			 yield 1e5 money
 //			 toast yoU WNO!!!!1!!!!!!111@!!!! 100 HUNRER AED THOAUSANDS DOLAER!!@@@
 //			 yield lotteryachv
-		end
+//		end
 		req:25 dirt
 		cost increase:105%
 		icon:icons1[8,1]
