@@ -96,9 +96,15 @@ Buttons
 			end
 		end
 		hidden
+	*present
+		name:a present.... fOR ME??????
+		desc:Wow, this prenent seems cool. Maybe i should Open .Happy CrabBran
+		on click:hide this
+		on click:yield 18000 moneymult1
+		toast:WOW!!!!!!! THIS IS AAMZAEING
 
 
-
+///////////////////////////////////////////////////////////////
 //debugs
 		
 	*debug1
@@ -120,14 +126,14 @@ Buttons
 	*debug6
 		name:x2 research
 		on click:yield research research
-		
+///////////////////////////////////////////////////////////////		
 	
 	
 	on workboost:
 		yield 5 speedup
 		toast Research timed Descreasioned! 5second less,
 	end
-		
+	
 Resources
 	*money
 		name:moneys
@@ -166,6 +172,18 @@ Resources
 			end
 		end
 		hidden
+	*moneymult1
+		name:2X the MONEYS
+		desc:dobles r money for so much! Wow I
+		passive:lose this
+		passive:if (this > 0) multiply yield of money by 2
+		passive:
+			if (this > 0)
+				show this
+			else
+				hide this
+				end
+			end
 	*speedup
 		hidden
 	*worktimer
