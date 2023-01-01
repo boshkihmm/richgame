@@ -101,7 +101,7 @@ Buttons
 		desc:Wow, this prenent seems cool. Maybe i should Open .Happy CrabBran
 		on click:hide this
 		on click:yield 18000 moneymult1
-		on click:toast:WOW!!!!!!! THIS IS AAMZAEING
+		on click:toast WOW!!!!!!! THIS IS AAMZAEING
 
 
 ///////////////////////////////////////////////////////////////
