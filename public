@@ -60,7 +60,7 @@ Layout
 		header:Buildings
 		tooltip origin:left
 	*upgrades
-		contains:Upgrades:NotOwned
+		contains:Upgrades
 		header:Upgrades
 		costs:hide
 		names:hide
