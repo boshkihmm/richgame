@@ -398,7 +398,7 @@ Buildings
 	*tree
 		name:Trees that grow money
 		desc:they said that mony aren't grow on tree....well... THEIR' WRONG<//><q>+2000 MPS</q><//><q>Upgrades unlock at: 10</q>
-		cost:50000 smartness
+		cost:1e5 smartness
 		passive:yield 2000 money
 		req:treeup1
 		cost increase:110%
@@ -672,7 +672,7 @@ Upgrades
 	*treeup1
 		name:Super Biology
 		desc:In collage we learn thing such as planting and tree.> ? ? Yeh and then with this we tree . It will moneys us<//><q>Unlocks a new building</q>
-		cost:2.5e5 smartness, 25 research
+		cost:1e6 smartness, 25 research
 		req:research8
 		
 Achievements
