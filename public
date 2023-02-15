@@ -64,10 +64,12 @@ Layout
 		header:Upgrades
 		costs:hide
 		names:hide
+/* none of this layout stuff is working please send help oh my god
 	*owned
 		header:Purchased
 		in:upgrades
-		contains:Upgrades:Owned
+		contains:tag:owned
+*/
 
 Buttons
 	*moneybag
@@ -382,6 +384,7 @@ Buildings
 		passive:yield 800 money
 		req:estateup1
 		icon:icons1[18,1]
+		
 	*superlab
 		name:super lab.
 		desc:This lab is Super.Its is very good, i Think! VEry good,Its moneys and smarts.; How do this work though?<//><q>+1000 MPS, +30 SPS, +2% money per level, +3% smartness per level, -5 research time per level</q><//><q>Upgrades unlock at: 10</q>
@@ -391,6 +394,14 @@ Buildings
 		req:superlabup1
 		cost increase:110%
 		icon:icons1[19,1]
+		
+	*tree
+		name:Trees that grow money
+		desc:they said that mony aren't grow on tree....well... THEIR' WRONG<//><q>+2000 MPS</q><//><q>Upgrades unlock at: 10</q>
+		cost:50000 smartness
+		passive:yield 2000 money
+		req:treeup1
+		cost increase:110%
 		
 
 Upgrades
@@ -654,9 +665,14 @@ Upgrades
 		req:research8
 	*book3up
 		name:How2English!!!!
-		desc:Greetings and salutations. The purchasing of this upgrade will allow me to speak in near-perfect English. No longer will my speaking be difficult to understand. Additionally, all research times will be 50 seconds shorter, making RPs (research points) significantly easier to obtain. These extremely useful benefits come at the low, low cost of 200 million (250,000,000) dollars ($). I hope you will consider this offer that will benefit the both of us very much. You have my thanks.<//><q>AAAAAAAh</q>
+		desc:Greetings and salutations. The purchasing of this upgrade will allow me to speak in near-perfect English. No longer will my speaking be difficult to understand. Additionally, all research times will be 50 seconds shorter, making RPs (research points) significantly easier to obtain. These extremely useful benefits come at the low, low cost of 250 million (250,000,000) dollars ($). I hope you will consider this offer that will benefit the both of us very much. You have my thanks.<//><q>AAAAAAAh</q>
 		cost:2.5e8 money, 5e6 smartness
 		on earn:yield 50 speedup
+		req:research8
+	*treeup1
+		name:Super Biology
+		desc:In collage we learn thing such as planting and tree.> ? ? Yeh and then with this we tree . It will moneys us<//><q>Unlocks a new building</q>
+		cost:2.5e5 smartness, 25 research
 		req:research8
 		
 Achievements
@@ -734,6 +750,7 @@ Achievements
 		desc:i am such a moneyer i am such a pro
 		req:1e18 money:earned
 //next name: "sixagonillion"???
+//"ZILLION DOLAR"?
 	*smart1achv
 		name:Smartereer
 		desc:Woa, we got smartness,Yea,Yeah,Lots
