@@ -60,14 +60,14 @@ Layout
 		header:Buildings
 		tooltip origin:left
 	*upgrades
-		contains:Upgrades:notOwned
+		contains:Upgrades:NotOwned
 		header:Upgrades
 		costs:hide
 		names:hide
 	*owned
 		header:Purchased
 		in:upgrades
-		contains:Upgrades:owned
+		contains:Upgrades:Owned
 
 Buttons
 	*moneybag
