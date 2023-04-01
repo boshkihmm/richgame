@@ -1,16 +1,16 @@
 Let's make a game!
-	name:become Rich !!!!
+	name:obtain Wealth !! !! !!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b>3.0.0</b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? obtain Wealth !! !! !111111<//>also we are in version <b>4.1.23</b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
-	updated:11/17/2022
+	updated:3/32/2023
 
 
 Settings
 	building cost increase:120%
 	building cost refund:-1e400%
-	background:https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F1142839776%2F960x0.jpg%3Ffit%3Dscale
-	spritesheet:icons1, 48 by 48, https://i.postimg.cc/RZm1Kg6n/fixed3.png
+	background:https://file.garden/Y3WCFJOdi23QPQVx/moneys
+	spritesheet:icons1, 48 by 48, https://file.garden/Y3WCFJOdi23QPQVx/workbutton
 	
 CSS
 
@@ -60,7 +60,7 @@ Buttons
 			end
 		end
 		passive:multiply smartness yield of moneybag by 0.2
-		icon:https://file.garden/Y3WCFJOdi23QPQVx/workbutton
+		icon:https://file.garden/Y3WCFJOdi23QPQVx/richgame%20sprites
 		class:bigButton
 	*researchbutton
 		name:makeing RESERCH!
@@ -96,12 +96,16 @@ Buttons
 			end
 		end
 		hidden
+	*freemoney
+		name:FreeMoney
+		desc:SUCH a good Deaal! This gives a fre Dollars every time you click! Wow! Almost 2 good to be true. Yummy
+		on click:yield 1 dollar
 	
 	on workboost:
 		yield 5 speedup
 		toast Research timed Descreasioned! 5second less,
 	end
-		
+
 Resources
 	*money
 		name:moneys
@@ -147,6 +151,14 @@ Resources
 		on tick:if (have factoryup) lose this
 		hidden
 	*autoflag
+		hidden
+	*dollar
+		name:Dollar
+		desc:this is how much rich you are! wow! Wait why is
+	*richpoint
+		name:RICH NESS POINTS!
+		desc:Wow we are popularer even more then Richs like NATO
+		icon:https://file.garden/Y3WCFJOdi23QPQVx/moneys
 		hidden
 
 Buildings
@@ -520,8 +532,8 @@ Upgrades
 		req:research7
 		class:glowpink halffit
 	*madlab
-		name:MAD SCienticts' LAB!
-		desc:Im mad, and IM SCIENCE@. Wait IM NOT EIVL<//><q>Does not do anything... for now</q>
+		name:MWUAHAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		desc:Im mad, and IM SCIENCE@. Wait IM EIVL<//><q>MAKES YOU EXTREMELY EVIL!!!! GRRRRRR!!!!</q>
 		cost:5e8 money, 100 research, 2 ep
 		req:10 superlab
 		class:glowred halffit
@@ -703,7 +715,12 @@ Achievements
 		desc:My SCIence lab can make evilneess.. Eivl will beome soon.
 		req:madlab
 		icon:icons1[18,2]
-		
+	*richness
+		name:Richness
+		desc:We have !))) 1000, DOLLAR !!!!!S You just one the game
+		req:25 dollar
+		on earn:yield 1 richpoint
+		on earn:show richpoint
 
 
 
