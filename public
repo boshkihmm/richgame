@@ -96,7 +96,7 @@ Buttons
 			end
 		end
 		hidden
-	*freemoney
+	*freedollar
 		name:FreeMoney
 		desc:SUCH a good Deaal! This gives a fre Dollars every time you click! Wow! Almost 2 good to be true. Yummy
 		on click:yield 1 dollar
