@@ -1,7 +1,7 @@
 Let's make a game!
 	name:obtain Wealth !! !! !!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? obtain Wealth !! !! !111111<//>also we are in version <b>4.1.23</b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? obtain Wealth !! !! !111111<//>also we are in version <b>4.1.24</b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:3/32/2023
 
@@ -52,7 +52,7 @@ Layout
 	use default
 	
 	*moneybox
-		header:huh this kinda shows up over the fps box doesn't it
+		header:i am the best box ever
 		contains:tag:yummy
 		class:moneybox
 
