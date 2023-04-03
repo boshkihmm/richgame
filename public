@@ -14,36 +14,47 @@ Settings
 	
 CSS
 
-	.halffit
-	{
+	.halffit {
 		width: 48%;
 	}
-	.glowgreen
-	{
+	.glowgreen {
 		color: green;
 		text-shadow: 0 0 5px green;
 		box-shadow: 0px 0px 15px green;
 		border-color: green;
 	}
-	.glowyellow
-	{
+	.glowyellow {
 		color: yellow;
 		text-shadow: 0 0 5px yellow;
 		box-shadow: 0px 0px 15px yellow;
 		border-color: yellow;
 	}
-	.glowlightblue
-	{
+	.glowlightblue {
 		border-color: powderblue;
 	}
-	.glowpink
-	{
+	.glowpink {
 		border-color: orchid;
 	}
-	.glowred
-	{
+	.glowred {
 		border-color: red;
 	}
+	
+	.moneybox {
+		position:absolute;
+		right:60%;
+		top:80%;
+		bottom:0%;
+		background-color:blue;
+	}
+	
+Layout
+
+	use default
+	
+	*moneybox
+		header:huh this kinda shows up over the fps box doesn't it
+		contains:tag:yummy
+		class:moneybox
 
 Buttons
 	*moneybag
@@ -100,6 +111,7 @@ Buttons
 		name:FreeMoney
 		desc:SUCH a good Deaal! This gives a fre Dollars every time you click! Wow! Almost 2 good to be true. Yummy
 		on click:yield 1 dollar
+		tag:yummy
 	
 	on workboost:
 		yield 5 speedup
@@ -155,10 +167,12 @@ Resources
 	*dollar
 		name:Dollar
 		desc:this is how much rich you are! wow! Wait why is
+		tag:yummy
 	*richpoint
 		name:RICH NESS POINTS!
 		desc:Wow we are popularer even more then Richs like NATO
 		icon:https://file.garden/Y3WCFJOdi23QPQVx/moneys
+		tag:yummy
 		hidden
 
 Buildings
