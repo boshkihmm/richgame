@@ -706,7 +706,3 @@ Achievements
 	*richness
 		name:Richness
 		desc:We have !))) 1000, DOLLAR !!!!!S You just one the game
-		req:25 dollar
-		on earn:yield 1 richpoint
-		on earn:show richpoint
-
