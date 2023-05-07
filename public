@@ -1,60 +1,49 @@
 Let's make a game!
-	name:obtain Wealth !! !! !!
+	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? obtain Wealth !! !! !111111<//>also we are in version <b>4.1.24</b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b>3.0.1</b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
-	updated:3/32/2023
+	updated:11/17/2022
 
 
 Settings
 	building cost increase:120%
 	building cost refund:-1e400%
-	background:https://file.garden/Y3WCFJOdi23QPQVx/moneys
-	spritesheet:icons1, 48 by 48, https://file.garden/Y3WCFJOdi23QPQVx/workbutton
+	background:https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F1142839776%2F960x0.jpg%3Ffit%3Dscale
+	spritesheet:icons1, 48 by 48, https://i.postimg.cc/RZm1Kg6n/fixed3.png
 	
 CSS
 
-	.halffit {
+	.halffit
+	{
 		width: 48%;
 	}
-	.glowgreen {
+	.glowgreen
+	{
 		color: green;
 		text-shadow: 0 0 5px green;
 		box-shadow: 0px 0px 15px green;
 		border-color: green;
 	}
-	.glowyellow {
+	.glowyellow
+	{
 		color: yellow;
 		text-shadow: 0 0 5px yellow;
 		box-shadow: 0px 0px 15px yellow;
 		border-color: yellow;
 	}
-	.glowlightblue {
+	.glowlightblue
+	{
 		border-color: powderblue;
 	}
-	.glowpink {
+	.glowpink
+	{
 		border-color: orchid;
 	}
-	.glowred {
+	.glowred
+	{
 		border-color: red;
 	}
-	
-	.moneybox {
-		position:absolute;
-		right:60%;
-		top:80%;
-		bottom:0%;
-		background-color:blue;
-	}
-	
-Layout
-
-	use default
-	
-	*moneybox
-		header:i am the best box ever
-		contains:tag:yummy
-		class:moneybox
 
 Buttons
 	*moneybag
@@ -71,7 +60,7 @@ Buttons
 			end
 		end
 		passive:multiply smartness yield of moneybag by 0.2
-		icon:https://file.garden/Y3WCFJOdi23QPQVx/richgame%20sprites
+		icon:https://file.garden/Y3WCFJOdi23QPQVx/workbutton
 		class:bigButton
 	*researchbutton
 		name:makeing RESERCH!
@@ -107,17 +96,12 @@ Buttons
 			end
 		end
 		hidden
-	*freedollar
-		name:FreeMoney
-		desc:SUCH a good Deaal! This gives a fre Dollars every time you click! Wow! Almost 2 good to be true. Yummy
-		on click:yield 1 dollar
-		tag:yummy
 	
 	on workboost:
 		yield 5 speedup
 		toast Research timed Descreasioned! 5second less,
 	end
-
+		
 Resources
 	*money
 		name:moneys
@@ -163,16 +147,6 @@ Resources
 		on tick:if (have factoryup) lose this
 		hidden
 	*autoflag
-		hidden
-	*dollar
-		name:Dollar
-		desc:this is how much rich you are! wow! Wait why is
-		tag:yummy
-	*richpoint
-		name:RICH NESS POINTS!
-		desc:Wow we are popularer even more then Richs like NATO
-		icon:https://file.garden/Y3WCFJOdi23QPQVx/moneys
-		tag:yummy
 		hidden
 
 Buildings
@@ -546,8 +520,8 @@ Upgrades
 		req:research7
 		class:glowpink halffit
 	*madlab
-		name:MWUAHAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAAAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHHAHAHAHAA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!A!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		desc:Im mad, and IM SCIENCE@. Wait IM EIVL<//><q>MAKES YOU EXTREMELY EVIL!!!! GRRRRRR!!!!</q>
+		name:MAD SCienticts' LAB!
+		desc:Im mad, and IM SCIENCE@. Wait IM NOT EIVL<//><q>Does not do anything... for now</q>
 		cost:5e8 money, 100 research, 2 ep
 		req:10 superlab
 		class:glowred halffit
@@ -735,6 +709,4 @@ Achievements
 		req:25 dollar
 		on earn:yield 1 richpoint
 		on earn:show richpoint
-
-
 
