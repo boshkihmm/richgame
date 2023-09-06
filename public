@@ -148,6 +148,9 @@ Resources
 		hidden
 	*autoflag
 		hidden
+	*money2
+		name:Money   2
+		desc:                         The
 
 Buildings
 
