@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b>3.0.1</b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b>3.0.2</b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:11/17/2022
 
@@ -106,7 +106,7 @@ Resources
 	*money
 		name:moneys
 		desc:this is how much rich you are! wow!
-		passive:multiply yield of this by 1+(0.02*book1)+(0.01*estate)
+		passive:multiply yield of this by 1+(0.02*book1)+(0.01*estate)+(0.01*money2building)
 		show earned
 		icon:icons1[0,0]
 	*ep
@@ -150,7 +150,7 @@ Resources
 		hidden
 	*money2
 		name:Money   2
-		desc:                         The
+		desc: Ok, Ok, Ok. So This is a the Money 2 (Two). O.k.? Yea. Its' Like Money but Its Better. And Two. So, Heres How This Works. Listen.ok?? So, This is What It is. You Use Your Money 1 (One) to Buy Money 2 (Two). O.k.? And So This Money 2 Starts at 100 Money 1s. Yes, Its 100. But, Once You Get Moneying, Getting 100 Money 1s is Very Easy.... So , Then , When You Buy a the Moneys 2, Thats Cool and Yes. But It Goes to 2x the Costs! Ye,s That is Right. Every Time You Buy the Money 2 the Price of the Money 1 (One) to Buy the Money 2 Cost is 2x (Doubled or Dbouled). Yes, Thats' Right,. So , if You Buy a Money 2 With One Hunred (100) a the Money 1, That Money 1 Cost to Buy a the Money 2 Will Be 2 Times.yes. Its Like Adding on Itself. So 1 Hunred Plus 1 Hunred is 300. Oh, Wait. That is a the a Right Though. Ok I'ts Actualy 200 Dolar. Or Euro. But Just Call It Moneys1, Ok? Got It , Cool. Ok Qand Then the a the Moneys Get the Biger. Yes That Right. So a Now It is the 200 Money 1 to Buy a Nother Money 2 Right? Yes, Yes, Yes. But Thenit Now Cost 400 Moeny1. Not 300 Like Counting With the Hunrededs. Yes. It Go to 400 Instead !!!ok    Ok<//>ok So Now Lets Think Next. Instead of 500 Like Counting 1s or 600 by Skips Counting a the Twos.it Go 8 Hunred. Yes, Tahts Right. 800 Hunred Money1s Just for a Mmoneys2.it Gets Really Expensivieing.wait, Wait, Wait, Wait, Wait, Wait, Wait, Wait, !wait, Wait, Wait, Wait, Yuh.wait, Wait, Wait, Wait, Wait, Wait, Wait, Wait, Wait, Holdit and Hlat It.sorry I Mean to Type Halt It. Now It Go to One Siz Zero Zero Hunred Dollar After That. (16,00) Yes Tahts Right. Sorry I Meant Dollar1 Not Just Dollar. But Ok. Yes, It Get Hard and Expensove to Money........this Moneys a Cost the a Lot. Many Monetys for Just a Money2!!!! This is Bad. But, Wait, the Vail and Grail. It is a the Upgrades. Yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes. A the Mooneys. They the a the Moneyupgrades Are Cool Good Nice and Wow and Dang.sorry I Said a Really Bad Word.but Its' Ok. Ok? Yes. Noce/. Sorry I Meant Nice.well,what You Waiting in? Go Get Moneys 1 and Make It to a the Money 2.ewell Now Thst Im' Done Tutoritaling on You Ont His, I Will Sing a Song. Here is It: Money, Money, Oh Yeah,.money, Money, Oh Yeah,.money, Money, Oh Yeah,.money is So Cool Yeah. Money is the Bstest Yeah,. Money Make a the All and Yeah. It is Cool.h,.money, Money, Oh Yeah,.h,.money, Money, Oh Yeah,.and That is My Song. My Next is Comming Soon,ok Well Happy a the Moneyinh!!!!
 
 Buildings
 
@@ -161,7 +161,14 @@ Buildings
 		passive:yield 0.5 money
 		cost increase:115%
 		icon:icons1[0,1]
-		
+
+	*money2building
+		name:come a nd Buy money 2 here
+		desc:<//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//>the
+		cost:100 money
+		cost increase:200%
+		icon:https://cdn.w600.comps.canstockphoto.com/funny-stupid-man-holding-a-big-money-stock-image_csp4135366.jpg
+
 	*cryptocurrency
 		name:investing cyrptocurrency
 		desc:i don't know how this work! i Buy, then wait for price to up? it earn me one 1 moneys every 1 seconds, YES!!!!!!!<//><q>+1 MPS</q><//><q>Upgrades unlock at: 5,</q>
@@ -709,3 +716,8 @@ Achievements
 	*richness
 		name:Richness
 		desc:We have !))) 1000, DOLLAR !!!!!S You just one the game
+	*money2achv
+		name:Ok so this is how works.:Evrery 1 bu
+		desc:ilding (or unit, but, I.D.K. what it actually called..) of money two you get, You''re moneying is incresed by 1%. Ok? Thats it. b
+		req:money2building
+		icon:https://media.istockphoto.com/id/172792162/photo/funny-money.jpg?s=170667a&w=0&k=20&c=wHwpu8Ifuy0bwuOBypYgN11ihACqcHeuMqvnVcB1Ss8=
