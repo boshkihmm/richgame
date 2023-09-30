@@ -716,7 +716,7 @@ Achievements
 	*richness
 		name:Richness
 		desc:We have !))) 1000, DOLLAR !!!!!S You just one the game
-	*money2achv
+	*moneyachv2
 		name:Ok so this is how works.:Evrery 1 bu
 		desc:ilding (or unit, but, I.D.K. what it actually called..) of money two you get, You''re moneying is incresed by 1%. Ok? Thats it. b
 		req:money2building
