@@ -164,7 +164,7 @@ Buildings
 
 	*money2building
 		name:come a nd Buy money 2 here
-		desc:<//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//><//>the
+		desc:ok<//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> the
 		cost:100 money
 		cost increase:200%
 		icon:https://cdn.w600.comps.canstockphoto.com/funny-stupid-man-holding-a-big-money-stock-image_csp4135366.jpg
