@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.8</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.9</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:11/17/2022
 
@@ -68,7 +68,7 @@ Buttons
 		desc:turn smartness into researches here!!! NOW!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		on click:
 			if (smartness >= convertcost and money >= convertcost*10 and converttimer > 1e250)
-				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab))
+				converttimer is (pow(convertcost,0.4))-(speedup+(2*factory)+(5*superlab))
 				lose convertcost smartness
 				lose convertcost*10 money
 				yield 100 convertcost
@@ -494,13 +494,13 @@ Upgrades
 	*research5
 		name:factory works.
 		desc:We have research factory to make. first, we will getting more clicking working moneying,. and, from basic setting uping, we get 10 less seconds of researcheings.<//><q>x5 click money, does not boost smartness. Reduces research time by 10 seconds. Unlocks new technology</q>
-		cost:9 research, 25000 money
+		cost:9 research, 1000000 money
 		on earn:yield 10 speedup
 		passive:multiply money yield of moneybag by 5
 		req:have research4
 	*school2up
 		name:CoolerSkool scholarship
-		desc:scolarship means SAVE MONEY and BE SMARTER. cool skool's cost down and we get higher smart per secondm,<//><q>Negative MPS decreased from 50 to 10 and +50% SPS</q>
+		desc:scolarship means SAVE MONEY and BE SMARTER. cool skool's cost down and we get higher smart per secondm,<//><q>Negative MPS decreased from 50 to 10 and +50% SPS for cooler skool</q>
 		cost:20000 smartness
 		passive:multiply smartness yield of school2 by 1.5
 		req:5 school2
