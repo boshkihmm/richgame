@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b>3.0.4</b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b>3.0.5</b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:11/17/2022
 
@@ -362,7 +362,7 @@ Upgrades
 		req:5 dirt
 	*cryptoup
 		name:Cryptcurency work
-		desc:sell your cyrtoping currencys for 2 more click work! YeSSSS!<//><q>Cryptocurrency gives +25% more money, +3 click money</q>
+		desc:sell your cyrtoping currencys for 3 more click work! YeSSSS!<//><q>Cryptocurrency gives +25% more money, +3 click money</q>
 		cost:500 money
 		passive:increase yield of moneybag by 3
 		passive:multiply yield of cryptocurrency by 1.25
@@ -442,7 +442,7 @@ Upgrades
 	*codingup	
 		name:MEGA coding!
 		desc:we can mega the codings to are make better coding yes and ad making for including more money! more click worth.<//><q>Coding gives +25% more money, +8 click money</q>
-		cost:75000 money
+		cost:50000 money
 		passive:increase yield of moneybag by 8
 		passive:multiply yield of coding by 1.25
 		req:5 coding
