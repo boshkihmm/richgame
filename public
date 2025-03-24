@@ -49,7 +49,7 @@ Buttons
 	*moneybag
 		name:Work !
 		text:[?(have factoryup and worktimer = 0)|<b><#00d90e>Work For Research boost !</#></b>|Work !]
-		desc:ohh! You must work to get moneys. click to earn money for investing. Investing good!!! why? because it's free Moneys! why? You Put Money In, and, If Lucky, get MONEY!!!!!!!!! [?have factoryup|<//> Hey,We got [worktimer] SECOND until we can MONEY TH ERESEARCH| ]
+		desc:ohh! You must work to get moneys. click to earn money for investing. Investing good!!! why? because it's free Moneys! why? You Put Money In, and, If Lucky, get MONEY!!!!!!!!! [?(have factoryup)|<//> Hey,We got [worktimer] SECOND until we can MONEY TH ERESEARCH| ]
 		on click:yield 2 money
 		on click:if (have school1up) yield 2 smartness
 		on click:
