@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b>3.0.2</b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b>3.0.3</b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:11/17/2022
 
@@ -228,10 +228,11 @@ Buildings
 		on earn:
 			if (chance(100%)) toast well, better luck next time. Guess we didn't get mone
 //igm sucks so this is disabled for now
-			else if (chance(9%))
+//(i have Completely Forgotten what went wrong here)
+			else if (chance(0%))
 			 yield 20 money
 			 toast yoU WNO!!!!! 20 do,laer!!!!
-			else if (chance(1%))
+			else if (chance(0%))
 			 yield 1e5 money
 			 toast yoU WNO!!!!1!!!!!!111@!!!! 100 HUNRER AED THOAUSANDS DOLAER!!@@@
 			 yield lotteryachv
