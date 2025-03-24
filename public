@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.15</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.16</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:11/17/2022
 
@@ -316,27 +316,27 @@ Buildings
 		
 	*supercomputer
 		name:SuperDuperComputers           .
-		desc:the computer, makes lot of thinking and proceser. this will smart us for us<//><q>+45 SPS, +500 MPS (if upgraded)</q><//><q>Upgrades unlock at: 10</q>
+		desc:the computer, makes lot of thinking and proceser. this will smart us for us<//><q>+100 SPS, +800 MPS (if upgraded)</q><//><q>Upgrades unlock at: 10</q>
 		cost:1.5e6 money, 2 research
-		passive:yield 45 smartness
-		passive:if (have supercomputerup2) yield 500 money
+		passive:yield 100 smartness
+		passive:if (have supercomputerup2) yield 800 money
 		req:have supercomputerup
 		cost increase:110%
 		icon:icons1[17,1]
 		
 	*estate
 		name:pROPERTY and eSTATE!
-		desc:I love money ($)<//><q>+800 MPS, +1% money per level</q><//><q>Upgrades unlock at: 10</q>
+		desc:I love money ($)<//><q>+1200 MPS, +1% money per level</q><//><q>Upgrades unlock at: 10</q>
 		cost:1e6 money, 30000 smartness
-		passive:yield 800 money
+		passive:yield 1200 money
 		req:estateup1
 		icon:icons1[18,1]
 	*superlab
 		name:super lab.
-		desc:This lab is Super.Its is very good, i Think! VEry good,Its moneys and smarts.; How do this work though?<//><q>+1000 MPS, +60 SPS, +2% money per level, +3% smartness per level, -5 research time per level</q><//><q>Upgrades unlock at: 10</q>
+		desc:This lab is Super.Its is very good, i Think! VEry good,Its moneys and smarts.;it do all THE GOOD THINGS . How do this work though?<//><q>+2000 MPS, +150 SPS, +2% money per level, +3% smartness per level, -5 research time per level</q><//><q>Upgrades unlock at: 10</q>
 		cost:5 research
-		passive:yield 1000 money
-		passive:yield 60 smartness
+		passive:yield 2000 money
+		passive:yield 150 smartness
 		req:superlabup1
 		cost increase:110%
 		icon:icons1[19,1]
@@ -524,10 +524,10 @@ Upgrades
 		on earn:show autoresearch
 	*research8
 		name:COLLeg,e..... FOR GENIUS
-		desc:We'll intellegnce from this. This School will Cool and WE WILL YES!!!!<//><q>x2 click money, affects smartness. Research time is 20 seconds shorter. Unlocks more upgrades</q>
+		desc:We'll intellegnce from this. This School will Cool and WE WILL YES!!!!<//><q>x3 click smartness, research time is 20 seconds shorter, unlocks a ton of upgrades</q>
 		cost: 40 research, 1e7 money, 3e5 smartness
 		on earn:yield 20 speedup
-		passive:multiply yield of moneybag by 2
+		passive:multiply smartness yield of moneybag by 3
 		req:research7
 		class:glowpink halffit
 	*madlab
@@ -573,7 +573,7 @@ Upgrades
 	*supercomputerup
 		name:Computering
 		desc:These Are FAST. I can BUy them For MAny moneys, And, THEY DO SMART FOR ME@!!!!#######<//><q>Unlocks a new building</q>
-		cost:3e7 money, 25 research
+		cost:2e7 money, 25 research
 		req:research8
 	*supercomputerup2
 		name:cyprtoCurrencying
@@ -583,18 +583,18 @@ Upgrades
 	*estateup1
 		name:lands and HOuse.!
 		desc:I buy property and selL it for more! WOW<//><q>Unlocks a new building</q>
-		cost:4e7 money, 5e5 smartness
+		cost:2e7 money, 5e5 smartness
 		req:research8
 	*estateup2
 		name:Cool Market
 		desc:the stock go up, the money go rise.<//><q>Property and estate gives +50% more money, stock markets give +100 MPS instead of -1 MPS</q>
-		cost:7.5e7 money, 1e6 smartness
+		cost:5e7 money, 1e6 smartness
 		req:10 estate
 		passive:multiply yield of estate by 1.5
 	*superlabup1
 		name:SUPEr Labs!!!!
 		desc:We're the power. Use our lab and make it SUPER AND NICE. It gives boosts evyerhintg now. YEah<//><q>Unlocks a powerful new building</q>
-		cost:1e8 money, 75 research, 3e6 smartness
+		cost:5e7 money, 75 research, 3e6 smartness
 		req:research8
 	*allup1
 		name:MEGA!MONEY!UPGRADE!S
