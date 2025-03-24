@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.9</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.10</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:11/17/2022
 
@@ -316,9 +316,9 @@ Buildings
 		
 	*supercomputer
 		name:SuperDuperComputers           .
-		desc:the computer, makes lot of thinking and proceser. this will smart us for us<//><q>+18 SPS, +500 MPS (if upgraded)</q><//><q>Upgrades unlock at: 10</q>
+		desc:the computer, makes lot of thinking and proceser. this will smart us for us<//><q>+45 SPS, +500 MPS (if upgraded)</q><//><q>Upgrades unlock at: 10</q>
 		cost:1.5e6 money, 2 research
-		passive:yield 18 smartness
+		passive:yield 45 smartness
 		passive:if (have supercomputerup2) yield 500 money
 		req:have supercomputerup
 		cost increase:110%
@@ -333,10 +333,10 @@ Buildings
 		icon:icons1[18,1]
 	*superlab
 		name:super lab.
-		desc:This lab is Super.Its is very good, i Think! VEry good,Its moneys and smarts.; How do this work though?<//><q>+1000 MPS, +30 SPS, +2% money per level, +3% smartness per level, -5 research time per level</q><//><q>Upgrades unlock at: 10</q>
+		desc:This lab is Super.Its is very good, i Think! VEry good,Its moneys and smarts.; How do this work though?<//><q>+1000 MPS, +60 SPS, +2% money per level, +3% smartness per level, -5 research time per level</q><//><q>Upgrades unlock at: 10</q>
 		cost:5 research
 		passive:yield 1000 money
-		passive:yield 30 smartness
+		passive:yield 60 smartness
 		req:superlabup1
 		cost increase:110%
 		icon:icons1[19,1]
@@ -507,7 +507,7 @@ Upgrades
 	*research6
 		name:Research. Factories.
 		desc:This is a new era of re-search. We will search for all of the re.<//><q>Unlocks a new building</q>
-		cost:15 research, 400000 money
+		cost:12 research, 400000 money
 		req:have research5
 	*factoryup
 		name:Moneying The REsearch.
@@ -519,13 +519,13 @@ Upgrades
 	*research7
 		name:The Auto Researcher/
 		desc:It;s a button. Press it on to automatically rearch whnever you have the resource for it! Press it off, it stops. WARNINGS: /!<//><q>Unlocks a toggle that makes research start automatically. This, however, will double the money cost of researching while enabled.</q>
-		cost:25 research, 5e6 money
+		cost:20 research, 5e6 money
 		req:have research6
 		on earn:show autoresearch
 	*research8
 		name:COLLeg,e..... FOR GENIUS
 		desc:We'll intellegnce from this. This School will Cool and WE WILL YES!!!!<//><q>x3 click money, affects smartness. Research time is 20 seconds shorter. Unlocks more upgrades</q>
-		cost: 50 research, 2e7 money, 3e5 smartness
+		cost: 40 research, 2e7 money, 3e5 smartness
 		on earn:yield 20 speedup
 		passive:multiply yield of moneybag by 3
 		req:research7
@@ -533,7 +533,7 @@ Upgrades
 	*madlab
 		name:MAD SCienticts' LAB!
 		desc:Im mad, and IM SCIENCE@. Wait IM NOT EIVL<//><q>Does not do anything... for now</q>
-		cost:5e8 money, 100 research, 2 ep
+		cost:5e8 money, 75 research, 2 ep
 		req:10 superlab
 		class:glowred halffit
 		
