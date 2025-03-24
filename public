@@ -68,7 +68,7 @@ Buttons
 		desc:turn smartness into researches here!!! NOW!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		on click:
 			if (smartness >= convertcost and money >= convertcost*10 and converttimer > 1e250)
-				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab))
+				converttimer is (pow(convertcost,0.45))-(speedup+(2*factory)+(5*superlab))
 				lose convertcost smartness
 				lose convertcost*10 money
 				yield 100 convertcost
