@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.7</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.8</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:11/17/2022
 
@@ -250,10 +250,10 @@ Buildings
 		icon:icons1[9,1]
 	*school1
 		name:skool
-		desc:go to skools to increase my smartness every seconds. W0W! <//><q>+2 SPS (smartness per second)</q><//><q>Upgrades unlock at: 5, 10</q>
+		desc:go to skools to increase my smartness every seconds. W0W! <//><q>+3 SPS (smartness per second)</q><//><q>Upgrades unlock at: 5, 10</q>
 		cost:5000 money
 		cost increase:130%
-		passive:yield 2 smartness
+		passive:yield 3 smartness
 		req:35 dirt
 		icon:icons1[10,1]
 		
@@ -300,9 +300,9 @@ Buildings
 
 	*school2
 		name:cool skool.
-		desc:new skool is pretty cool. it gives 6 smartness per second, but it costs 50 money per second. :sunglasses:<//><q>+6 SPS, -50 MPS</q><//><q>Upgrades unlock at: 5</q>
+		desc:new skool is pretty cool. it gives 15 smartness per second, but it costs 50 money per second. :sunglasses:<//><q>+15 SPS, -50 MPS</q><//><q>Upgrades unlock at: 5</q>
 		cost:75000 money, 500 smartness
-		passive:yield 6 smartness
+		passive:yield 15 smartness
 		passive:if (have school2up) lose 10 money else lose 50 money
 		req:50000 smartness:earned
 		icon:icons1[15,1]
