@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b>3.0.3</b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b>3.0.4</b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:11/17/2022
 
@@ -362,36 +362,36 @@ Upgrades
 		req:5 dirt
 	*cryptoup
 		name:Cryptcurency work
-		desc:sell your cyrtoping currencys for 2 more click work! YeSSSS!<//><q>Cryptocurrency gives +25% more money, +2 click money</q>
+		desc:sell your cyrtoping currencys for 2 more click work! YeSSSS!<//><q>Cryptocurrency gives +25% more money, +3 click money</q>
 		cost:500 money
-		passive:increase yield of moneybag by 2
+		passive:increase yield of moneybag by 3
 		passive:multiply yield of cryptocurrency by 1.25
 		req:5 cryptocurrency
 	*dogup
 		name:Pet the dogs.
-		desc:<u>We must pet the dogs.</u><//><q>Petting the Dogs gives +25% more money, +3 click money</q>
+		desc:<u>We must pet the dogs.</u><//><q>Petting the Dogs gives +25% more money, +4 click money</q>
 		cost:300 money
-		passive:increase yield of moneybag by 3
+		passive:increase yield of moneybag by 4
 		passive:multiply yield of dog by 1.25
 		req:5 dog
 	*cookieup
 		name:cookie Sell!
-		desc:cookie clicking didn't work. let's sell the cookie instead for 3 more click work! YESSSSSS<//><q>+3 click money</q>
+		desc:cookie clicking didn't work. let's sell the cookie instead for 3 more click work! YESSSSSS<//><q>+5 click money</q>
 		cost:100 money
-		passive:increase yield of moneybag by 3
+		passive:increase yield of moneybag by 5
 		req:5 cookie
 	*stockup
 		name:Market CRASH!!
-		desc:NO DO NOT CRASH THE MARKET!!!!!! I WILL LOSE ALL MONEYS!!!!! NOOOOOOO!!!!!!!!! STOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<//><q>You'll lose 100k, don't do this (unless you really want the achievement)</q>
+		desc:NO DO NOT CRASH THE MARKET!!!!!! I WILL LOSE ALL MONEYS!!!!! NOOOOOOO!!!!!!!!! STOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<//><q>You'll lose 100k, don't do this (unless you want a achievement)</q>
 		cost:1000 money
 		on earn:lose 100000 money
 		on earn:toast NOOOOOOOOOOOOOOOOŒ
 		req:10 stock
 	*paperclipup	
 		name:clipping the paper !
-		desc:Use paperclips for better organizing making money boost!!!<//><q>Paperclips give +25% more money, +4 click money</q>
+		desc:Use paperclips for better organizing making money boost!!!<//><q>Paperclips give +25% more money, +6 click money</q>
 		cost:3000 money
-		passive:increase yield of moneybag by 4
+		passive:increase yield of moneybag by 6
 		passive:multiply yield of paperclip by 1.25
 		req:5 paperclip
 	*stealingup
@@ -410,15 +410,15 @@ Upgrades
 		req:1 ep
 	*lotteryup	
 		name:lottery Making
-		desc:We Make the Loterys so We can Get The a Moneys For 4 clicked Working     ?<//><q>What</q>
+		desc:We Make the Loterys so We can Get The a Moneys For 6 clicked Working     ?<//><q>What</q>
 		cost:1500 money
-		passive:increase yield of moneybag by 4
+		passive:increase yield of moneybag by 6
 		req:50 lottery
 	*landscapeup	
 		name:scaping The Land.
-		desc:instead of landing the scape, we scape the land. What!?!?/1/1/1/1. it makes   more click worth thoough !<//><q>Landscaping gives +25% more money, +5 click money</q>
+		desc:instead of landing the scape, we scape the land. What!?!?/1/1/1/1. it makes   more click worth thoough !<//><q>Landscaping gives +25% more money, +7 click money</q>
 		cost:5000 money
-		passive:increase yield of moneybag by 5
+		passive:increase yield of moneybag by 7
 		passive:multiply yield of landscape by 1.25
 		req:5 landscape
 	*school1up	
@@ -435,22 +435,22 @@ Upgrades
 		class:glowlightblue halffit
 	*book1up	
 		name:reading glass.
-		desc:so. WE geT reading glasses to read more better. 5 more click works now ! why is this so expesnive<//><q>+5 click money</q>
+		desc:so. WE geT reading glasses to read more better. 7 more click works now ! why is this so expesnive<//><q>+7 click money</q>
 		cost:30000 money
-		passive:increase yield of moneybag by 5
+		passive:increase yield of moneybag by 7
 		req:5 book1
 	*codingup	
 		name:MEGA coding!
-		desc:we can mega the codings to are make better coding yes and ad making for including more money! more click worth.<//><q>Coding gives +25% more money, +6 click money</q>
+		desc:we can mega the codings to are make better coding yes and ad making for including more money! more click worth.<//><q>Coding gives +25% more money, +8 click money</q>
 		cost:75000 money
-		passive:increase yield of moneybag by 6
+		passive:increase yield of moneybag by 8
 		passive:multiply yield of coding by 1.25
 		req:5 coding
 	*book2up	
 		name:second reading glass.
-		desc:so, nOW WE geT reading MORE glassses to read EVEN more bettEr. 2 more click works nows1@!@!!!@!@!#!@}132$!@$!<//><q>+6 click money</q>
+		desc:so, nOW WE geT reading MORE glassses to read EVEN more bettEr. 2 more click works nows1@!@!!!@!@!#!@}132$!@$!<//><q>+8 click money</q>
 		cost:100000 money
-		passive:increase yield of moneybag by 6
+		passive:increase yield of moneybag by 8
 		req:5 book2
 	*research1
 		name:smart works.
@@ -465,10 +465,10 @@ Upgrades
 		req:have research1
 	*wheelup
 		name:WHEEL 2.0.
-		desc:THE BETTER WHEEL. IT GIVES 7 CLICK MONEYS AND 50 THOUSANDS BUCKS.<//><q>Reinventing the Wheel gives +25% more money, +7 click money, +50,000 money</q>
+		desc:THE BETTER WHEEL. IT GIVES 9 CLICK MONEYS AND 50 THOUSANDS BUCKS.<//><q>Reinventing the Wheel gives +25% more money, +9 click money, +50,000 money</q>
 		cost:8000 smartness
 		on earn:yield 50000 money
-		passive:increase yield of moneybag by 7
+		passive:increase yield of moneybag by 9
 		passive:multiply yield of wheel by 1.25
 		req:5 wheel
 	*research3
@@ -485,10 +485,10 @@ Upgrades
 		req:have research3
 	*susup
 		name:ripoff Pro skills.
-		desc:we better at ripping, so we off. 7 clicks works .<//><q>Among Us Ripoff gives +25% more money, +7 click money</q>
+		desc:we better at ripping, so we off. 7 clicks works .<//><q>Among Us Ripoff gives +25% more money, +10 click money</q>
 		cost:200000 money, 5000 smartness
 		on earn:yield 2 ep
-		passive:increase yield of moneybag by 7
+		passive:increase yield of moneybag by 10
 		passive:multiply yield of sus by 1.25
 		req:5 sus
 	*research5
