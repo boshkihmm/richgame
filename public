@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.13</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.14</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:11/17/2022
 
@@ -524,10 +524,10 @@ Upgrades
 		on earn:show autoresearch
 	*research8
 		name:COLLeg,e..... FOR GENIUS
-		desc:We'll intellegnce from this. This School will Cool and WE WILL YES!!!!<//><q>x3 click money, affects smartness. Research time is 20 seconds shorter. Unlocks more upgrades</q>
-		cost: 40 research, 2e7 money, 3e5 smartness
+		desc:We'll intellegnce from this. This School will Cool and WE WILL YES!!!!<//><q>x2 click money, affects smartness. Research time is 20 seconds shorter. Unlocks more upgrades</q>
+		cost: 40 research, 1e7 money, 3e5 smartness
 		on earn:yield 20 speedup
-		passive:multiply yield of moneybag by 3
+		passive:multiply yield of moneybag by 2
 		req:research7
 		class:glowpink halffit
 	*madlab
