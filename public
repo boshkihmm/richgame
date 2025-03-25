@@ -199,7 +199,11 @@ Resources
 	*evilcost
 		start with:10
 		//hidden
-		passive: if (this=100) this is 10
+		passive:
+			if (this=100)
+				this is 10
+			end
+		end
 	*eviltimer
 		start with:1e300
 		passive:lose this
