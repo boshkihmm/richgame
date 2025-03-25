@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.22</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.23</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:11/17/2022
 
@@ -194,7 +194,7 @@ Buildings
 
 	*dirt
 		name:Sell dirt!
-		desc:wows, dirt give money!  !<//><q>+0.5 MPS (money per second). <b>Buying large amounts of this is required to unlock new features and progress the game.</b></q>
+		desc:wows, dirt give money!  !<//><q>+0.5 MPS (money per second). <b>Buying large amounts of this is required to unlock new features and progress the game</b></q>
 		cost:10 money
 		passive:yield 0.5 money
 		cost increase:115%
@@ -583,7 +583,7 @@ Upgrades
 	*dirtup2
 		name:Ultimate Dirt Extracing
 		desc:use the Power OF COOL CONSTURCION MACHINES to get mroe dirt! YeSSSSSS!!!!!<//><q>Sell Dirt gives x100 money</q>
-		cost:5e6 money
+		cost:1e7 money, 1e6 smartness
 		passive:multiply yield of dirt by 100
 		req:75 dirt, allup1
 		
@@ -632,12 +632,12 @@ Upgrades
 	*superlabup1
 		name:SUPEr Labs!!!!
 		desc:We're the power. Use our lab and make it SUPER AND NICE. It gives boosts evyerhintg now. YEah<//><q>Unlocks a powerful new building</q>
-		cost:5e7 money, 75 research, 3e6 smartness
+		cost:5e7 money, 60 research, 3e6 smartness
 		req:research8
 	*allup1
 		name:MEGA!MONEY!UPGRADE!S
-		desc:This give all the upgrade to all the mony<//><q>Unlocks an upgrade for each unit from Sell Dirt to Super Labs. The respective units' upgrades can only be unlocked when leveled to 75</q>
-		cost:1e8 money, 1e6 smartness
+		desc:This give all the upgrade to all the mony<//><q>Unlocks an upgrade for each unit. The respective units' upgrades can only be unlocked when leveled to 75</q>
+		cost:2e6 smartness
 		req:research8
 	*book3up
 		name:How2English!!!!
