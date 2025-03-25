@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.16</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.17</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:11/17/2022
 
@@ -283,18 +283,18 @@ Buildings
 		
 	*wheel
 		name:reinventing the wheel
-		desc:is this how i can strike rich. 1 less smartness per two second but 150 moneys per second. investeors say no, but i say yEs.Whats a invetor<//><q>+150 MPS, -0.5 SPS</q><//><q>Upgrades unlock at: 5</q>
+		desc:is this how i can strike rich. 1 less smartness per two second but 150 moneys per second. investeors say no, but i say yEs.Whats a invetor<//><q>+200 MPS, -0.5 SPS</q><//><q>Upgrades unlock at: 5</q>
 		cost:4000 money, 2500 smartness
-		passive:yield 150 money
+		passive:yield 200 money
 		passive:lose 0.5 smartness
 		req:have research2
 		icon:icons1[13,1]
 		
 	*sus
 		name:among Us rip Off.
-		desc:it's popular game, i ripoff and make popular game again. i charge extra moneys.   they're problem if they're getting ideas stolen from.<//><q>+350 MPS</q><//><q>Upgrades unlock at: 5</q>
+		desc:it's popular game, i ripoff and make popular game again. i charge extra moneys.   they're problem if they're getting ideas stolen from.<//><q>+400 MPS</q><//><q>Upgrades unlock at: 5</q>
 		cost:50000 money
-		passive:yield 350 money
+		passive:yield 400 money
 		req:have research4
 		icon:icons1[14,1]
 
@@ -313,29 +313,29 @@ Buildings
 		req:have research6
 		cost increase:115%
 		icon:icons1[16,1]
-		
+
 	*supercomputer
 		name:SuperDuperComputers           .
-		desc:the computer, makes lot of thinking and proceser. this will smart us for us<//><q>+100 SPS, +800 MPS (if upgraded)</q><//><q>Upgrades unlock at: 10</q>
+		desc:the computer, makes lot of thinking and proceser. this will smart us for us<//><q>+100 SPS, +1200 MPS (if upgraded)</q><//><q>Upgrades unlock at: 10</q>
 		cost:1.5e6 money, 2 research
 		passive:yield 100 smartness
-		passive:if (have supercomputerup2) yield 800 money
+		passive:if (have supercomputerup2) yield 1200 money
 		req:have supercomputerup
 		cost increase:110%
 		icon:icons1[17,1]
 		
 	*estate
 		name:pROPERTY and eSTATE!
-		desc:I love money ($)<//><q>+1200 MPS, +1% money per level</q><//><q>Upgrades unlock at: 10</q>
+		desc:I love money ($)<//><q>+1500 MPS, +1% money per level</q><//><q>Upgrades unlock at: 10</q>
 		cost:1e6 money, 30000 smartness
-		passive:yield 1200 money
+		passive:yield 1500 money
 		req:estateup1
 		icon:icons1[18,1]
 	*superlab
 		name:super lab.
-		desc:This lab is Super.Its is very good, i Think! VEry good,Its moneys and smarts.;it do all THE GOOD THINGS . How do this work though?<//><q>+2000 MPS, +150 SPS, +2% money per level, +3% smartness per level, -5 research time per level</q><//><q>Upgrades unlock at: 10</q>
+		desc:This lab is Super.Its is very good, i Think! VEry good,Its moneys and smarts.;it do all THE GOOD THINGS . How do this work though?<//><q>+3000 MPS, +150 SPS, +2% money per level, +3% smartness per level, -5 research time per level</q><//><q>Upgrades unlock at: 10</q>
 		cost:5 research
-		passive:yield 2000 money
+		passive:yield 3000 money
 		passive:yield 150 smartness
 		req:superlabup1
 		cost increase:110%
@@ -704,6 +704,11 @@ Achievements
 		desc:I'm Smartest Ever!!!!!!!!!!
 		req:research8
 		icon:icons1[17,2]
+	*research1achv
+		name:The Great Researcher That Searches For The Re
+		desc:we got 100 total re, yea, alright, yea, good.
+		req:100 research:earned
+		icon:icons1[3,0]
 	*evil1achv
 		name:We The Eil
 		desc:We got Evil, We doing eivl
