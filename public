@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.24</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.25</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:11/17/2022
 
@@ -100,6 +100,7 @@ Buttons
 		passive:multiply smartness yield of moneybag by 0.2
 		icon:https://file.garden/Y3WCFJOdi23QPQVx/workbutton
 		class:bigButton
+
 	*researchbutton
 		name:makeing RESERCH!
 		text:[?(converttimer < 1e250)|[converttimer] seconds until we earn RESEARCH!|Convert [convertcost] smartness and [convertcost*10] money into RESEARCH!]
@@ -114,6 +115,7 @@ Buttons
 		end	
 		tag:researchtag
 		hidden
+
 	*autoresearch
 		name:aUTO RESEARCH
 		text:[?(autoflag = 0)|Click TO Turn On...... Auto-RESarching!|turn off autoresearch.]
@@ -134,7 +136,23 @@ Buttons
 			end
 		end
 		hidden
-	
+
+	*evilbutton
+		name:MAKING THE EVIL POINTS AND THE EILNESS
+		text:[?(eviltimer < 1e250)|[eviltimer] seconds until we earn EVIL. POINTS.|Convert [evilcost] research points into EVIL. POINTS.]
+		desc:WE MAKEINH THE RESEARCH INTOTHE EVILS
+		on click:
+			if (research >= evilcost and eviltimer > 1e250)
+				eviltimer is (pow(evilcost,0.5))*10
+				lose evilcost research
+				yield 1 evilcost
+			end
+		end	
+		tag:eviltag
+		hidden
+
+
+
 	on workboost:
 		yield 5 speedup
 		toast Research timed Descreasioned! 5second less,
@@ -178,6 +196,19 @@ Resources
 			end
 		end
 		hidden
+	*evilcost
+		start with:100
+		//hidden
+	*eviltimer
+		start with:1e300
+		passive:lose this
+		passive:
+			if (this<=0)
+				yield research
+				this is 1e300
+			end
+		end
+		//hidden
 	*speedup
 		hidden
 	*worktimer
@@ -572,6 +603,7 @@ Upgrades
 		name:MAD SCienticts' LAB!
 		desc:Im mad, and IM SCIENCE@. Wait IM NOT EIVL<//><q>Unlocks production of evil points and numerous upgrades</q>
 		cost:2.5e8 money, 5e6 smartness, 2 ep
+		passive:show tag:eviltag
 		req:10 superlab, have evil1
 		class:glowred halffit
 		
