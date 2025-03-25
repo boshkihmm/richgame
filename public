@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.21</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.22</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:11/17/2022
 
@@ -35,17 +35,17 @@ CSS
 	.glowlightblue
 	{
 		border-color: powderblue;
-		border-width: 0.5vw;
+		border-width: 0.2vw;
 	}
 	.glowpink
 	{
 		border-color: orchid;
-		border-width: 0.5vw;
+		border-width: 0.2vw;
 	}
 	.glowred
 	{
 		border-color: red;
-		border-width: 0.5vw;
+		border-width: 0.2vw;
 	}
 
 	.upgrade.owned
