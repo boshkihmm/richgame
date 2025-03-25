@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.23</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.24</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:11/17/2022
 
@@ -442,9 +442,9 @@ Upgrades
 		req:5 stealing
 	*evil1
 		name:EVIL Working.!
-		desc:be evil and scam for 10 click works!<//><q>+10 click money</q>
+		desc:be evil and scam for 5 click works!<//><q>+5 click money</q>
 		cost:2000 money, 1 ep
-		passive:increase yield of moneybag by 10
+		passive:increase yield of moneybag by 5
 		req:1 ep
 	*lotteryup	
 		name:lottery Making
@@ -562,7 +562,7 @@ Upgrades
 		on earn:show autoresearch
 	*research8
 		name:COLLeg,e..... FOR GENIUS
-		desc:We'll intellegnce from this. This School will Cool and WE WILL YES!!!!<//><q>x3 click smartness, research time is 20 seconds shorter, unlocks a ton of upgrades</q>
+		desc:We'll intellegnce from this. This School will Cool and WE WILL YES!!!!<//><q>x3 click smartness, research time is 20 seconds shorter, unlocks several upgrades</q>
 		cost: 40 research, 1e7 money, 3e5 smartness
 		on earn:yield 20 speedup
 		passive:multiply smartness yield of moneybag by 3
@@ -570,9 +570,9 @@ Upgrades
 		class:glowpink halffit
 	*madlab
 		name:MAD SCienticts' LAB!
-		desc:Im mad, and IM SCIENCE@. Wait IM NOT EIVL<//><q>Does not do anything... for now</q>
-		cost:5e8 money, 75 research, 2 ep
-		req:10 superlab
+		desc:Im mad, and IM SCIENCE@. Wait IM NOT EIVL<//><q>Unlocks production of evil points and numerous upgrades</q>
+		cost:2.5e8 money, 5e6 smartness, 2 ep
+		req:10 superlab, have evil1
 		class:glowred halffit
 		
 	*TEMPLATE
