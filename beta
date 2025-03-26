@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.37<#ffd000>b</#></u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.38<#ffd000>b</#></u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:3/26/2025
 
@@ -108,6 +108,11 @@ Buttons
 		on click:
 			if (smartness >= convertcost and money >= convertcost*10 and converttimer > 1e250)
 				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab))
+				// temporary fix because "yield research" just doesn't work
+				if (converttimer <= 0)
+					research is research+1
+					converttimer is 1e300
+				end
 				lose convertcost smartness
 				lose convertcost*10 money
 				yield 100 convertcost
@@ -130,16 +135,14 @@ Buttons
 		passive:
 			if (smartness >= convertcost and money >= convertcost*20 and converttimer > 1e250 and autoflag = 1)
 				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab))
-				// temporary(?) fix
+				// temporary fix because "yield research" just doesn't work
 				if (converttimer <= 0)
 					research is research+1
 					converttimer is 1e300
-					toast hi
 				end
 				lose convertcost smartness
 				lose convertcost*20 money
 				yield 100 convertcost
-				toast sup
 			end
 		end
 		hidden
@@ -221,15 +224,9 @@ Resources
 	*converttimer
 		start with:1e300
 		passive:lose this
-		passive:
-			if (this<=0)
-				yield research
-				this is 1e300
-			end
-		end
 		hidden
 		desc:[converttimer] seconds left (using a desc bc igm number display is weird)
-		passive:show this
+		//passive:show this
 	*evilcost
 		start with:10
 		hidden
@@ -238,7 +235,6 @@ Resources
 		passive:lose this
 		passive:
 			if (this<=0)
-				yield ep
 				this is 1e300
 			end
 		end
