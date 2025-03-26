@@ -1,0 +1,858 @@
+Let's make a game!
+	name:become Rich !!!!
+	by:boshki0987 (sprites by Lexali5)
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.30</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	created:5/25/2021
+	updated:3/26/2025
+
+
+Settings
+	building cost increase:120%
+	building cost refund:-1e400%
+	background:https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F1142839776%2F960x0.jpg%3Ffit%3Dscale
+	spritesheet:icons1, 48 by 48, https://i.postimg.cc/RZm1Kg6n/fixed3.png
+	
+CSS
+
+	.halffit
+	{
+		width: 48%;
+	}
+	.glowgreen
+	{
+		color: green;
+		text-shadow: 0 0 5px green;
+		box-shadow: 0px 0px 15px green;
+		border-color: green;
+	}
+	.glowyellow
+	{
+		color: yellow;
+		text-shadow: 0 0 5px yellow;
+		box-shadow: 0px 0px 15px yellow;
+		border-color: yellow;
+	}
+	.glowlightblue
+	{
+		border-color: powderblue;
+		border-width: 0.2vw;
+	}
+	.glowpink
+	{
+		border-color: orchid;
+		border-width: 0.2vw;
+	}
+	.glowred
+	{
+		border-color: red;
+		border-width: 0.2vw;
+	}
+
+	.upgrade.owned
+	{
+	box-shadow:0px 0px 0px 4px rgba(0,0,0,0.5) inset;
+	background:rgba(255,255,255,0.7);
+	}
+	.upgradebox
+	{
+	background-image: url("https://i.ebayimg.com/images/g/uCQAAOSwnm1gCzFD/s-l1600.jpg");
+	}
+
+
+
+Layout
+	*main
+		contains:res, buttons
+	*res
+		contains:Resources
+		class:fullWidth
+	*buttons
+		contains:Buttons
+	*store
+		contains:buildings, upgrades
+	*buildings
+		contains:BulkDisplay, Buildings
+		header:Buildings
+		tooltip origin:left
+	*upgrades
+		contains:Upgrades
+		header:Upgrades
+		costs:hide
+		names:hide
+		class:upgradebox
+
+
+
+Buttons
+	*moneybag
+		name:Work !
+		text:[?(have factoryup and worktimer = 0)|<b><#00d90e>Work For Research boost !</#></b>|Work !]
+		desc:ohh! You must work to get moneys. click to earn money for investing. Investing good!!! why? because it's free Moneys! why? You Put Money In, and, If Lucky, get MONEY!!!!!!!!! [?(have factoryup)|<//> Hey,We got [worktimer] SECOND until we can MONEY TH ERESEARCH| ]
+		on click:yield 2 money
+		on click:if (have school1up) yield 2 smartness
+		on click:
+			if (have factoryup and worktimer = 0)
+				speedup is speedup+3
+				toast Research timed Descreasioned! 3second less,
+				worktimer is 900
+			end
+		end
+		passive:multiply smartness yield of moneybag by 0.2
+		icon:https://file.garden/Y3WCFJOdi23QPQVx/workbutton
+		class:bigButton
+
+	*researchbutton
+		name:makeing RESERCH!
+		text:[?(converttimer < 1e250)|[converttimer] seconds until we earn RESEARCH!|Convert [convertcost] smartness and [convertcost*10] money into RESEARCH!]
+		desc:turn smartness into researches here!!! NOW!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		on click:
+			if (smartness >= convertcost and money >= convertcost*10 and converttimer > 1e250)
+				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab))
+				lose convertcost smartness
+				lose convertcost*10 money
+				yield 100 convertcost
+			end
+		end	
+		tag:researchtag
+		hidden
+
+	*autoresearch
+		name:aUTO RESEARCH
+		text:[?(autoflag = 0)|Click TO Turn On...... Auto-RESarching!|turn off autoresearch.]
+		desc:AutoResearch maeks you search for all of The re!!!!@ BUT AUTO! Wanrings: It is twice The MOney To search The re when auto, ,Though,
+		on click:
+			if (autoflag = 0)
+				autoflag is 1
+			else if (autoflag = 1)
+				autoflag is 0
+				end
+			end
+		passive:
+			if (smartness >= convertcost and money >= convertcost*20 and converttimer > 1e250 and autoflag = 1)
+				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory))
+				lose convertcost smartness
+				lose convertcost*20 money
+				yield 100 convertcost
+			end
+		end
+		hidden
+
+	*evilbutton
+		name:MAKING THE EVIL POINTS AND THE EILNESS
+		text:[?(eviltimer < 1e250)|[eviltimer] seconds until we earn EVIL. POINTS.|Convert [evilcost] research points into EVIL. POINTS.]
+		desc:WE MAKEINH THE RESEARCH INTOTHE EVILS
+		on click:
+			if (research >= evilcost and eviltimer > 1e250)
+				eviltimer is ((pow(evilcost,0.5))*50)
+				lose evilcost research
+				yield 5 evilcost
+			end
+		end	
+		tag:eviltag
+		hidden
+
+///////////////////////////////////////////////////////////////
+//debugs
+		
+	*debug1
+		name:x2 money
+		on click:yield money money
+	*debug2
+		name:x2 smartness
+		on click:yield smartness smartness
+	*debug3
+		name:Fast research
+		on click:converttimer is 0
+		hidden
+	*debug4
+		name:change speedup
+		on click:speedup is 25
+	*debug5
+		name:show autoresearcher
+		on click:show autoresearch
+	*debug6
+		name:x2 research
+		on click:yield research research
+///////////////////////////////////////////////////////////////	
+
+
+
+	on workboost:
+		yield 5 speedup
+		toast Research timed Descreasioned! 5second less,
+	end
+		
+Resources
+	*money
+		name:moneys
+		desc:this is how much rich you are! wow!
+		passive:multiply yield of this by 1+(0.02*book1)+(0.01*estate)+(0.01*money2building)
+		show earned
+		icon:icons1[0,0]
+	*ep
+		name:EVIL points.
+		desc:No, Im not Evil!!!#@@!#!#!@#!!!@!!!!!}! STOTP#@P#@P@!PP!@!@#P!@O#P@O@
+		show earned
+		icon:icons1[1,0]
+	*smartness
+		name:smartness!
+		desc:i can be smart to do BIG Money!1
+		passive:multiply yield of this by 1+(0.03*book2)
+		show earned
+		icon:icons1[2,0]
+	*research
+		name:researching pointers
+		desc:called research point, used to get bIg smart!
+		show earned
+		hidden
+		tag:researchtag
+		icon:icons1[3,0]
+	*convertcost
+		start with:100
+		hidden
+	*converttimer
+		start with:1e300
+		passive:lose this
+		passive:
+			if (this<=0)
+				yield research
+				this is 1e300
+			end
+		end
+		hidden
+	*evilcost
+		start with:10
+		//hidden
+	*eviltimer
+		start with:1e300
+		passive:lose this
+		passive:
+			if (this<=0)
+				yield ep
+				this is 1e300
+			end
+		end
+		//hidden
+	*speedup
+		hidden
+	*worktimer
+		start with:900
+		on tick:if (have factoryup) lose this
+		hidden
+	*autoflag
+		hidden
+
+
+Buildings
+
+	*dirt
+		name:Sell dirt!
+		desc:wows, dirt give money!  !<//><q>+0.5 MPS (money per second). <b>Buying large amounts of this is required to unlock new features and progress the game</b></q>
+		cost:10 money
+		passive:yield 0.5 money
+		cost increase:115%
+		icon:icons1[0,1]
+
+	*money2building
+		name:come a nd Buy money 2 here
+		desc: Ok, Ok, Ok. So This is a the Money 2 (Two). O.k.? Yea. Its' Like Money but Its Better. And Two. So, Heres How This Works. Listen.ok?? So, This is What It is. You Use Your Money 1 (One) to Buy Money 2 (Two). O.k.? And So This Money 2 Starts at 100 Money 1s. Yes, Its 100. But, Once You Get Moneying, Getting 100 Money 1s is Very Easy.... So , Then , When You Buy a the Moneys 2, Thats Cool and Yes. But It Goes to 2x the Costs! Ye,s That is Right. Every Time You Buy the Money 2 the Price of the Money 1 (One) to Buy the Money 2 Cost is 2x (Doubled or Dbouled). Yes, Thats' Right,. So , if You Buy a Money 2 With One Hunred (100) a the Money 1, That Money 1 Cost to Buy a the Money 2 Will Be 2 Times.yes. Its Like Adding on Itself. So 1 Hunred Plus 1 Hunred is 300. Oh, Wait. That is a the a Right Though. Ok I'ts Actualy 200 Dolar. Or Euro. But Just Call It Moneys1, Ok? Got It , Cool. Ok Qand Then the a the Moneys Get the Biger. Yes That Right. So a Now It is the 200 Money 1 to Buy a Nother Money 2 Right? Yes, Yes, Yes. But Thenit Now Cost 400 Moeny1. Not 300 Like Counting With the Hunrededs. Yes. It Go to 400 Instead !!!ok    Ok<//>ok So Now Lets Think Next. Instead of 500 Like Counting 1s or 600 by Skips Counting a the Twos.it Go 8 Hunred. Yes, Tahts Right. 800 Hunred Money1s Just for a Mmoneys2.it Gets Really Expensivieing.wait, Wait, Wait, Wait, Wait, Wait, Wait, Wait, !wait, Wait, Wait, Wait, Yuh.wait, Wait, Wait, Wait, Wait, Wait, Wait, Wait, Wait, Holdit and Hlat It.sorry I Mean to Type Halt It. Now It Go to One Siz Zero Zero Hunred Dollar After That. (16,00) Yes Tahts Right. Sorry I Meant Dollar1 Not Just Dollar. But Ok. Yes, It Get Hard and Expensove to Money........this Moneys a Cost the a Lot. Many Monetys for Just a Money2!!!! This is Bad. But, Wait, the Vail and Grail. It is a the Upgrades. Yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes. A the Mooneys. They the a the Moneyupgrades Are Cool Good Nice and Wow and Dang.sorry I Said a Really Bad Word.but Its' Ok. Ok? Yes. Noce/. Sorry I Meant Nice.well,what You Waiting in? Go Get Moneys 1 and Make It to a the Money 2.ewell Now Thst Im' Done Tutoritaling on You Ont His, I Will Sing a Song. Here is It: Money, Money, Oh Yeah,.money, Money, Oh Yeah,.money, Money, Oh Yeah,.money is So Cool Yeah. Money is the Bstest Yeah,. Money Make a the All and Yeah. It is Cool.h,.money, Money, Oh Yeah,.h,.money, Money, Oh Yeah,.and That is My Song. My Next is Comming Soon,ok Well Happy a the Moneyinh!!!!
+		cost:100 money
+		cost increase:200%
+		req:1e6 money
+		icon:https://media.istockphoto.com/id/172792162/photo/funny-money.jpg?s=170667a&w=0&k=20&c=wHwpu8Ifuy0bwuOBypYgN11ihACqcHeuMqvnVcB1Ss8=
+
+	*cryptocurrency
+		name:investing cyrptocurrency
+		desc:i don't know how this work! i Buy, then wait for price to up? it earn me one 1 moneys every 1 seconds, YES!!!!!!!<//><q>+1 MPS</q><//><q>Upgrades unlock at: 5,</q>
+		cost:50 money
+		passive:yield 1 money
+		passive:if (have supercomputerup2) yield 5 smartness
+		cost increase:160%
+		req:have dirt
+		icon:icons1[1,1]
+		
+	*dog
+		name:walking the Dog
+		desc:you just take puppy and follow it around the street! 3 money per second sounds free money, yes?!!?!?!?<//><q>+3 MPS</q><//><q>Upgrades unlock at: 5,</q>
+		cost:150 money
+		passive:yield 3 money
+		req:5 dirt
+		icon:icons1[2,1]
+		
+	*cookie
+		name:Cookie clicking
+		desc:oh ! Well you just put mouse on cookie, then click! according to cookie game it makes me easy rich!!!!!!!!!!!!!!!!!<//><q>+0 MPS</q><//><q>Upgrades unlock at: 5,</q>
+		cost:200 money
+		req:10 dirt
+		icon:icons1[3,1]
+		
+	*stock
+		name:Stocking Markets!
+		desc:well, it's called stock market but i don't see any markets here. oh.........................................................<//><q>-1 MPS (+100 MPS if upgraded with the Cool Markets upgrade)</q><//><q>Upgrades unlock at: 10,</q>
+		cost:400 money
+		passive:if (have estateup2) yield 101 money
+		passive:lose 1 money
+		req:15 dirt
+		icon:icons1[4,1]
+		
+	*paperclip
+		name:Paperclip
+		desc:We buy some from office store, then sell it at higher price . is this how shoping works??<//><q>+12 MPS</q><//><q>Upgrades unlock at: 5,</q>
+		cost:600 money
+		passive:yield 12 money
+		cost increase:130%
+		req:20 dirt
+		icon:icons1[6,1]
+		
+	*stealing
+		name:stealing?!!?!?
+		desc:well. maybe this is how we rich. we can earn some moneys, but, we probably get CAUGHT and have to pay thousands for fine!. ohhoohoho!!!! that not good!!!!!!!!!!!!! no,.no,.no!!!., not good at all! dont' do this actully i regrett it! stop! no! ohohoohohlhhoohok12ooi1djpif31fp9f1h3pu3f1hf3iuf3hufh13uiuhf13uhf13iuh1ffhiu1 that's be much money lost! but. i mgight be to yes. money must earn, and stealing is how we do.! hmm, huh. maybe that NOt good idea!?!?!?!?! not sur,ws but well it seems bad so acutally DON"T DO!!!!!!!!! NOO!!!!!!!!! STOPSTOPSTOPSTOPSTOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<//><q>+0 MPS, lose 1,000 money</q><//><q>Upgrades unlock at: 5,</q>
+		cost:601 money
+		on earn:lose 1000 money
+		on earn:toast oh!!!!! noo!!!!!!!!!! They found me stealing and have now to pay lots of money! nooooo!!!! no!!!!!!!!!!!!!!
+		req:22 dirt
+		icon:icons1[7,1]
+		
+	*lottery
+		name:Lotery Ticket!
+		desc:if we get a ticket then we have a chance of earning bIg bucks.<//><q>May or may not give you boatloads of money<//><q>+0 MPS</q><//><q>Upgrades unlock at: 50,</q>
+		cost:5 money
+		on earn:
+			if (chance(100%)) toast well, better luck next time. Guess we didn't get mone
+//igm sucks so this is disabled for now
+//(i have Completely Forgotten what went wrong here)
+			else if (chance(0%))
+			 yield 20 money
+			 toast yoU WNO!!!!! 20 do,laer!!!!
+			else if (chance(0%))
+			 yield 1e5 money
+			 toast yoU WNO!!!!1!!!!!!111@!!!! 100 HUNRER AED THOAUSANDS DOLAER!!@@@
+			 yield lotteryachv
+		end
+		req:25 dirt
+		cost increase:105%
+		icon:icons1[8,1]
+		
+	*landscape
+		name:landscaping job  .
+		desc:go to yard and mess around with it for 30 per second! why do people pay that much!<//><q>+40 MPS</q><//><q>Upgrades unlock at: 5</q>
+		cost:2000 money
+		passive:yield 40 money
+		req:30 dirt
+		icon:icons1[9,1]
+	*school1
+		name:skool
+		desc:go to skools to increase my smartness every seconds. W0W! <//><q>+3 SPS (smartness per second)</q><//><q>Upgrades unlock at: 5, 10</q>
+		cost:5000 money
+		cost increase:130%
+		passive:yield 3 smartness
+		req:35 dirt
+		icon:icons1[10,1]
+		
+	*book1
+		name:How2Rich!!!!
+		desc:a book, That gives me tips on being RICH!!!!! Moneying<//><q>+2% money per level</q><//><q>Upgrades unlock at: 5</q>
+		cost:6000 money
+		req:37 dirt
+		req:50 smartness:earned
+		icon:icons1[11,1]
+		
+	*coding
+		name:coding making.
+		desc:make code stuff, put ads, RICH as much as yes!<//><q>+70 MPS</q><//><q>Upgrades unlock at: 5</q>
+		cost:7000 money, 500 smartness
+		passive:yield 70 money
+		req:40 dirt
+		req:1000 smartness:earned
+		icon:icons1[11,0]
+		
+	*book2
+		name:How2Smart!!!!!!!!!
+		desc:Books That Gives Me Smarters! MOre Smarting per LEvel.!<//><q>+3% smartness per level</q><//><q>Upgrades unlock at: 5</q>
+		cost:14000 money
+		req:5000 smartness:earned
+		icon:icons1[12,1]
+		
+	*wheel
+		name:reinventing the wheel
+		desc:is this how i can strike rich. 1 less smartness per two second but 150 moneys per second. investeors say no, but i say yEs.Whats a invetor<//><q>+200 MPS, -0.5 SPS</q><//><q>Upgrades unlock at: 5</q>
+		cost:4000 money, 2500 smartness
+		passive:yield 200 money
+		passive:lose 0.5 smartness
+		req:have research2
+		icon:icons1[13,1]
+		
+	*sus
+		name:among Us rip Off.
+		desc:it's popular game, i ripoff and make popular game again. i charge extra moneys.   they're problem if they're getting ideas stolen from.<//><q>+400 MPS</q><//><q>Upgrades unlock at: 5</q>
+		cost:50000 money
+		passive:yield 400 money
+		req:have research4
+		icon:icons1[14,1]
+
+	*school2
+		name:cool skool.
+		desc:new skool is pretty cool. it gives 15 smartness per second, but it costs 50 money per second. :sunglasses:<//><q>+15 SPS, -50 MPS</q><//><q>Upgrades unlock at: 5</q>
+		cost:75000 money, 500 smartness
+		passive:yield 15 smartness
+		passive:if (have school2up) lose 10 money else lose 50 money
+		req:50000 smartness:earned
+		icon:icons1[15,1]
+	*factory
+		name:Research Factory
+		desc:Mass produce for all of research. This will yes. Makes 2 less seconds for research per factory. Very expensiving, though .<//><q>Each factory will reduce research time by 2 seconds</q><//><q>Upgrades unlock at: 5</q>
+		cost:150000 money
+		req:have research6
+		cost increase:115%
+		icon:icons1[16,1]
+
+	*supercomputer
+		name:SuperDuperComputers           .
+		desc:the computer, makes lot of thinking and proceser. this will smart us for us<//><q>+100 SPS, +1200 MPS (if upgraded)</q><//><q>Upgrades unlock at: 10</q>
+		cost:1.5e6 money, 2 research
+		passive:yield 100 smartness
+		passive:if (have supercomputerup2) yield 1200 money
+		req:have supercomputerup
+		cost increase:110%
+		icon:icons1[17,1]
+		
+	*estate
+		name:pROPERTY and eSTATE!
+		desc:I love money ($)<//><q>+1500 MPS, +1% money per level</q><//><q>Upgrades unlock at: 10</q>
+		cost:1e6 money, 30000 smartness
+		passive:yield 1500 money
+		req:estateup1
+		icon:icons1[18,1]
+
+	*superlab
+		name:super lab.
+		desc:This lab is Super.Its is very good, i Think! VEry good,Its moneys and smarts.;it do all THE GOOD THINGS . How do this work though?<//><q>+3000 MPS, +150 SPS, +2% money per level, +3% smartness per level, -5 research time per level</q><//><q>Upgrades unlock at: 10</q>
+		cost:5 research
+		passive:yield 3000 money
+		passive:yield 150 smartness
+		req:superlabup1
+		cost increase:110%
+		icon:icons1[19,1]
+
+	*tree
+		name:Trees that grow money
+		desc:they said that mony aren't grow on tree....well... THEIR' WRONG<//><q>+4000 MPS</q><//><q>Upgrades unlock at: 10</q>
+		cost:3e5 smartness
+		passive:yield 4000 money
+		req:treeup1
+		cost increase:110%
+		
+
+Upgrades
+
+	*TEMPLATE
+		class:halffit
+
+	*freemoney
+		name:300 dollars
+		desc:300 dollars<//><q>300 dollars</q>
+		on earn:yield 300 money
+		on earn:toast 300 dollars
+		req:500 money:earned
+	*dirtup
+		name:Dirt Working
+		desc:use the power Of dirt to boost click work by 2! YeSSSS!<//><q>Selling Dirt gives +25% more money, +2 click money (click money = boost to how much money you earn from clicking the work button). Buy multiple (usually 5) of any building to unlock similar upgrades.</q>
+		cost:30 money
+		passive:increase yield of moneybag by 2
+		passive:multiply yield of dirt by 1.25
+		req:5 dirt
+	*cryptoup
+		name:Cryptcurency work
+		desc:sell your cyrtoping currencys for 3 more click work! YeSSSS!<//><q>Cryptocurrency gives +25% more money, +3 click money</q>
+		cost:500 money
+		passive:increase yield of moneybag by 3
+		passive:multiply yield of cryptocurrency by 1.25
+		req:5 cryptocurrency
+	*dogup
+		name:Pet the dogs.
+		desc:<u>We must pet the dogs.</u><//><q>Petting the Dogs gives +25% more money, +4 click money</q>
+		cost:300 money
+		passive:increase yield of moneybag by 4
+		passive:multiply yield of dog by 1.25
+		req:5 dog
+	*cookieup
+		name:cookie Sell!
+		desc:cookie clicking didn't work. let's sell the cookie instead for 3 more click work! YESSSSSS<//><q>+5 click money</q>
+		cost:100 money
+		passive:increase yield of moneybag by 5
+		req:5 cookie
+	*stockup
+		name:Market CRASH!!
+		desc:NO DO NOT CRASH THE MARKET!!!!!! I WILL LOSE ALL MONEYS!!!!! NOOOOOOO!!!!!!!!! STOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<//><q>You'll lose 100k, don't do this (unless you want a achievement)</q>
+		cost:1000 money
+		on earn:lose 100000 money
+		on earn:toast NOOOOOOOOOOOOOOOOŒ
+		req:10 stock
+	*paperclipup	
+		name:clipping the paper !
+		desc:Use paperclips for better organizing making money boost!!!<//><q>Paperclips give +25% more money, +6 click money</q>
+		cost:3000 money
+		passive:increase yield of moneybag by 6
+		passive:multiply yield of paperclip by 1.25
+		req:5 paperclip
+	*stealingup
+		name:Pro stealing Plan.
+		desc:oohohhohoohohho! this time we prepared! YES !<//><q>+1,100 money, +1 evil point</q>
+		cost:1200 money
+		on earn:yield 1100 money
+		on earn:yield 1 ep
+		on earn:toast success! we stole 1100 worth of moneys! That's a profiting right???
+		req:5 stealing
+	*evil1
+		name:EVIL Working.!
+		desc:be evil and scam for 5 click works!<//><q>+5 click money</q>
+		cost:2000 money, 1 ep
+		passive:increase yield of moneybag by 5
+		req:1 ep
+	*lotteryup	
+		name:lottery Making
+		desc:We Make the Loterys so We can Get The a Moneys For 6 clicked Working     ?<//><q>What</q>
+		cost:1500 money
+		passive:increase yield of moneybag by 6
+		req:50 lottery
+	*landscapeup	
+		name:scaping The Land.
+		desc:instead of landing the scape, we scape the land. What!?!?/1/1/1/1. it makes   more click worth thoough !<//><q>Landscaping gives +25% more money, +7 click money</q>
+		cost:5000 money
+		passive:increase yield of moneybag by 7
+		passive:multiply yield of landscape by 1.25
+		req:5 landscape
+	*school1up	
+		name:bigger brain.s
+		desc:well. You gets  smart for every moneys you get from click work.<//><q>Earn smartness per click work equal 20% of click money (rounded)</q>
+		cost:15000 money
+		req:5 school1
+	*researchup
+		name:reaserch lab!
+		desc:convert intellegence into RESEARCH !<//><q>Unlocks researching and research points</q>
+		cost:50000 money
+		on earn:show tag:researchtag
+		req:10 school1
+		class:glowlightblue halffit
+	*book1up	
+		name:reading glass.
+		desc:so. WE geT reading glasses to read more better. 7 more click works now ! why is this so expesnive<//><q>+7 click money</q>
+		cost:30000 money
+		passive:increase yield of moneybag by 7
+		req:5 book1
+	*codingup	
+		name:MEGA coding!
+		desc:we can mega the codings to are make better coding yes and ad making for including more money! more click worth.<//><q>Coding gives +25% more money, +8 click money</q>
+		cost:50000 money
+		passive:increase yield of moneybag by 8
+		passive:multiply yield of coding by 1.25
+		req:5 coding
+	*book2up	
+		name:second reading glass.
+		desc:so, nOW WE geT reading MORE glassses to read EVEN more bettEr. 2 more click works nows1@!@!!!@!@!#!@}132$!@$!<//><q>+8 click money</q>
+		cost:100000 money
+		passive:increase yield of moneybag by 8
+		req:5 book2
+	*research1
+		name:smart works.
+		desc:we use our smart research to make smart works. MULTPILY x5 click work moneys.<//><q>x5 click money, does not boost smartness</q>
+		cost:1 research, 20000 money
+		passive:multiply money yield of moneybag by 5
+		req:1 research
+	*research2
+		name:wheel inventions.
+		desc:People say "reinventing the wheel,," what's that mean?<//><q>Unlocks a new building</q>
+		cost:3 research, 30000 money
+		req:have research1
+	*wheelup
+		name:WHEEL 2.0.
+		desc:THE BETTER WHEEL. IT GIVES 9 CLICK MONEYS AND 50 THOUSANDS BUCKS.<//><q>Reinventing the Wheel gives +25% more money, +9 click money, +50,000 money</q>
+		cost:8000 smartness
+		on earn:yield 50000 money
+		passive:increase yield of moneybag by 9
+		passive:multiply yield of wheel by 1.25
+		req:5 wheel
+	*research3
+		name:research works.
+		desc:we use smarter research to make more intellegent works.<//><q>x5 click money, boosts smartness</q>
+		cost:5 research, 50000 money
+		passive:multiply yield of moneybag by 5
+		req:have research2
+	*research4
+		name:The Sus.
+		desc:We're sus, and we make Amongus.<//><q>Unlocks... something</q>
+		cost:7 research, 100000 money
+		on earn:toast amogus sUs!
+		req:have research3
+	*susup
+		name:ripoff Pro skills.
+		desc:we better at ripping, so we off. 7 clicks works .<//><q>Among Us Ripoff gives +25% more money, +10 click money</q>
+		cost:200000 money, 5000 smartness
+		on earn:yield 2 ep
+		passive:increase yield of moneybag by 10
+		passive:multiply yield of sus by 1.25
+		req:5 sus
+	*research5
+		name:factory works.
+		desc:We have research factory to make. first, we will getting more clicking working moneying,. and, from basic setting uping, we get 10 less seconds of researcheings.<//><q>x5 click money, does not boost smartness. Reduces research time by 10 seconds. Unlocks new technology</q>
+		cost:9 research, 1000000 money
+		on earn:yield 10 speedup
+		passive:multiply money yield of moneybag by 5
+		req:have research4
+	*school2up
+		name:CoolerSkool scholarship
+		desc:scolarship means SAVE MONEY and BE SMARTER. cool skool's cost down and we get higher smart per secondm,<//><q>Negative MPS decreased from 50 to 10 and +50% SPS for cooler skool</q>
+		cost:20000 smartness
+		passive:multiply smartness yield of school2 by 1.5
+		req:5 school2
+	*research6
+		name:Research. Factories.
+		desc:This is a new era of re-search. We will search for all of the re.<//><q>Unlocks a new building</q>
+		cost:12 research, 2e6 money
+		req:have research5
+	*factoryup
+		name:Moneying The REsearch.
+		desc:the Work ! button; it give  permenant less research second, but   only someimtimes. Also it gives has less researc seond when buyed/ SO, Yeah.<//><q>Clicking the Work button will permanently reduce research time by 3 seconds, with a cooldown of 15 minutes.</q><//><q>Reduces research time by 15 seconds</q>
+		cost:20 research, 3e6 money, 50000 smartness
+		on earn:yield 15 speedup
+		on earn:worktimer is 900
+		req:5 factory
+	*research7
+		name:The Auto Researcher/
+		desc:It;s a button. Press it on to automatically rearch whnever you have the resource for it! Press it off, it stops. WARNINGS: /!<//><q>Unlocks a toggle that makes research start automatically. This, however, will double the money cost of researching while enabled.</q>
+		cost:20 research, 5e6 money
+		req:have research6
+		on earn:show autoresearch
+	*research8
+		name:COLLeg,e..... FOR GENIUS
+		desc:We'll intellegnce from this. This School will Cool and WE WILL YES!!!!<//><q>x3 click smartness, research time is 20 seconds shorter, unlocks several upgrades</q>
+		cost: 40 research, 1e7 money, 3e5 smartness
+		on earn:yield 20 speedup
+		passive:multiply smartness yield of moneybag by 3
+		req:research7
+		class:glowpink halffit
+	*madlab
+		name:MAD SCienticts' LAB!
+		desc:Im mad, and IM SCIENCE@. Wait IM NOT EIVL<//><q>Unlocks production of evil points and numerous upgrades</q>
+		cost:2.5e8 money, 5e6 smartness, 2 ep
+		on earn:show tag:eviltag
+		req:10 superlab, have evil1
+		class:glowred halffit
+
+
+
+
+	*TEMPLATE
+		tag:tier2
+		tag:geniustag
+		class:halffit
+	
+	*dirtup2
+		name:Ultimate Dirt Extracing
+		desc:use the Power OF COOL CONSTURCION MACHINES to get mroe dirt! YeSSSSSS!!!!!<//><q>Sell Dirt gives x100 money</q>
+		cost:1e7 money, 1e6 smartness
+		passive:multiply yield of dirt by 100
+		req:75 dirt, allup1
+		
+//the rest of tier2s are wip
+
+	*cryptoup2
+		name:Nft Mass Produceion
+		desc:Make imagez and peoples buy them for Bilions of Bucks{. We will Nf the T,Sounds like good to me,<//><q>a</q>
+		cost:1e15 money
+		passive:increase yield of moneybag by 2
+		req:7500 cryptocurrency, allup1
+	*dogup2
+		name:Ultimate Petting.
+		desc:<u>Bring in all the pets. We must pet them all.</u><//><q>Walking the Dog gives +4 smartness per unit</q>
+		cost:5e7 money
+		passive:increase yield of moneybag by 3
+		req:7500 dog, allup1
+		
+	*TEMPLATE
+		tag:geniustag
+		class:halffit
+		
+		
+		
+	*supercomputerup
+		name:Computering
+		desc:These Are FAST. I can BUy them For MAny moneys, And, THEY DO SMART FOR ME@!!!!#######<//><q>Unlocks a new building</q>
+		cost:2e7 money, 25 research
+		req:research8
+	*supercomputerup2
+		name:cyprtoCurrencying
+		desc:You can use Compute to Smart. But what else?????/ You can mine bitscoin.Dont know what that is<//><q>Supercomputers will yield +1200 MPS. Investing Cryptocurrency will yield +5 SPS per building.</q>
+		cost:3e7 money, 25 research
+		req:10 supercomputer
+	*estateup1
+		name:lands and HOuse.!
+		desc:I buy property and selL it for more! WOW<//><q>Unlocks a new building</q>
+		cost:2e7 money, 5e5 smartness
+		req:research8
+	*estateup2
+		name:Cool Market
+		desc:the stock go up, the money go rise.<//><q>Property and estate gives +50% more money, stock markets give +100 MPS instead of -1 MPS</q>
+		cost:3e7 money, 1e6 smartness
+		req:10 estate
+		passive:multiply yield of estate by 1.5
+	*superlabup1
+		name:SUPEr Labs!!!!
+		desc:We're the power. Use our lab and make it SUPER AND NICE. It gives boosts evyerhintg now. YEah<//><q>Unlocks a powerful new building</q>
+		cost:5e7 money, 60 research, 3e6 smartness
+		req:research8
+	*allup1
+		name:MEGA!MONEY!UPGRADE!S
+		desc:This give all the upgrade to all the mony<//><q>Unlocks an upgrade for each unit. The respective units' upgrades can only be unlocked when leveled to 75</q>
+		cost:2e6 smartness
+		req:research8
+	*book3up
+		name:How2English!!!!
+		desc:Greetings and salutations. The purchasing of this upgrade will allow me to speak in near-perfect English. No longer will my speaking be difficult to understand. Additionally, all research times will be 40 seconds shorter, making RPs (research points) significantly easier to obtain. These extremely useful benefits come at the low, low cost of 100 million (100,000,000) dollars ($) and 3 million (3,000,000) smartness. I hope you will consider this offer that will benefit the both of us immensely. You have my thanks.<//><q>What</q>
+		cost:1e8 money, 3e6 smartness
+		on earn:yield 40 speedup
+		req:research8
+	*treeup1
+		name:Super Biology
+		desc:In collage we learn thing such as planting and tree.> ? ? Yeh and then with this we tree . It will moneys us<//><q>Unlocks a new building</q>
+		cost:1e6 smartness, 25 research
+		req:research8
+	*treeup2
+		name:XTREME Biologys
+		desc:This treeing not enough,Ok?instead. WE MAKIG THE WATER POURER AND MAKES IT POUR WATERS ONTHE TREEINGS.    AND BY USEING THE WATERON THE TREE WE MAKE MORE MONYES<//><q>Trees that grow money give +50% more money</q>
+		cost:100 money, 3e6 smartness
+		req:10 tree
+		passive:multiply yield of tree by 1.5
+		
+Achievements
+	*freemoneyachv
+		name:300 dollars
+		desc:300 dollars<//><q>300 dollars</q>
+		req:freemoney
+		icon:icons1[0,2]
+	*money1achv
+		name:not rich.
+		desc:you only have 10 money. that's not rich.
+		req:10 money
+		icon:icons1[1,2]
+	*money2achv
+		name:still not rich.
+		desc:you only have 100 money. that's not rich.
+		req:100 money
+		icon:icons1[1,2]
+	*money3achv
+		name:not rich at all.
+		desc:you only have 1000 money. that's not rich.
+		req:1000 money
+		icon:icons1[2,2]
+	*money4achv
+		name:really not rich.
+		desc:you only have 10000 money. that's not rich.
+		req:10000 money
+		icon:icons1[3,2]
+	*money5achv
+		name:too not rich.
+		desc:you only have 100000 money. that's not rich.
+		req:100000 money
+		icon:icons1[4,2]
+	*money6achv
+		name:WOAH DUDE! LET'S BE MILLION!!!!!!!!!
+		desc:WE MILLIONARE@
+		req:1000000 money
+		icon:icons1[5,2]
+	*net1achv
+		name:10Mil NetWorth.
+		desc:i found this thing called networth? what's it do? don't know. but im richer now, so oh yeah
+		req:1e7 money:earned
+		icon:icons1[6,2]
+	*net2achv
+		name:100Mil NetWorth.
+		desc:well i got more net worths, it's seems fun so i will get more
+		req:1e8 money:earned
+		icon:icons1[7,2]
+	*net3achv
+		name:1Bil NetWorth.
+		desc:Welcome to Become Rich! Here, you build your way to being a MILLIONARE in this very fun Idol Game! Very Wow! Such Yes!
+		req:1e9 money:earned
+		icon:icons1[8,2]
+	*net4achv
+		name:10Bil NetWorth.
+		desc:ok that's a lot of moneying. maybe ishould dontate  ? don't know.also i think im famous
+		req:1e10 money:earned
+		icon:icons1[9,2]
+	*net5achv
+		name:100Bil NetWorth.
+		desc:100 Bills???? WOw! That's more moneying than all of The atoms in the universe! WOW!
+		req:1e11 money:earned
+		icon:icons1[10,2]
+	*net6achv
+		name:trilion
+		desc:WE SO RICHESt, WE MAKED ALLTHE MONEIS AN WE'ILL MAKE MORE,mMORE!!. WE HaVE TRUE RICHNES AND NICE.  WE TRILLION,BIGGER THAN THE MONEY ANYONE HAD
+		req:1e12 money:earned
+		icon:icons1[10,2]
+	*net7achv
+		name:trillion but the tri is replaceed with whatever word 4 is for.           i think it;s called squareillion
+		desc:$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$<//>                                         $$$$
+		req:1e15 money:earned
+	*net8achv
+		name:pentagonillion
+		desc:i am such a moneyer i am such a pro
+		req:1e18 money:earned
+	*smart1achv
+		name:Smartereer
+		desc:Woa, we got smartness,Yea,Yeah,Lots
+		req:1000 smartness
+		icon:icons1[12,2]
+	*smart2achv
+		name:Intelegeint
+		desc:Our Big Brain and Cool Skool make Intellegnet Intresting
+		req:1e6 smartness
+		icon:icons1[13,2]
+	*smart3achv
+		name:Geniuis
+		desc:WE'RE MASTERS OF THINKIG
+		req:1e9 smartness
+		icon:icons1[14,2]
+	*crashachv
+		name:Well
+		desc:the stocks are gone forever. Look what you did. i am mad and angery
+		req:stockup
+		icon:icons1[15,2]
+	*lotteryachv
+		name:WE LUCKY AND MONEYEST OH YEAH YES
+		desc:you win the lotteys and earned.THREE 1,00 THOAUNSD , FREE BUCK<//>you win the lotteys and earned.THREE 1,00 THOAUNSD , FREE BUCK
+		icon:icons1[0,0]
+//placeholder icon
+	*smartachv
+		name:brain Educationing
+		desc:You can be smart and Good to create Smartness with Think
+		req:1 school1
+		icon:icons1[16,2]
+	*collegeachv
+		name:GENUSNESS
+		desc:I'm Smartest Ever!!!!!!!!!!
+		req:research8
+		icon:icons1[17,2]
+	*research1achv
+		name:The Great Researcher That Searches For The Re
+		desc:we got 100 total re, yea, alright, yea, good.
+		req:100 research:earned
+		icon:icons1[3,0]
+	*evil1achv
+		name:We The Eil
+		desc:We got Evil, We doing eivl
+		req:1 ep:earned
+		icon:icons1[18,2]
+	*evil2achv
+		name:We'll be the Eilest of All
+		desc:My SCIence lab can make evilneess.. Eivl will beome soon.
+		req:madlab
+		icon:icons1[18,2]
+	*richness
+		name:Richness
+		desc:We have !))) 1000, DOLLAR !!!!!S You just one the game
+	*moneyachv2
+		name:Ok so this is how works.:Evrery 1 bu
+		desc:ilding (or unit, but, I.D.K. what it actually called..) of money two you get, You''re moneying is incresed by 1%. Ok? Thats it. b
+		req:money2building
+		icon:https://media.istockphoto.com/id/172792162/photo/funny-money.jpg?s=170667a&w=0&k=20&c=wHwpu8Ifuy0bwuOBypYgN11ihACqcHeuMqvnVcB1Ss8=
