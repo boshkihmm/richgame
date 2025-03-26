@@ -129,7 +129,12 @@ Buttons
 			end
 		passive:
 			if (smartness >= convertcost and money >= convertcost*20 and converttimer > 1e250 and autoflag = 1)
-				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory))
+				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab))
+				// temporary(?) fix
+				if (converttimer <= 0)
+					yield research
+					converttimer is 1e300
+				end
 				lose convertcost smartness
 				lose convertcost*20 money
 				yield 100 convertcost
@@ -187,7 +192,7 @@ Resources
 	*money
 		name:moneys
 		desc:this is how much rich you are! wow!
-		passive:multiply yield of this by 1+(0.02*book1)+(0.01*estate)+(0.01*money2building)
+		passive:multiply yield of this by 1+(0.02*book1)+(0.01*estate)+(0.01*money2building)+(0.02*superlab)
 		show earned
 		icon:icons1[0,0]
 	*ep
@@ -198,7 +203,7 @@ Resources
 	*smartness
 		name:smartness!
 		desc:i can be smart to do BIG Money!1
-		passive:multiply yield of this by 1+(0.03*book2)
+		passive:multiply yield of this by 1+(0.03*book2)+(0.03*superlab)
 		show earned
 		icon:icons1[2,0]
 	*research
