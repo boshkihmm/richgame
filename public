@@ -1,9 +1,9 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.28</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.29</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
-	updated:11/17/2022
+	updated:3/26/2025
 
 
 Settings
@@ -235,7 +235,7 @@ Buildings
 		cost:100 money
 		cost increase:200%
 		req:1e6 money
-		icon:https://cdn.w600.comps.canstockphoto.com/funny-stupid-man-holding-a-big-money-stock-image_csp4135366.jpg
+		icon:https://media.istockphoto.com/id/172792162/photo/funny-money.jpg?s=170667a&w=0&k=20&c=wHwpu8Ifuy0bwuOBypYgN11ihACqcHeuMqvnVcB1Ss8=
 
 	*cryptocurrency
 		name:investing cyrptocurrency
@@ -399,6 +399,7 @@ Buildings
 		passive:yield 1500 money
 		req:estateup1
 		icon:icons1[18,1]
+
 	*superlab
 		name:super lab.
 		desc:This lab is Super.Its is very good, i Think! VEry good,Its moneys and smarts.;it do all THE GOOD THINGS . How do this work though?<//><q>+3000 MPS, +150 SPS, +2% money per level, +3% smartness per level, -5 research time per level</q><//><q>Upgrades unlock at: 10</q>
@@ -408,6 +409,14 @@ Buildings
 		req:superlabup1
 		cost increase:110%
 		icon:icons1[19,1]
+
+	*tree
+		name:Trees that grow money
+		desc:they said that mony aren't grow on tree....well... THEIR' WRONG<//><q>+4000 MPS</q><//><q>Upgrades unlock at: 10</q>
+		cost:3e5 smartness
+		passive:yield 4000 money
+		req:treeup1
+		cost increase:110%
 		
 
 Upgrades
@@ -605,7 +614,10 @@ Upgrades
 		on earn:show tag:eviltag
 		req:10 superlab, have evil1
 		class:glowred halffit
-		
+
+
+
+
 	*TEMPLATE
 		tag:tier2
 		tag:geniustag
@@ -676,6 +688,17 @@ Upgrades
 		cost:1e8 money, 3e6 smartness
 		on earn:yield 40 speedup
 		req:research8
+	*treeup1
+		name:Super Biology
+		desc:In collage we learn thing such as planting and tree.> ? ? Yeh and then with this we tree . It will moneys us<//><q>Unlocks a new building</q>
+		cost:1e6 smartness, 25 research
+		req:research8
+	*treeup2
+		name:XTREME Biologys
+		desc:This treeing not enough,Ok?instead. WE MAKIG THE WATER POURER AND MAKES IT POUR WATERS ONTHE TREEINGS.    AND BY USEING THE WATERON THE TREE WE MAKE MORE MONYES<//><q><Trees that grow money give +50% more money/q>
+		cost:100 money, 3e6 smartness
+		req:10 tree
+		passive:multiply yield of tree by 1.5
 		
 Achievements
 	*freemoneyachv
@@ -738,6 +761,19 @@ Achievements
 		desc:100 Bills???? WOw! That's more moneying than all of The atoms in the universe! WOW!
 		req:1e11 money:earned
 		icon:icons1[10,2]
+	*net6achv
+		name:trilion
+		desc:WE SO RICHESt, WE MAKED ALLTHE MONEIS AN WE'ILL MAKE MORE,mMORE!!. WE HaVE TRUE RICHNES AND NICE.  WE TRILLION,BIGGER THAN THE MONEY ANYONE HAD
+		req:1e12 money:earned
+		icon:icons1[10,2]
+	*net7achv
+		name:trillion but the tri is replaceed with whatever word 4 is for.           i think it;s called squareillion
+		desc:$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$<//>                                         $$$$
+		req:1e15 money:earned
+	*net8achv
+		name:pentagonillion
+		desc:i am such a moneyer i am such a pro
+		req:1e18 money:earned
 	*smart1achv
 		name:Smartereer
 		desc:Woa, we got smartness,Yea,Yeah,Lots
