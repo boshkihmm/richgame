@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.39<#ffd000>b</#></u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.40<#ffd000>b</#></u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:3/26/2025
 
@@ -51,7 +51,7 @@ CSS
 	.upgrade.owned
 	{
 	box-shadow:0px 0px 0px 4px rgba(0,0,0,0.5) inset;
-	background:rgba(255,255,255,0.7);
+	background:rgba(255,255,255,0.8);
 	}
 	.upgradebox
 	{
@@ -636,7 +636,7 @@ Upgrades
 		req:have research6
 		on earn:show autoresearch
 	*research8
-		name:COLLeg,e..... FOR GENIUS
+		name:COLLeg,e...FOR GENIUS
 		desc:We'll intellegnce from this. This School will Cool and WE WILL YES!!!!<//><q>x3 click smartness, research time is 20 seconds shorter, unlocks several upgrades</q>
 		cost: 40 research, 1e7 money, 3e5 smartness
 		on earn:yield 20 speedup
