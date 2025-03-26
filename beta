@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.30</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.31b</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:3/26/2025
 
@@ -165,14 +165,14 @@ Buttons
 		on click:converttimer is 0
 		hidden
 	*debug4
-		name:change speedup
+		name:+25 speedup
 		on click:speedup is 25
 	*debug5
-		name:show autoresearcher
-		on click:show autoresearch
-	*debug6
 		name:x2 research
 		on click:yield research research
+	*debug6
+		name:x2 evil
+		on click:yield ep ep
 ///////////////////////////////////////////////////////////////	
 
 
@@ -222,7 +222,7 @@ Resources
 		hidden
 	*evilcost
 		start with:10
-		//hidden
+		hidden
 	*eviltimer
 		start with:1e300
 		passive:lose this
@@ -232,7 +232,7 @@ Resources
 				this is 1e300
 			end
 		end
-		//hidden
+		hidden
 	*speedup
 		hidden
 	*worktimer
@@ -483,7 +483,7 @@ Upgrades
 		req:5 cookie
 	*stockup
 		name:Market CRASH!!
-		desc:NO DO NOT CRASH THE MARKET!!!!!! I WILL LOSE ALL MONEYS!!!!! NOOOOOOO!!!!!!!!! STOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<//><q>You'll lose 100k, don't do this (unless you want a achievement)</q>
+		desc:NO DO NOT CRASH THE MARKET!!!!!! I WILL LOSE ALL MONEYS!!!!! NOOOOOOO!!!!!!!!! STOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<//><q>You'll lose 100k</q>
 		cost:1000 money
 		on earn:lose 100000 money
 		on earn:toast NOOOOOOOOOOOOOOOOŒ
