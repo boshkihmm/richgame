@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.29</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.30</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:3/26/2025
 
@@ -695,7 +695,7 @@ Upgrades
 		req:research8
 	*treeup2
 		name:XTREME Biologys
-		desc:This treeing not enough,Ok?instead. WE MAKIG THE WATER POURER AND MAKES IT POUR WATERS ONTHE TREEINGS.    AND BY USEING THE WATERON THE TREE WE MAKE MORE MONYES<//><q><Trees that grow money give +50% more money/q>
+		desc:This treeing not enough,Ok?instead. WE MAKIG THE WATER POURER AND MAKES IT POUR WATERS ONTHE TREEINGS.    AND BY USEING THE WATERON THE TREE WE MAKE MORE MONYES<//><q>Trees that grow money give +50% more money</q>
 		cost:100 money, 3e6 smartness
 		req:10 tree
 		passive:multiply yield of tree by 1.5
