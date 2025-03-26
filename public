@@ -198,7 +198,7 @@ Resources
 		hidden
 	*evilcost
 		start with:10
-		//hidden
+		hidden
 	*eviltimer
 		start with:1e300
 		passive:lose this
@@ -208,7 +208,7 @@ Resources
 				this is 1e300
 			end
 		end
-		//hidden
+		hidden
 	*speedup
 		hidden
 	*worktimer
