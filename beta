@@ -132,7 +132,7 @@ Buttons
 				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab))
 				// temporary(?) fix
 				if (converttimer <= 0)
-					yield 5 research
+					research is research+1
 					converttimer is 1e300
 					toast hi
 				end
