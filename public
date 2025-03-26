@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.27</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.28</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:11/17/2022
 
@@ -145,7 +145,7 @@ Buttons
 			if (research >= evilcost and eviltimer > 1e250)
 				eviltimer is ((pow(evilcost,0.5))*50)
 				lose evilcost research
-				yield 1 evilcost
+				yield 5 evilcost
 			end
 		end	
 		tag:eviltag
@@ -217,9 +217,7 @@ Resources
 		hidden
 	*autoflag
 		hidden
-	*money2
-		name:Money   2
-		desc: Ok, Ok, Ok. So This is a the Money 2 (Two). O.k.? Yea. Its' Like Money but Its Better. And Two. So, Heres How This Works. Listen.ok?? So, This is What It is. You Use Your Money 1 (One) to Buy Money 2 (Two). O.k.? And So This Money 2 Starts at 100 Money 1s. Yes, Its 100. But, Once You Get Moneying, Getting 100 Money 1s is Very Easy.... So , Then , When You Buy a the Moneys 2, Thats Cool and Yes. But It Goes to 2x the Costs! Ye,s That is Right. Every Time You Buy the Money 2 the Price of the Money 1 (One) to Buy the Money 2 Cost is 2x (Doubled or Dbouled). Yes, Thats' Right,. So , if You Buy a Money 2 With One Hunred (100) a the Money 1, That Money 1 Cost to Buy a the Money 2 Will Be 2 Times.yes. Its Like Adding on Itself. So 1 Hunred Plus 1 Hunred is 300. Oh, Wait. That is a the a Right Though. Ok I'ts Actualy 200 Dolar. Or Euro. But Just Call It Moneys1, Ok? Got It , Cool. Ok Qand Then the a the Moneys Get the Biger. Yes That Right. So a Now It is the 200 Money 1 to Buy a Nother Money 2 Right? Yes, Yes, Yes. But Thenit Now Cost 400 Moeny1. Not 300 Like Counting With the Hunrededs. Yes. It Go to 400 Instead !!!ok    Ok<//>ok So Now Lets Think Next. Instead of 500 Like Counting 1s or 600 by Skips Counting a the Twos.it Go 8 Hunred. Yes, Tahts Right. 800 Hunred Money1s Just for a Mmoneys2.it Gets Really Expensivieing.wait, Wait, Wait, Wait, Wait, Wait, Wait, Wait, !wait, Wait, Wait, Wait, Yuh.wait, Wait, Wait, Wait, Wait, Wait, Wait, Wait, Wait, Holdit and Hlat It.sorry I Mean to Type Halt It. Now It Go to One Siz Zero Zero Hunred Dollar After That. (16,00) Yes Tahts Right. Sorry I Meant Dollar1 Not Just Dollar. But Ok. Yes, It Get Hard and Expensove to Money........this Moneys a Cost the a Lot. Many Monetys for Just a Money2!!!! This is Bad. But, Wait, the Vail and Grail. It is a the Upgrades. Yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes. A the Mooneys. They the a the Moneyupgrades Are Cool Good Nice and Wow and Dang.sorry I Said a Really Bad Word.but Its' Ok. Ok? Yes. Noce/. Sorry I Meant Nice.well,what You Waiting in? Go Get Moneys 1 and Make It to a the Money 2.ewell Now Thst Im' Done Tutoritaling on You Ont His, I Will Sing a Song. Here is It: Money, Money, Oh Yeah,.money, Money, Oh Yeah,.money, Money, Oh Yeah,.money is So Cool Yeah. Money is the Bstest Yeah,. Money Make a the All and Yeah. It is Cool.h,.money, Money, Oh Yeah,.h,.money, Money, Oh Yeah,.and That is My Song. My Next is Comming Soon,ok Well Happy a the Moneyinh!!!!
+
 
 Buildings
 
@@ -233,9 +231,10 @@ Buildings
 
 	*money2building
 		name:come a nd Buy money 2 here
-		desc:ok<//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> <//> the
+		desc: Ok, Ok, Ok. So This is a the Money 2 (Two). O.k.? Yea. Its' Like Money but Its Better. And Two. So, Heres How This Works. Listen.ok?? So, This is What It is. You Use Your Money 1 (One) to Buy Money 2 (Two). O.k.? And So This Money 2 Starts at 100 Money 1s. Yes, Its 100. But, Once You Get Moneying, Getting 100 Money 1s is Very Easy.... So , Then , When You Buy a the Moneys 2, Thats Cool and Yes. But It Goes to 2x the Costs! Ye,s That is Right. Every Time You Buy the Money 2 the Price of the Money 1 (One) to Buy the Money 2 Cost is 2x (Doubled or Dbouled). Yes, Thats' Right,. So , if You Buy a Money 2 With One Hunred (100) a the Money 1, That Money 1 Cost to Buy a the Money 2 Will Be 2 Times.yes. Its Like Adding on Itself. So 1 Hunred Plus 1 Hunred is 300. Oh, Wait. That is a the a Right Though. Ok I'ts Actualy 200 Dolar. Or Euro. But Just Call It Moneys1, Ok? Got It , Cool. Ok Qand Then the a the Moneys Get the Biger. Yes That Right. So a Now It is the 200 Money 1 to Buy a Nother Money 2 Right? Yes, Yes, Yes. But Thenit Now Cost 400 Moeny1. Not 300 Like Counting With the Hunrededs. Yes. It Go to 400 Instead !!!ok    Ok<//>ok So Now Lets Think Next. Instead of 500 Like Counting 1s or 600 by Skips Counting a the Twos.it Go 8 Hunred. Yes, Tahts Right. 800 Hunred Money1s Just for a Mmoneys2.it Gets Really Expensivieing.wait, Wait, Wait, Wait, Wait, Wait, Wait, Wait, !wait, Wait, Wait, Wait, Yuh.wait, Wait, Wait, Wait, Wait, Wait, Wait, Wait, Wait, Holdit and Hlat It.sorry I Mean to Type Halt It. Now It Go to One Siz Zero Zero Hunred Dollar After That. (16,00) Yes Tahts Right. Sorry I Meant Dollar1 Not Just Dollar. But Ok. Yes, It Get Hard and Expensove to Money........this Moneys a Cost the a Lot. Many Monetys for Just a Money2!!!! This is Bad. But, Wait, the Vail and Grail. It is a the Upgrades. Yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes. A the Mooneys. They the a the Moneyupgrades Are Cool Good Nice and Wow and Dang.sorry I Said a Really Bad Word.but Its' Ok. Ok? Yes. Noce/. Sorry I Meant Nice.well,what You Waiting in? Go Get Moneys 1 and Make It to a the Money 2.ewell Now Thst Im' Done Tutoritaling on You Ont His, I Will Sing a Song. Here is It: Money, Money, Oh Yeah,.money, Money, Oh Yeah,.money, Money, Oh Yeah,.money is So Cool Yeah. Money is the Bstest Yeah,. Money Make a the All and Yeah. It is Cool.h,.money, Money, Oh Yeah,.h,.money, Money, Oh Yeah,.and That is My Song. My Next is Comming Soon,ok Well Happy a the Moneyinh!!!!
 		cost:100 money
 		cost increase:200%
+		req:1e6 money
 		icon:https://cdn.w600.comps.canstockphoto.com/funny-stupid-man-holding-a-big-money-stock-image_csp4135366.jpg
 
 	*cryptocurrency
@@ -673,9 +672,9 @@ Upgrades
 		req:research8
 	*book3up
 		name:How2English!!!!
-		desc:Greetings and salutations. The purchasing of this upgrade will allow me to speak in near-perfect English. No longer will my speaking be difficult to understand. Additionally, all research times will be 50 seconds shorter, making RPs (research points) significantly easier to obtain. These extremely useful benefits come at the low, low cost of 200 million (250,000,000) dollars ($). I hope you will consider this offer that will benefit the both of us very much. You have my thanks.<//><q>AAAAAAAh</q>
-		cost:2e8 money, 2e6 smartness
-		on earn:yield 50 speedup
+		desc:Greetings and salutations. The purchasing of this upgrade will allow me to speak in near-perfect English. No longer will my speaking be difficult to understand. Additionally, all research times will be 40 seconds shorter, making RPs (research points) significantly easier to obtain. These extremely useful benefits come at the low, low cost of 100 million (100,000,000) dollars ($) and 3 million (3,000,000) smartness. I hope you will consider this offer that will benefit the both of us immensely. You have my thanks.<//><q>What</q>
+		cost:1e8 money, 3e6 smartness
+		on earn:yield 40 speedup
 		req:research8
 		
 Achievements
