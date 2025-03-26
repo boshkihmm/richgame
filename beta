@@ -156,7 +156,7 @@ Buttons
 				eviltimer is ((pow(evilcost,0.5))*50)
 				if (eviltimer <= 0)
 					ep is ep+1
-					evilimer is 1e300
+					eviltimer is 1e300
 				end
 				lose evilcost research
 				yield 5 evilcost
