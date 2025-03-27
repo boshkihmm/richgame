@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.45<#ffd000>b</#></u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.46<#ffd000>b</#></u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:3/26/2025
 
@@ -59,6 +59,7 @@ CSS
 	}
 
 
+
 	.evilbox {
   		transition-duration: 0.5s;
   		border: 2px solid black;
@@ -76,6 +77,14 @@ CSS
 		left: 0%;
 	}
 
+	.evilheader {
+		width: 100%;
+		text-color: red;
+	}
+
+	.eviltree {
+		text-color: red;
+	}
 
 
 Layout
@@ -130,7 +139,7 @@ Buttons
 		desc:turn smartness into researches here!!! NOW!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		on click:
 			if (smartness >= convertcost and money >= convertcost*10 and converttimer > 1e250)
-				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab))
+				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab)+(15*ep*(have tree3path1)))
 				// temporary fix because "yield research" just doesn't work
 				if (converttimer <= 0)
 					research is research+1
@@ -176,7 +185,7 @@ Buttons
 		desc:WE MAKEINH THE RESEARCH INTOTHE EVILS
 		on click:
 			if (research >= evilcost and smartness >= evilcost*1e5 and eviltimer > 1e250)
-				eviltimer is ((pow(evilcost,0.5))*100)
+				eviltimer is (((pow(evilcost,0.5))*100)-(600*(have tree1path2)))
 				if (eviltimer <= 0)
 					ep is ep+1
 					eviltimer is 1e300
@@ -191,7 +200,9 @@ Buttons
 
 
 	*evilheader
-		name:[?(have madlab)|The EVIL. UPGRADES.|What this? don't know. Best to ignore.]
+		name:EIL ! ! ! !
+		text:[?(have madlab)|The EVIL. UPGRADES.|What this? don't know. Best to ignore.]
+		class:evilheader
 		tag:evilheader
 
 
@@ -807,7 +818,7 @@ Upgrades
 		name:Print ALLTHE BILLS!All
 		desc:Why print one bill, WHEN U CAN PRIONT ALL THEM!!!!!!!!!!!!!!!<//><q>Printers give +75% more money</q>
 		cost:2e7 smartness, 1 ep
-		req:25 printer
+		req:25 printer, printerup2
 		passive:multiply yield of tree by 1.75
 
 	*hackingup1
@@ -825,8 +836,52 @@ Upgrades
 		name:Anonymous.
 		desc:We are Anonymous. For more info, visit hackertyper.net<//><q>Hacking gives +75% more smartness</q>
 		cost:2e7 smartness, 1 ep
-		req:25 hacking
+		req:25 hacking, hackingup2
 		passive:multiply yield of hacking by 1.75
+
+
+	*TEMPLATE
+		tag:eviltree
+		class:halffit eviltree
+
+	*tree1path1
+		name:EVIL Pricing.
+		desc:Use the Eilness to make the best and eilest price possible.<//><q>+10% MPS for each evil point you have (spending evil points will decrease your MPS as a result)</q>
+		cost:1 ep
+		req:madlab
+		passive:multiply yield of money by (1+(ep*0.1))
+	*tree1path2
+		name:EVIL Evilness.
+		desc:Using our evil, let's get. more. evil.<//><q>Evil point production is 600 seconds faster</q>
+		cost:1 ep
+		req:madlab
+
+	*tree2path1
+		name:EVIL Thinking.
+		desc:Think Bad and in an Bad Way to get more Intelct<//><q>+15% SPS for each evil point you have</q>
+		cost:2 ep
+		req:tree1path1
+		passive:multiply yield of smartness by (1+(ep*0.15))
+	*tree2path2
+		name:EVIL Deals.
+		desc:Give them bad deal, we get good deal.Let get the factory.<//><q>Research factory price reduced by x20</q>
+		cost:2 ep
+		req:tree1path2
+		passive:multiply cost of factory by 0.05
+
+	*tree3path1
+		name:EVIL Time.
+		desc:With The EVILS, we will quicken it all up.<//><q>Research is 15 seconds faster for each evil point you have </q>
+		cost:4 ep
+		req:tree2path1
+	*tree3path2
+		name:EVIL Research.
+		desc:Our Eilness so strong that we eil search our for the re.<//><q>Doubles the amount of research points earned</q>
+		cost:4 ep
+		req:tree2path2
+		passive:multiply yield of research of 2
+
+
 
 
 
