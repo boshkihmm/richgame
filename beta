@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.46<#ffd000>b</#></u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.47<#ffd000>b</#></u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:3/26/2025
 
@@ -79,12 +79,11 @@ CSS
 
 	.evilheader {
 		width: 100%;
-		text-color: red;
+		color: red;
+		font-weight: bold;
 	}
 
-	.eviltree {
-		text-color: red;
-	}
+
 
 
 Layout
@@ -706,7 +705,7 @@ Upgrades
 		class:glowpink halffit
 	*madlab
 		name:MAD SCienticts' LAB!
-		desc:Im mad, and IM SCIENCE@. Wait IM NOT EIVL<//><q>Unlocks production of evil points and numerous upgrades</q>
+		desc:Im mad, and IM SCIENCE@. Wait IM NOT EIVL<//><q>Unlocks production of evil points and numerous upgrades<//>Hover over the tab on the left of the screen to view an upgrade tree</q>
 		cost:2.5e8 money, 5e6 smartness, 2 ep
 		on earn:show tag:eviltag
 		req:10 superlab, have evil1
