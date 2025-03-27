@@ -879,7 +879,7 @@ Upgrades
 		desc:Our Eilness so strong that we eil search our for the re.<//><q>Doubles the amount of research points earned</q>
 		cost:4 ep
 		req:tree2path2
-		passive:multiply yield of research of 2
+		passive:multiply yield of research by 2
 
 
 
