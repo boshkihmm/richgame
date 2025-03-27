@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.42<#ffd000>b</#></u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.43<#ffd000>b</#></u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:3/26/2025
 
@@ -192,10 +192,6 @@ Buttons
 
 
 
-	on workboost:
-		yield 5 speedup
-		toast Research timed Descreasioned! 5second less,
-	end
 		
 Resources
 	*money
@@ -458,7 +454,16 @@ Buildings
 		passive:yield 4000 money
 		req:treeup1
 		cost increase:110%
-		
+
+	*printer
+		name:Mony Printer
+		desc:Makeing the MoneyOurselves.Straightfromthe Source.<//><q>+10000 MPS</q><//><q>Upgrades unlock at: 10</q>
+		cost:1e7 money
+		passive:yield 10000 money
+		req:printerup1
+		cost increase:115%
+
+
 
 Upgrades
 
@@ -740,6 +745,34 @@ Upgrades
 		cost:100 money, 3e6 smartness
 		req:10 tree
 		passive:multiply yield of tree by 1.5
+
+
+
+	*TEMPLATE
+		tag:eviltag
+		class:halffit
+
+	*printerup1
+		name:MakeTheOurMoney
+		desc:Why go job for monys, when u can JUST MAKE SOME?<//><q>Unlocks a new EVIL building</q>
+		cost:5e6 smartness, 1 ep
+		req:madlab
+	*printerup2
+		name:Print the BIGGES BIL
+		desc:Why print small bill, when, instead,  YOU CAN JUST MAKE BIGGER MONY<//><q>Printers give +50% more money</q>
+		cost:1e7 smartness, 1 ep
+		req:10 printer
+	*printerup3
+		name:Print ALLTHE BILLS!All
+		desc:Why print one bill, WHEN U CAN PRIONT ALL THEM<//><q>Printers give +75% more money</q>
+		cost:2e7 smartness, 1 ep
+		req:25 printer
+
+
+
+
+
+
 		
 Achievements
 	*freemoneyachv
