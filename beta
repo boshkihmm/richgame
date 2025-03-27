@@ -59,10 +59,26 @@ CSS
 	}
 
 
+	.evilbox {
+  		transition-duration: 0.5s;
+  		border: 2px solid black;
+  		position: absolute;
+  		top: 20%;
+		bottom: 20%;
+		left: -24%;
+		width: 25%;
+		background:#333;
+	}
+	.button1:hover {
+		left: 0%;
+		background:#555;
+	}
+
+
 
 Layout
 	*main
-		contains:res, buttons
+		contains:res, buttons, evilbox
 	*res
 		contains:Resources
 		class:fullWidth
@@ -80,6 +96,11 @@ Layout
 		costs:hide
 		names:hide
 		class:upgradebox
+
+
+	*evilbox
+		contains:tag:evilup
+		class:evilbox
 
 
 
@@ -149,16 +170,17 @@ Buttons
 
 	*evilbutton
 		name:MAKING THE EVIL POINTS AND THE EILNESS
-		text:[?(eviltimer < 1e250)|[eviltimer] seconds until we earn EVIL. POINTS.|Convert [evilcost] research points into EVIL. POINTS.]
+		text:[?(eviltimer < 1e250)|[eviltimer] seconds until we earn EVIL. POINTS.|Convert [evilcost] research and [evilcost*1e5] smartness into EVIL. POINTS.]
 		desc:WE MAKEINH THE RESEARCH INTOTHE EVILS
 		on click:
-			if (research >= evilcost and eviltimer > 1e250)
-				eviltimer is ((pow(evilcost,0.5))*50)
+			if (research >= evilcost and smartness >= evilcost*1e5 and eviltimer > 1e250)
+				eviltimer is ((pow(evilcost,0.5))*100)
 				if (eviltimer <= 0)
 					ep is ep+1
 					eviltimer is 1e300
 				end
 				lose evilcost research
+				lose evilcost*1e5 smartness
 				yield 5 evilcost
 			end
 		end	
@@ -457,10 +479,18 @@ Buildings
 
 	*printer
 		name:Mony Printer
-		desc:Makeing the MoneyOurselves.Straightfromthe Source.<//><q>+10000 MPS</q><//><q>Upgrades unlock at: 10</q>
-		cost:1e7 money
+		desc:Makeing the MoneyOurselves.Straightfromthe Source.<//><q>+10000 MPS</q><//><q>Upgrades unlock at: 10, 25</q>
+		cost:1.5e7 money
 		passive:yield 10000 money
 		req:printerup1
+		cost increase:115%
+
+	*hacking
+		name:Hack into their systems.
+		desc:hack and get things like......DATA, INFO, and MORE.<//><q>+400 SPS</q><//><q>Upgrades unlock at: 10, 25</q>
+		cost:2e7 money
+		passive:yield 400 smartness
+		req:hackingup1
 		cost increase:115%
 
 
@@ -762,11 +792,31 @@ Upgrades
 		desc:Why print small bill, when, instead,  YOU CAN JUST MAKE BIGGER MONY<//><q>Printers give +50% more money</q>
 		cost:1e7 smartness, 1 ep
 		req:10 printer
+		passive:multiply yield of printer by 1.5
 	*printerup3
 		name:Print ALLTHE BILLS!All
-		desc:Why print one bill, WHEN U CAN PRIONT ALL THEM<//><q>Printers give +75% more money</q>
+		desc:Why print one bill, WHEN U CAN PRIONT ALL THEM!!!!!!!!!!!!!!!<//><q>Printers give +75% more money</q>
 		cost:2e7 smartness, 1 ep
 		req:25 printer
+		passive:multiply yield of tree by 1.75
+
+	*hackingup1
+		name:Hackinh
+		desc:lets go get hackinh, hack into the mainframe, hacking and stealing all the important datas.<//><q>Unlocks a new EVIL building</q>
+		cost:5e6 smartness, 1 ep
+		req:madlab
+	*hackingup2
+		name:Typing,FASTgreen text
+		desc:Get Hacker Knowledge, Type Away, Type Type Away Your Hacking Skills Into The Green Hacking Text.<//><q>Hacking gives +50% more smartness</q>
+		cost:1e7 smartness, 1 ep
+		req:10 hacking
+		passive:multiply yield of hacking by 1.5
+	*hackingup3
+		name:Anonymous.
+		desc:We are Anonymous. For more info, visit hackertyper.net<//><q>Hacking gives +75% more smartness</q>
+		cost:2e7 smartness, 1 ep
+		req:25 hacking
+		passive:multiply yield of hacking by 1.75
 
 
 
