@@ -101,7 +101,7 @@ Layout
 
 
 	*evilbox
-		contains:evilheader, tag:eviltree
+		contains:tag:evilheader, tag:eviltree
 		class:evilbox
 
 
@@ -192,6 +192,7 @@ Buttons
 
 	*evilheader
 		name:[?(have madlab)|The EVIL. UPGRADES.|What this? don't know. Best to ignore.]
+		tag:evilheader
 
 
 
