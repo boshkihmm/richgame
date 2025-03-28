@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.49<#ffd000>b</#></u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.50<#ffd000>b</#></u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:3/26/2025
 
@@ -331,6 +331,7 @@ Buildings
 		desc:you just take puppy and follow it around the street! 3 money per second sounds free money, yes?!!?!?!?<//><q>+3 MPS</q><//><q>Upgrades unlock at: 5,</q>
 		cost:150 money
 		passive:yield 3 money
+		passive:if (have dogup2) yield 20 smartness
 		req:5 dirt
 		icon:icons1[2,1]
 		
@@ -725,6 +726,11 @@ Upgrades
 		cost:1e7 money, 1e6 smartness
 		passive:multiply yield of dirt by 100
 		req:75 dirt, allup1
+	*dogup2
+		name:Ultimate Petting.
+		desc:<u>Bring in all the pets. We must pet them all.</u><//><q>Walking the Dog gives +20 smartness per unit</q>
+		cost:1e9 money
+		req:75 dog, allup1
 		
 //the rest of tier2s are wip
 
@@ -734,12 +740,7 @@ Upgrades
 		cost:1e15 money
 		passive:increase yield of moneybag by 2
 		req:7500 cryptocurrency, allup1
-	*dogup2
-		name:Ultimate Petting.
-		desc:<u>Bring in all the pets. We must pet them all.</u><//><q>Walking the Dog gives +4 smartness per unit</q>
-		cost:5e7 money
-		passive:increase yield of moneybag by 3
-		req:7500 dog, allup1
+
 		
 	*TEMPLATE
 		tag:geniustag
@@ -754,7 +755,7 @@ Upgrades
 		req:research8
 	*supercomputerup2
 		name:cyprtoCurrencying
-		desc:You can use Compute to Smart. But what else?????/ You can mine bitscoin.Dont know what that is<//><q>Supercomputers will yield +1200 MPS. Investing Cryptocurrency will yield +5 SPS per building.</q>
+		desc:You can use Compute to Smart. But what else?????/ You can mine bitscoin.Dont know what that is<//><q>Supercomputers give +1200 MPS. Investing Cryptocurrency gives +5 SPS per building.</q>
 		cost:3e7 money, 25 research
 		req:10 supercomputer
 	*estateup1
