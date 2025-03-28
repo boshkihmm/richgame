@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.0.0</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.0.1</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:3/27/2025
 
@@ -206,31 +206,7 @@ Buttons
 
 
 
-
-///////////////////////////////////////////////////////////////
-//debugs
-		
-	*debug1
-		name:x2 money
-		on click:yield money money
-	*debug2
-		name:x2 smartness
-		on click:yield smartness smartness
-	*debug3
-		name:Fast research
-		on click:converttimer is 0
-		hidden
-	*debug4
-		name:+25 speedup
-		on click:yield 25 speedup
-		desc:you have [speedup] speedup
-	*debug5
-		name:x2 research
-		on click:yield research research
-	*debug6
-		name:x2 evil
-		on click:yield ep ep
-///////////////////////////////////////////////////////////////	
+	
 
 
 
