@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.48<#ffd000>b</#></u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.49<#ffd000>b</#></u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:3/26/2025
 
@@ -61,7 +61,7 @@ CSS
 
 
 	.evilbox {
-  		transition-duration: 0.5s;
+  		transition-duration: 0.3s;
   		border: 2px solid black;
   		position: absolute;
   		top: 20%;
@@ -141,7 +141,7 @@ Buttons
 				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab)+(15*ep*(have tree3path1)))
 				// temporary fix because "yield research" just doesn't work
 				if (converttimer <= 0)
-					research is research+1
+					research is research+1+(have tree3path2)
 					converttimer is 1e300
 				end
 				lose convertcost smartness
@@ -168,7 +168,7 @@ Buttons
 				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab))
 				// temporary fix because "yield research" just doesn't work
 				if (converttimer <= 0)
-					research is research+1
+					research is research+1+(have tree3path2)
 					converttimer is 1e300
 				end
 				lose convertcost smartness
@@ -268,7 +268,7 @@ Resources
 		passive:lose this
 		passive:
  			if (this<=0)
-				research is research+1
+				research is research+1+(have tree3path2)
  				this is 1e300
  			end
  		end
@@ -878,7 +878,8 @@ Upgrades
 		desc:Our Eilness so strong that we eil search our for the re.<//><q>Doubles the amount of research points earned</q>
 		cost:4 ep
 		req:tree2path2
-		passive:multiply yield of research by 2
+		//passive:multiply yield of research by 2
+		//multiply yield doesn't work ig
 
 
 
