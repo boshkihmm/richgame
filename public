@@ -1,9 +1,9 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>3.0.30</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.0.0</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
-	updated:3/26/2025
+	updated:3/27/2025
 
 
 Settings
@@ -51,7 +51,7 @@ CSS
 	.upgrade.owned
 	{
 	box-shadow:0px 0px 0px 4px rgba(0,0,0,0.5) inset;
-	background:rgba(255,255,255,0.7);
+	background:rgba(255,255,255,0.8);
 	}
 	.upgradebox
 	{
@@ -60,9 +60,35 @@ CSS
 
 
 
+	.evilbox {
+  		transition-duration: 0.3s;
+  		border: 2px solid black;
+  		position: absolute;
+  		top: 20%;
+		bottom: 20%;
+		left: -28%;
+		width: 30%;
+		background-image: url("https://images.pexels.com/photos/2314391/pexels-photo-2314391.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  		background-color: #333;
+		background-position: center;
+		background-size: cover
+	}
+	.evilbox:hover {
+		left: 0%;
+	}
+
+	.evilheader {
+		width: 100%;
+		color: red;
+		font-weight: bold;
+	}
+
+
+
+
 Layout
 	*main
-		contains:res, buttons
+		contains:res, buttons, evilbox
 	*res
 		contains:Resources
 		class:fullWidth
@@ -80,6 +106,11 @@ Layout
 		costs:hide
 		names:hide
 		class:upgradebox
+
+
+	*evilbox
+		contains:tag:evilheader, tag:eviltree
+		class:evilbox
 
 
 
@@ -107,7 +138,12 @@ Buttons
 		desc:turn smartness into researches here!!! NOW!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		on click:
 			if (smartness >= convertcost and money >= convertcost*10 and converttimer > 1e250)
-				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab))
+				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab)+(15*ep*(have tree3path1)))
+				// temporary fix because "yield research" just doesn't work
+				if (converttimer <= 0)
+					research is research+1+(have tree3path2)
+					converttimer is 1e300
+				end
 				lose convertcost smartness
 				lose convertcost*10 money
 				yield 100 convertcost
@@ -129,7 +165,12 @@ Buttons
 			end
 		passive:
 			if (smartness >= convertcost and money >= convertcost*20 and converttimer > 1e250 and autoflag = 1)
-				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory))
+				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab))
+				// temporary fix because "yield research" just doesn't work
+				if (converttimer <= 0)
+					research is research+1+(have tree3path2)
+					converttimer is 1e300
+				end
 				lose convertcost smartness
 				lose convertcost*20 money
 				yield 100 convertcost
@@ -139,12 +180,17 @@ Buttons
 
 	*evilbutton
 		name:MAKING THE EVIL POINTS AND THE EILNESS
-		text:[?(eviltimer < 1e250)|[eviltimer] seconds until we earn EVIL. POINTS.|Convert [evilcost] research points into EVIL. POINTS.]
+		text:[?(eviltimer < 1e250)|[eviltimer] seconds until we earn EVIL. POINTS.|Convert [evilcost] research and [evilcost*1e5] smartness into EVIL. POINTS.]
 		desc:WE MAKEINH THE RESEARCH INTOTHE EVILS
 		on click:
-			if (research >= evilcost and eviltimer > 1e250)
-				eviltimer is ((pow(evilcost,0.5))*50)
+			if (research >= evilcost and smartness >= evilcost*1e5 and eviltimer > 1e250)
+				eviltimer is (((pow(evilcost,0.5))*100)-(600*(have tree1path2)))
+				if (eviltimer <= 0)
+					ep is ep+1
+					eviltimer is 1e300
+				end
 				lose evilcost research
+				lose evilcost*1e5 smartness
 				yield 5 evilcost
 			end
 		end	
@@ -152,17 +198,48 @@ Buttons
 		hidden
 
 
+	*evilheader
+		name:EIL ! ! ! !
+		text:[?(have madlab)|The EVIL. UPGRADES.|What this? don't know. Best to ignore.]
+		class:evilheader
+		tag:evilheader
 
-	on workboost:
-		yield 5 speedup
-		toast Research timed Descreasioned! 5second less,
-	end
+
+
+
+///////////////////////////////////////////////////////////////
+//debugs
+		
+	*debug1
+		name:x2 money
+		on click:yield money money
+	*debug2
+		name:x2 smartness
+		on click:yield smartness smartness
+	*debug3
+		name:Fast research
+		on click:converttimer is 0
+		hidden
+	*debug4
+		name:+25 speedup
+		on click:yield 25 speedup
+		desc:you have [speedup] speedup
+	*debug5
+		name:x2 research
+		on click:yield research research
+	*debug6
+		name:x2 evil
+		on click:yield ep ep
+///////////////////////////////////////////////////////////////	
+
+
+
 		
 Resources
 	*money
 		name:moneys
 		desc:this is how much rich you are! wow!
-		passive:multiply yield of this by 1+(0.02*book1)+(0.01*estate)+(0.01*money2building)
+		passive:multiply yield of this by 1+(0.02*book1)+(0.01*estate)+(0.01*money2building)+(0.02*superlab)
 		show earned
 		icon:icons1[0,0]
 	*ep
@@ -173,7 +250,7 @@ Resources
 	*smartness
 		name:smartness!
 		desc:i can be smart to do BIG Money!1
-		passive:multiply yield of this by 1+(0.03*book2)
+		passive:multiply yield of this by 1+(0.03*book2)+(0.03*superlab)
 		show earned
 		icon:icons1[2,0]
 	*research
@@ -190,12 +267,14 @@ Resources
 		start with:1e300
 		passive:lose this
 		passive:
-			if (this<=0)
-				yield research
-				this is 1e300
-			end
-		end
+ 			if (this<=0)
+				research is research+1+(have tree3path2)
+ 				this is 1e300
+ 			end
+ 		end
 		hidden
+		desc:[converttimer] seconds left (using a desc bc igm number display is weird)
+		//passive:show this
 	*evilcost
 		start with:10
 		hidden
@@ -204,7 +283,7 @@ Resources
 		passive:lose this
 		passive:
 			if (this<=0)
-				yield ep
+				ep is ep+1
 				this is 1e300
 			end
 		end
@@ -252,6 +331,7 @@ Buildings
 		desc:you just take puppy and follow it around the street! 3 money per second sounds free money, yes?!!?!?!?<//><q>+3 MPS</q><//><q>Upgrades unlock at: 5,</q>
 		cost:150 money
 		passive:yield 3 money
+		passive:if (have dogup2) yield 25 smartness
 		req:5 dirt
 		icon:icons1[2,1]
 		
@@ -417,7 +497,24 @@ Buildings
 		passive:yield 4000 money
 		req:treeup1
 		cost increase:110%
-		
+
+	*printer
+		name:Mony Printer
+		desc:Makeing the MoneyOurselves.Straightfromthe Source.<//><q>+10000 MPS</q><//><q>Upgrades unlock at: 10, 25</q>
+		cost:1.5e7 money
+		passive:yield 10000 money
+		req:printerup1
+		cost increase:115%
+
+	*hacking
+		name:Hack into their systems.
+		desc:hack and get things like......DATA, INFO, and MORE.<//><q>+400 SPS</q><//><q>Upgrades unlock at: 10, 25</q>
+		cost:2e7 money
+		passive:yield 400 smartness
+		req:hackingup1
+		cost increase:115%
+
+
 
 Upgrades
 
@@ -459,7 +556,7 @@ Upgrades
 		req:5 cookie
 	*stockup
 		name:Market CRASH!!
-		desc:NO DO NOT CRASH THE MARKET!!!!!! I WILL LOSE ALL MONEYS!!!!! NOOOOOOO!!!!!!!!! STOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<//><q>You'll lose 100k, don't do this (unless you want a achievement)</q>
+		desc:NO DO NOT CRASH THE MARKET!!!!!! I WILL LOSE ALL MONEYS!!!!! NOOOOOOO!!!!!!!!! STOP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<//><q>You'll lose 100k</q>
 		cost:1000 money
 		on earn:lose 100000 money
 		on earn:toast NOOOOOOOOOOOOOOOOŒ
@@ -600,7 +697,7 @@ Upgrades
 		req:have research6
 		on earn:show autoresearch
 	*research8
-		name:COLLeg,e..... FOR GENIUS
+		name:COLLeg,e...FOR GENIUS
 		desc:We'll intellegnce from this. This School will Cool and WE WILL YES!!!!<//><q>x3 click smartness, research time is 20 seconds shorter, unlocks several upgrades</q>
 		cost: 40 research, 1e7 money, 3e5 smartness
 		on earn:yield 20 speedup
@@ -609,7 +706,7 @@ Upgrades
 		class:glowpink halffit
 	*madlab
 		name:MAD SCienticts' LAB!
-		desc:Im mad, and IM SCIENCE@. Wait IM NOT EIVL<//><q>Unlocks production of evil points and numerous upgrades</q>
+		desc:Im mad, and IM SCIENCE@. Wait IM NOT EIVL<//><q>Unlocks production of evil points and numerous upgrades</q><//><q>Hover over the tab on the left of the screen to view an upgrade tree</q>
 		cost:2.5e8 money, 5e6 smartness, 2 ep
 		on earn:show tag:eviltag
 		req:10 superlab, have evil1
@@ -629,6 +726,11 @@ Upgrades
 		cost:1e7 money, 1e6 smartness
 		passive:multiply yield of dirt by 100
 		req:75 dirt, allup1
+	*dogup2
+		name:Ultimate Petting.
+		desc:<u>Bring in all the pets. We must pet them all.</u><//><q>Walking the Dog gives +25 smartness per unit</q>
+		cost:1e9 money
+		req:75 dog, allup1
 		
 //the rest of tier2s are wip
 
@@ -638,12 +740,7 @@ Upgrades
 		cost:1e15 money
 		passive:increase yield of moneybag by 2
 		req:7500 cryptocurrency, allup1
-	*dogup2
-		name:Ultimate Petting.
-		desc:<u>Bring in all the pets. We must pet them all.</u><//><q>Walking the Dog gives +4 smartness per unit</q>
-		cost:5e7 money
-		passive:increase yield of moneybag by 3
-		req:7500 dog, allup1
+
 		
 	*TEMPLATE
 		tag:geniustag
@@ -658,7 +755,7 @@ Upgrades
 		req:research8
 	*supercomputerup2
 		name:cyprtoCurrencying
-		desc:You can use Compute to Smart. But what else?????/ You can mine bitscoin.Dont know what that is<//><q>Supercomputers will yield +1200 MPS. Investing Cryptocurrency will yield +5 SPS per building.</q>
+		desc:You can use Compute to Smart. But what else?????/ You can mine bitscoin.Dont know what that is<//><q>Supercomputers give +1200 MPS. Investing Cryptocurrency gives +5 SPS per building.</q>
 		cost:3e7 money, 25 research
 		req:10 supercomputer
 	*estateup1
@@ -699,6 +796,99 @@ Upgrades
 		cost:100 money, 3e6 smartness
 		req:10 tree
 		passive:multiply yield of tree by 1.5
+
+
+
+	*TEMPLATE
+		tag:evilup
+		class:halffit
+
+	*printerup1
+		name:MakeTheOurMoney
+		desc:Why go job for monys, when u can JUST MAKE SOME?<//><q>Unlocks a new EVIL building</q>
+		cost:5e6 smartness, 1 ep
+		req:madlab
+	*printerup2
+		name:Print the BIGGES BIL
+		desc:Why print small bill, when, instead,  YOU CAN JUST MAKE BIGGER MONY<//><q>Printers give +50% more money</q>
+		cost:1e7 smartness, 1 ep
+		req:10 printer
+		passive:multiply yield of printer by 1.5
+	*printerup3
+		name:Print ALLTHE BILLS!All
+		desc:Why print one bill, WHEN U CAN PRIONT ALL THEM!!!!!!!!!!!!!!!<//><q>Printers give +75% more money</q>
+		cost:2e7 smartness, 1 ep
+		req:25 printer, printerup2
+		passive:multiply yield of tree by 1.75
+
+	*hackingup1
+		name:Hackinh
+		desc:lets go get hackinh, hack into the mainframe, hacking and stealing all the important datas.<//><q>Unlocks a new EVIL building</q>
+		cost:5e6 smartness, 1 ep
+		req:madlab
+	*hackingup2
+		name:Typing,FASTgreen text
+		desc:Get Hacker Knowledge, Type Away, Type Type Away Your Hacking Skills Into The Green Hacking Text.<//><q>Hacking gives +50% more smartness</q>
+		cost:1e7 smartness, 1 ep
+		req:10 hacking
+		passive:multiply yield of hacking by 1.5
+	*hackingup3
+		name:Anonymous.
+		desc:We are Anonymous. For more info, visit hackertyper.net<//><q>Hacking gives +75% more smartness</q>
+		cost:2e7 smartness, 1 ep
+		req:25 hacking, hackingup2
+		passive:multiply yield of hacking by 1.75
+
+
+	*TEMPLATE
+		tag:eviltree
+		class:halffit eviltree
+
+	*tree1path1
+		name:EVIL Pricing.
+		desc:Use the Eilness to make the best and eilest price possible.<//><q>+10% MPS for each evil point you have (spending evil points will decrease your MPS as a result)</q>
+		cost:1 ep
+		req:madlab
+		passive:multiply yield of money by (1+(ep*0.1))
+	*tree1path2
+		name:EVIL Evilness.
+		desc:Using our evil, let's get. more. evil.<//><q>Evil point production is 600 seconds faster</q>
+		cost:1 ep
+		req:madlab
+
+	*tree2path1
+		name:EVIL Thinking.
+		desc:Think Bad and in an Bad Way to get more Intelct<//><q>+15% SPS for each evil point you have</q>
+		cost:2 ep
+		req:tree1path1
+		passive:multiply yield of smartness by (1+(ep*0.15))
+	*tree2path2
+		name:EVIL Deals.
+		desc:Give them bad deal, we get good deal.Let get the factory.<//><q>Research factory price reduced by x20</q>
+		cost:2 ep
+		req:tree1path2
+		passive:multiply cost of factory by 0.05
+
+	*tree3path1
+		name:EVIL Time.
+		desc:With The EVILS, we will quicken it all up.<//><q>Research is 15 seconds faster for each evil point you have </q>
+		cost:4 ep
+		req:tree2path1
+	*tree3path2
+		name:EVIL Research.
+		desc:Our Eilness so strong that we eil search our for the re.<//><q>Doubles the amount of research points earned</q>
+		cost:4 ep
+		req:tree2path2
+		//passive:multiply yield of research by 2
+		//multiply yield doesn't work ig
+
+
+
+
+
+
+
+
 		
 Achievements
 	*freemoneyachv
