@@ -1023,3 +1023,9 @@ Achievements
 		desc:ilding (or unit, but, I.D.K. what it actually called..) of money two you get, You''re moneying is incresed by 1%. Ok? Thats it. b
 		req:money2building
 		icon:https://media.istockphoto.com/id/172792162/photo/funny-money.jpg?s=170667a&w=0&k=20&c=wHwpu8Ifuy0bwuOBypYgN11ihACqcHeuMqvnVcB1Ss8=
+	*spinachv
+		name:Woah,SpinningAchievement!
+		desc:Woah,SpinningToolTip!, Again!
+		req:have spinupgrade
+		class:spinUpgrade
+		tooltip class:spinUpgrade
