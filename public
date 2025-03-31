@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.1.4</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.1.5</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:3/27/2025
 
@@ -648,10 +648,10 @@ Upgrades
 		desc:We're sus, and we make Amongus.<//><q>Unlocks... something</q>
 		cost:7 research, 100000 money
 		on earn:toast amogus sUs!
-		req:have research3
+		req:have research
 	*susup
 		name:ripoff Pro skills.
-		desc:we better at ripping, so we off. 7 clicks works .<//><q>Among Us Ripoff gives +25% more money, +10 click money</q>
+		desc:we better at ripping, so we off. 7 clicks works .<//><q>Among Us Ripoff gives +25% more money, +10 click money, +2 evil points</q>
 		cost:200000 money, 5000 smartness
 		on earn:yield 2 ep
 		passive:increase yield of moneybag by 10
