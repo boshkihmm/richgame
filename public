@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.1.3</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.1.4</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:3/27/2025
 
@@ -614,7 +614,7 @@ Upgrades
 		req:5 coding
 	*book2up	
 		name:second reading glass.
-		desc:so, nOW WE geT reading MORE glassses to read EVEN more bettEr. 2 more click works nows1@!@!!!@!@!#!@}132$!@$!<//><q>+8 click money</q>
+		desc:so, nOW WE geT reading MORE glassses to read EVEN more bettEr. 8 more click works nows1@!@!!!@!@!#!@}132$!@$!<//><q>+8 click money</q>
 		cost:100000 money
 		passive:increase yield of moneybag by 8
 		req:5 book2
