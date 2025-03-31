@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.0.1</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.1.0</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:3/27/2025
 
@@ -82,6 +82,22 @@ CSS
 		color: red;
 		font-weight: bold;
 	}
+
+
+
+	.spinUpgrade {
+		animation: spin 3s infinite linear;
+	}
+
+	@keyframes spin {
+	from {
+		transform: rotateY(0deg);
+	}
+	to {
+		transform: rotateY(360deg);
+	}
+
+}
 
 
 
@@ -688,6 +704,15 @@ Upgrades
 		req:10 superlab, have evil1
 		class:glowred halffit
 
+	*spinupgrade
+		name:Woah,SpinningUpgrade!
+		desc:Woah,SpinningToolTip!</q><//><q>Research time is 30 seconds shorter</q>
+		cost:3e8 money
+		on earn:yield 30 speedup
+		req:3e8 money:earned
+		class:spinUpgrade
+		tooltip class:spinUpgrade
+
 
 
 
@@ -836,25 +861,25 @@ Upgrades
 		name:EVIL Thinking.
 		desc:Think Bad and in an Bad Way to get more Intelct<//><q>+15% SPS for each evil point you have</q>
 		cost:2 ep
-		req:tree1path1
+		req:madlab
 		passive:multiply yield of smartness by (1+(ep*0.15))
 	*tree2path2
 		name:EVIL Deals.
 		desc:Give them bad deal, we get good deal.Let get the factory.<//><q>Research factory price reduced by x20</q>
 		cost:2 ep
-		req:tree1path2
+		req:madlab
 		passive:multiply cost of factory by 0.05
 
 	*tree3path1
 		name:EVIL Time.
 		desc:With The EVILS, we will quicken it all up.<//><q>Research is 15 seconds faster for each evil point you have </q>
 		cost:4 ep
-		req:tree2path1
+		req:madlab
 	*tree3path2
 		name:EVIL Research.
 		desc:Our Eilness so strong that we eil search our for the re.<//><q>Doubles the amount of research points earned</q>
 		cost:4 ep
-		req:tree2path2
+		req:madlab
 		//passive:multiply yield of research by 2
 		//multiply yield doesn't work ig
 
