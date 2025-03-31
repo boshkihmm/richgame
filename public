@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.1.0</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.1.2</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:3/27/2025
 
@@ -336,7 +336,7 @@ Buildings
 		
 	*stock
 		name:Stocking Markets!
-		desc:well, it's called stock market but i don't see any markets here. oh.........................................................<//><q>-1 MPS (+100 MPS if upgraded with the Cool Markets upgrade)</q><//><q>Upgrades unlock at: 10,</q>
+		desc:well, it's called stock market but i don't see any markets here. oh.........................................................<//><q>-1 MPS</q><//><q>Upgrades unlock at: 10,</q>
 		cost:400 money
 		passive:if (have estateup2) yield 101 money
 		passive:lose 1 money
@@ -542,7 +542,7 @@ Upgrades
 		req:5 dog
 	*cookieup
 		name:cookie Sell!
-		desc:cookie clicking didn't work. let's sell the cookie instead for 3 more click work! YESSSSSS<//><q>+5 click money</q>
+		desc:cookie clicking didn't work. let's sell the cookie instead for 5 more click work! YESSSSSS<//><q>+5 click money</q>
 		cost:100 money
 		passive:increase yield of moneybag by 5
 		req:5 cookie
