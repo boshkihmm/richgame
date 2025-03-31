@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.1.2</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.1.3</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:3/27/2025
 
@@ -383,7 +383,7 @@ Buildings
 		
 	*landscape
 		name:landscaping job  .
-		desc:go to yard and mess around with it for 30 per second! why do people pay that much!<//><q>+40 MPS</q><//><q>Upgrades unlock at: 5</q>
+		desc:go to yard and mess around with it for 40 per second! why do people pay that much!<//><q>+40 MPS</q><//><q>Upgrades unlock at: 5</q>
 		cost:2000 money
 		passive:yield 40 money
 		req:30 dirt
@@ -423,7 +423,7 @@ Buildings
 		
 	*wheel
 		name:reinventing the wheel
-		desc:is this how i can strike rich. 1 less smartness per two second but 150 moneys per second. investeors say no, but i say yEs.Whats a invetor<//><q>+200 MPS, -0.5 SPS</q><//><q>Upgrades unlock at: 5</q>
+		desc:is this how i can strike rich. less smartness per two second but 200 moneys per second. investeors say no, but i say yEs.Whats a invetor<//><q>+200 MPS, -0.5 SPS</q><//><q>Upgrades unlock at: 5</q>
 		cost:4000 money, 2500 smartness
 		passive:yield 200 money
 		passive:lose 0.5 smartness
