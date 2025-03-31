@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.1.6</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.1.7</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:3/27/2025
 
@@ -1029,7 +1029,6 @@ Achievements
 		icon:https://media.istockphoto.com/id/172792162/photo/funny-money.jpg?s=170667a&w=0&k=20&c=wHwpu8Ifuy0bwuOBypYgN11ihACqcHeuMqvnVcB1Ss8=
 	*spinachv
 		name:Woah,SpinningAchievement!
-		desc:Woah,SpinningToolTip!, Again!
+		desc:Woah,COOL.
 		req:have spinupgrade
 		class:spinUpgrade
-		tooltip class:spinUpgrade
