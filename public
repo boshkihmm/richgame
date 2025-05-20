@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.1.7</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.1.8</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:5/19/2025
 
@@ -184,7 +184,7 @@ Buttons
 			end
 		passive:
 			if (smartness >= convertcost and money >= convertcost*20 and converttimer > 1e250 and autoflag = 1)
-				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab))
+				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab)+(15*ep*(have tree3path1)))
 				// temporary fix because "yield research" just doesn't work
 				if (converttimer <= 0)
 					research is research+1+(have tree3path2)
@@ -781,7 +781,7 @@ Upgrades
 		req:research8
 	*allup1
 		name:MEGA!MONEY!UPGRADE!S
-		desc:This give all the upgrade to all the mony<//><q>Unlocks an upgrade for each unit. The respective units' upgrades can only be unlocked when leveled to 75</q>
+		desc:This give all the upgrade to all the mony<//><q>Unlocks an upgrade for some early units. The respective units' upgrades can only be unlocked when leveled to 75</q>
 		cost:2e6 smartness
 		req:research8
 	*book3up
