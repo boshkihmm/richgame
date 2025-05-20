@@ -3,7 +3,7 @@ Let's make a game!
 	by:boshki0987 (sprites by Lexali5)
 	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.1.7</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
-	updated:3/27/2025
+	updated:5/19/2025
 
 
 Settings
@@ -1018,6 +1018,11 @@ Achievements
 		name:We'll be the Eilest of All
 		desc:My SCIence lab can make evilneess.. Eivl will beome soon.
 		req:madlab
+		icon:icons1[18,2]
+	*evil3achv
+		name:A Good Start To Geting Some Of A The Eil
+		desc:I Feel The Evil, Its Bad And It Make The Monys Tho<//><//>Yea Yea Yea The Eil Here
+		req:10 ep:earned
 		icon:icons1[18,2]
 	*richness
 		name:Richness
