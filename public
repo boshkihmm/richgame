@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.1.8</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.2.0</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:5/19/2025
 
@@ -81,6 +81,9 @@ CSS
 		width: 100%;
 		color: red;
 		font-weight: bold;
+	}
+	.eviltree.owned {
+		box-shadow: 0px 0px 10px 5px red;
 	}
 
 
@@ -203,9 +206,9 @@ Buttons
 		desc:WE MAKEINH THE RESEARCH INTOTHE EVILS
 		on click:
 			if (research >= evilcost and smartness >= evilcost*1e5 and eviltimer > 1e250)
-				eviltimer is (((pow(evilcost,0.5))*100)-(600*(have tree1path2)))
+				eviltimer is (((pow(evilcost,0.5))*100)-(500*(have tree1path2))+(120*ep*(have tree4path1)))
 				if (eviltimer <= 0)
-					ep is ep+1
+					ep is ep+1+(have tree4path2)
 					eviltimer is 1e300
 				end
 				lose evilcost research
@@ -857,7 +860,7 @@ Upgrades
 		passive:multiply yield of money by (1+(ep*0.1))
 	*tree1path2
 		name:EVIL Evilness.
-		desc:Using our evil, let's get. more. evil.<//><q>Evil point production is 600 seconds faster</q>
+		desc:Using our evil, let's get. more. evil.<//><q>Evil point production is 500 seconds faster</q>
 		cost:1 ep
 		req:madlab
 
@@ -884,8 +887,21 @@ Upgrades
 		desc:Our Eilness so strong that we eil search our for the re.<//><q>Doubles the amount of research points earned</q>
 		cost:4 ep
 		req:madlab
+		//notes for this and tree4path2
 		//passive:multiply yield of research by 2
 		//multiply yield doesn't work ig
+		//doesn't actually double earnings, just does adds +1 point to the yield line in the timer effect
+
+	*tree4path1
+		name:EVIL Affirmations.
+		desc:<u>I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil.</u><//><q>Evil point production is 120 seconds faster for each evil point you have </q>
+		cost:8 ep
+		req:madlab
+	*tree4path2
+		name:EVIL Production.
+		desc:With Js A lil bit of Eilness, We can Get So Much More Eil now....Its Insane, And The Eil We Get is So Much Eil, i think i gon be Eil after Ts<//><q>Doubles the amount of evil points earned</q>
+		cost:8 ep
+		req:madlab
 
 
 
@@ -1022,7 +1038,7 @@ Achievements
 	*evil3achv
 		name:A Good Start To Geting Some Of A The Eil
 		desc:I Feel The Evil, Its Bad And It Make The Monys Tho<//><//>Yea Yea Yea The Eil Here
-		req:10 ep:earned
+		req:10 ep
 		icon:icons1[18,2]
 	*richness
 		name:Richness
