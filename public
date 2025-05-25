@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Hyphen)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.3.1</u></b>! idk what that is!!!<//><//>Special thanks to Hyphen for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Hyphen!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.3.2</u></b>! idk what that is!!!<//><//>Special thanks to Hyphen for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Hyphen!
 	created:5/25/2021
 	updated:5/25/2025
 
@@ -1117,38 +1117,37 @@ Achievements
 		name:trilion
 		desc:WE SO RICHESt, WE MAKED ALLTHE MONEIS AN WE'ILL MAKE MORE,mMORE!!. WE HaVE TRUE RICHNES AND NICE.  WE TRILLION,BIGGER THAN THE MONEY ANYONE HAD
 		req:1e12 money:earned
-		icon:icons1[10,4]
+		icon:icons1[11,4]
 	*net7achv
 		name:trillion but the tri is replaceed with whatever word 4 is for.           i think it;s called squareillion
 		desc:$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$<//>                                         $$$$
 		req:1e15 money:earned
-		icon:icons1[11,4]
+		icon:icons1[12,4]
 	*net8achv
 		name:pentagonillion
 		desc:i am such a moneyer i am such a pro
 		req:1e18 money:earned
-		icon:icons1[12,4]
+		icon:icons1[13,4]
 	*net9achv
 		name:You've gone too far.
 		desc:Who are you talking to?
 		req:1e19 money:earned
-		icon:icons1[13,4]
-//feel free to remove this one, i accidentally made one icon too many lololol
+		icon:icons1[14,4]
 	*smart1achv
 		name:Smartereer
 		desc:Woa, we got smartness,Yea,Yeah,Lots
 		req:1000 smartness
-		icon:icons1[14,4]
+		icon:icons1[15,4]
 	*smart2achv
 		name:Intelegeint
 		desc:Our Big Brain and Cool Skool make Intellegnet Intresting
 		req:1e6 smartness
-		icon:icons1[15,4]
+		icon:icons1[16,4]
 	*smart3achv
 		name:Geniuis
 		desc:WE'RE MASTERS OF THINKIG
 		req:1e9 smartness
-		icon:icons1[16,4]
+		icon:icons1[17,4]
 	*crashachv
 		name:Well
 		desc:the stocks are gone forever. Look what you did. i am mad and angery
@@ -1158,7 +1157,6 @@ Achievements
 		name:WE LUCKY AND MONEYEST OH YEAH YES
 		desc:you win the lotteys and earned.THREE 1,00 THOAUNSD , FREE BUCK<//>you win the lotteys and earned.THREE 1,00 THOAUNSD , FREE BUCK
 		icon:icons1[11,4]
-//placeholder icon
 	*smartachv
 		name:brain Educationing
 		desc:You can be smart and Good to create Smartness with Think
