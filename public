@@ -1,10 +1,11 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Lexali5)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.2.5</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.3.0</u></b>! idk what that is!!!<//><//>Special thanks to Lexali5 for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Lexali!
 	created:5/25/2021
 	updated:5/19/2025
 
+//https://orteil.dashnet.org/igm/?g=https://becomerich.neocities.org/game.txt
 
 Settings
 	building cost increase:120%
@@ -64,7 +65,7 @@ CSS
   		transition-duration: 0.3s;
   		border: 2px solid black;
   		position: absolute;
-  		top: 20%;
+  		top: 25%;
 		bottom: 20%;
 		left: -28%;
 		width: 30%;
@@ -104,17 +105,101 @@ CSS
 
 
 
-
+	/* use to adjust resource bar */
 	#box-res {
-		top: 7% !important;
+		top: 5% !important;
 	}
 
 
 
 
+	.researchbutton {
+		position: absolute;
+		top: 10%;
+		left: 5%;
+		height: 12%;
+		width: 40%;
+		
+		border-color: hsl(180, 100%, 60%);
+		border-width: 10px;
+		border-style: solid;
+	
+		padding: 0px;
+		
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.5em;
+		line-height: 1.25em;
+	
+	    background-color: hsla(180 40% 80% / 0.8);
+		box-shadow: 0px 0px 20px 10px cyan;
+	
+		transition-duration: .5s;
+	
+		animation: glow 4s infinite ease-in-out
+	}
+	
+	.researchbutton:hover {
+	    scale: 1.05;
+    }
+
+    .evilbutton {
+		position: absolute;
+		top: 10%;
+		right: 5%;
+		height: 12%;
+		width: 40%;
+		
+		border-color: hsl(0, 100%, 45%);
+		border-width: 10px;
+		border-style: solid;
+	
+		padding: 0px;
+		
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.5em;
+		line-height: 1.25em;
+	
+	    background-color: hsla(0 100% 80% / 0.8);
+		box-shadow: 0px 0px 20px 10px red;
+	
+		transition-duration: .5s;
+	
+		animation: glow 4s infinite ease-in-out
+	}
+	
+	.evilbutton:hover {
+	    scale: 1.05;
+    }
+
+
+
+
+	@keyframes glow {
+		0% {
+			filter: brightness(100%);
+		}
+		50% {
+			filter: brightness(150%);
+		}
+		100% {
+			filter: brightness(100%);
+		}
+	}
+
+    
+    /* remove underline from buttons JUST KIDDING this doesnt work Lol*/
+    button>.thing-text {
+        text-decoration: none;
+    }
+
+
 Layout
 	*main
-		contains:res, buttons, evilbox
+		contains:res, buttons, evilbox, tag:mainButton
 	*res
 		contains:Resources
 		class:fullWidth
@@ -163,11 +248,12 @@ Buttons
 
 	*researchbutton
 		name:makeing RESERCH!
-		text:[?(converttimer < 1e250)|[converttimer] seconds until we earn RESEARCH!|Convert [convertcost] smartness and [convertcost*10] money into RESEARCH!]
+		text:[?(converttimer < 1e250)|<b><#008299>[converttimer]</#></b> seconds until we earn RESEARCH!|Start Makeing the RESEARCH!]<//>cost Is: <b><#008299>[convertcost]</#></b> smartness, <b><#008299>[(convertcost*10)+(convertcost*10*autoflag)]</#></b> money<//>And The Time to Make: is: <b><#008299>[(pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab)+(10*ep*(have tree3path1)))]</#></b> Second
+		// make sure to update time prediction when you update the time below too!!!!!!!! Yeah and also the autoresearch effect. Ok
 		desc:turn smartness into researches here!!! NOW!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		on click:
 			if (smartness >= convertcost and money >= convertcost*10 and converttimer > 1e250)
-				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab)+(15*ep*(have tree3path1)))
+				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab)+(10*ep*(have tree3path1)))
 				// temporary fix because "yield research" just doesn't work
 				if (converttimer <= 0)
 					research is research+1+(have tree3path2)
@@ -178,7 +264,8 @@ Buttons
 				yield 100 convertcost
 			end
 		end	
-		tag:researchtag
+		tag:researchtag, mainButton
+		class:researchbutton
 		hidden
 
 	*autoresearch
@@ -194,7 +281,7 @@ Buttons
 			end
 		passive:
 			if (smartness >= convertcost and money >= convertcost*20 and converttimer > 1e250 and autoflag = 1)
-				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab)+(15*ep*(have tree3path1)))
+				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab)+(10*ep*(have tree3path1)))
 				// temporary fix because "yield research" just doesn't work
 				if (converttimer <= 0)
 					research is research+1+(have tree3path2)
@@ -205,15 +292,17 @@ Buttons
 				yield 100 convertcost
 			end
 		end
+		tag:mainButton
+		class:autoresearch
 		hidden
 
 	*evilbutton
 		name:MAKING THE EVIL POINTS AND THE EILNESS
-		text:[?(eviltimer < 1e250)|[eviltimer] seconds until we earn EVIL. POINTS.|Convert [evilcost] research and [evilcost*1e5] smartness into EVIL. POINTS.]
+		text:[?(eviltimer < 1e250)|<b><#910a00>[eviltimer]</#></b> second until EVIL. POINTS.|Start Makeing the EVIL. POINTS.]<//>cost Is: <b><#910a00>[evilcost]</#></b> research, <b><#910a00>[evilcost*1e5]</#></b> smartness<//>And The Time to Make: is: <b><#910a00>[(((pow(evilcost,0.5))*100)-(500*(have tree1path2))-(60*ep*(have tree4path1)))]</#></b> Second
 		desc:WE MAKEINH THE RESEARCH INTOTHE EVILS
 		on click:
 			if (research >= evilcost and smartness >= evilcost*1e5 and eviltimer > 1e250)
-				eviltimer is (((pow(evilcost,0.5))*100)-(500*(have tree1path2))+(120*ep*(have tree4path1)))
+				eviltimer is (((pow(evilcost,0.5))*100)-(500*(have tree1path2))-(60*ep*(have tree4path1)))
 				if (eviltimer <= 0)
 					ep is ep+1+(have tree4path2)
 					eviltimer is 1e300
@@ -223,7 +312,8 @@ Buttons
 				yield 5 evilcost
 			end
 		end	
-		tag:eviltag
+		tag:eviltag, mainButton
+		class:evilbutton
 		hidden
 
 
@@ -459,6 +549,7 @@ Buildings
 		passive:if (have school2up) lose 10 money else lose 50 money
 		req:50000 smartness:earned
 		icon:icons1[15,1]
+		
 	*factory
 		name:Research Factory
 		desc:Mass produce for all of research. This will yes. Makes 2 less seconds for research per factory. Very expensiving, though .<//><q>Each factory will reduce research time by 2 seconds</q><//><q>Upgrades unlock at: 5</q>
@@ -739,7 +830,7 @@ Upgrades
 	
 	*dirtup2
 		name:Ultimate Dirt Extracing
-		desc:use the Power OF COOL CONSTURCION MACHINES to get mroe dirt! YeSSSSSS!!!!!<//><q>Sell Dirt gives x100 money</q>
+		desc:use the Power OF COOL CONSTURCION MACHINES to get mroe dirt! YeSSSSSS!!!!!<//><q>Sell Dirt gives 100x more money</q>
 		cost:1e7 money, 1e6 smartness
 		passive:multiply yield of dirt by 100
 		req:75 dirt, allup1
@@ -748,6 +839,24 @@ Upgrades
 		desc:<u>Bring in all the pets. We must pet them all.</u><//><q>Walking the Dog gives +25 smartness per unit</q>
 		cost:1e9 money
 		req:75 dog, allup1
+	*cookieup2
+		name:Yummh cookie
+		desc:Ok, so, instead of sellinh the cookie, WHY NOT EAT ? Makes a good for The Yum yummys when I go ahead and just Take a Big ol Bite.Ok<//><q>Research time is 10 seconds shorter</q>
+		on earn:yield 10 speedup
+		cost:2e9 money
+		req:75 cookie, allup1
+	*stockup2
+		name:BEST STOCKS .
+		desc:THSE ARE THE BEST STOCKS, THEY MAKE THE MONEY GO ME, WE GET ALL THE MONEYS AND IT ALL IT DO IS HAVE TO GET A BETTER KNOWING OF STOCKS TO IMPROVE OUR STOCK MARKET SKILLS. AND THIS EARNS US ALL THATMONEY THA T WE NEED TO GET MORE INVESTING, AND FINALLY,BECOME MONEY<//><q>Stock markets give 30x more money</q>
+		passive:multiply yield of stock by 30
+		cost:3e9 money
+		req:75 stock, allup1
+	*stealingup2
+		name:Stoleing the Sciance
+		desc:ya, ok, So, we stealing sum secret science,<//><q>Research time is 25 seconds shorter</q>
+		on earn:yield 25 speedup
+		cost:1 ep
+		req:75 stealing, allup1
 		
 //the rest of tier2s are wip
 
@@ -855,6 +964,26 @@ Upgrades
 		cost:2e7 smartness, 1 ep
 		req:25 hacking, hackingup2
 		passive:multiply yield of hacking by 1.75
+		
+	*ritualup1
+		name:If you see this, you will turn into an induction stove. Farewell.
+		desc:lets go get hackinh, hack into the mainframe, hacking and stealing all the important datas.<//><q>Unlocks a new EVIL building</q>
+		cost:5e6 smartness, 1 ep
+		req:madlab, 1e300 money
+	*ritualup2
+		name:If you see this, you will turn into an induction stove. Farewell.
+		desc:Get Hacker Knowledge, Type Away, Type Type Away Your Hacking Skills Into The Green Hacking Text.<//><q>Hacking gives +50% more smartness</q>
+		cost:1e7 smartness, 1 ep
+		req:10 hacking, 1e300 money
+		passive:multiply yield of hacking by 1.5
+	*ritualup3
+		name:If you see this, you will turn into an induction stove. Farewell.
+		desc:We are Anonymous. For more info, visit hackertyper.net<//><q>Hacking gives +75% more smartness</q>
+		cost:2e7 smartness, 1 ep
+		req:25 hacking, hackingup2, 1e300 money
+		passive:multiply yield of hacking by 1.75
+		
+	
 
 
 	*TEMPLATE
@@ -888,7 +1017,7 @@ Upgrades
 
 	*tree3path1
 		name:EVIL Time.
-		desc:With The EVILS, we will quicken it all up.<//><q>Research is 15 seconds faster for each evil point you have </q>
+		desc:With The EVILS, we will quicken it all up.<//><q>Research is 10 seconds faster for each evil point you have </q>
 		cost:4 ep
 		req:madlab
 	*tree3path2
@@ -903,7 +1032,7 @@ Upgrades
 
 	*tree4path1
 		name:EVIL Affirmations.
-		desc:<u>I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil.</u><//><q>Evil point production is 120 seconds faster for each evil point you have </q>
+		desc:<u>I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil.</u><//><q>Evil point production is 80 seconds faster for each evil point you have </q>
 		cost:8 ep
 		req:madlab
 	*tree4path2
@@ -1062,3 +1191,37 @@ Achievements
 		desc:Woah,COOL.
 		req:have spinupgrade
 		class:spinUpgrade
+	// this is dumb
+	*click1achv
+	    name:First Click.
+	    desc:Welcome to The First Clicke
+	    req:1 moneybag:clicks
+	*click2achv
+	    name:SECOND Click.
+	    desc:Welcome to The Secona Clicked
+	    req:2 moneybag:clicks
+	*click3achv
+	    name:Third Click., Oh Yea Yeah
+	    desc:Wow, Ur a God at the Clickig the Button of Mony. Keep it up
+	    req:3 moneybag:clicks
+	*click4achv
+	    name:FORTH Click. Wow
+	    desc:Did U Know: ok so Basically this game is a metaphor for things like. capitalism and WhatNot. Society and the State of The World And such. Yeeeep this is compeletely true
+	    req:4 moneybag:clicks
+	*click5achv
+	    name:The FIFTH AND FINAL Click.Insane
+	    desc:This is crazy,UR THE MASTER OF CLICKING THE BUTTIN.
+	    req:5 moneybag:clicks
+	*click37achv
+	    name:THIRTY SEVENTH Click.
+	    desc:That A Lot Of Clicking That Make Ur Money Go High
+	    req:37 moneybag:clicks
+	*click82achv
+	    name:Eighty seconds Click.
+	    desc:eithy two times to click the clicked? now, you are so good at click, and , Well yeah
+	    req:82 moneybag:clicks
+	*click917achv
+	    name:NINE HUNDREAD AND SEVENEEN CLICKJ
+	    desc:INFINITE CLICKEING FOR INIFIEITE MONY
+	    req:917 moneybag:clicks
+	//hi
