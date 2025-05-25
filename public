@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Hyphen)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.3.0</u></b>! idk what that is!!!<//><//>Special thanks to Hyphen for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Hyphen!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.3.1</u></b>! idk what that is!!!<//><//>Special thanks to Hyphen for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Hyphen!
 	created:5/25/2021
 	updated:5/25/2025
 
@@ -11,8 +11,7 @@ Settings
 	building cost increase:120%
 	building cost refund:-1e400%
 	background:https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F1142839776%2F960x0.jpg%3Ffit%3Dscale
-	spritesheet:icons1, 48 by 48, https://raw.githubusercontent.com/Lexal1/richgame/refs/heads/main/graphics.png
-//hey!! replace this with the merged version of the spritesheet!! otherwise some stuff might happen that is Bad!!!!
+	spritesheet:icons1, 48 by 48, https://raw.githubusercontent.com/boshkihmm/richgame/refs/heads/main/graphics.png
 	
 CSS
 
