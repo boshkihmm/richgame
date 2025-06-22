@@ -1,10 +1,12 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Hyphen)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.3.2</u></b>! idk what that is!!!<//><//>Special thanks to Hyphen for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Hyphen!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.4.0</u></b>! idk what that is!!!<//><//>Special thanks to Hyphen for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Hyphen!
 	created:5/25/2021
-	updated:5/25/2025
+	updated:6/22/2025
 
+//beta version i guess
+//different site because github has an annoying update delay
 //https://orteil.dashnet.org/igm/?g=https://becomerich.neocities.org/game.txt
 
 Settings
@@ -15,48 +17,40 @@ Settings
 	
 CSS
 
-	.halffit
-	{
+	.halffit {
 		width: 48%;
 	}
-	.glowgreen
-	{
+	.glowgreen {
 		color: green;
 		text-shadow: 0 0 5px green;
 		box-shadow: 0px 0px 15px green;
 		border-color: green;
 	}
-	.glowyellow
-	{
+	.glowyellow {
 		color: yellow;
 		text-shadow: 0 0 5px yellow;
 		box-shadow: 0px 0px 15px yellow;
 		border-color: yellow;
 	}
-	.glowlightblue
-	{
+	.glowlightblue {
 		border-color: powderblue;
 		border-width: 0.2vw;
 	}
-	.glowpink
-	{
+	.glowpink {
 		border-color: orchid;
 		border-width: 0.2vw;
 	}
-	.glowred
-	{
+    .glowred {
 		border-color: red;
 		border-width: 0.2vw;
 	}
 
-	.upgrade.owned
-	{
-	box-shadow:0px 0px 0px 4px rgba(0,0,0,0.5) inset;
-	background:rgba(255,255,255,0.8);
+	.upgrade.owned {
+	    box-shadow:0px 0px 0px 4px rgba(0,0,0,0.5) inset;
+	    background:rgba(255,255,255,0.8);
 	}
-	.upgradebox
-	{
-	background-image: url("https://i.ebayimg.com/images/g/uCQAAOSwnm1gCzFD/s-l1600.jpg");
+	.upgradebox {
+	    background-image: url("https://i.ebayimg.com/images/g/uCQAAOSwnm1gCzFD/s-l1600.jpg");
 	}
 
 
@@ -65,7 +59,7 @@ CSS
   		transition-duration: 0.3s;
   		border: 2px solid black;
   		position: absolute;
-  		top: 25%;
+  		top: 27%;
 		bottom: 20%;
 		left: -28%;
 		width: 30%;
@@ -94,18 +88,17 @@ CSS
 	}
 
 	@keyframes spin {
-	from {
-		transform: rotateY(0deg);
-	}
-	to {
-		transform: rotateY(360deg);
-	}
-
-}
-
+	    from {
+		    transform: rotateY(0deg);
+	    }
+	    to {
+	    	transform: rotateY(360deg);
+    	}
+    }
 
 
-	/* use to adjust resource bar */
+
+	/* use to adjust resource bar? */
 	#box-res {
 		top: 5% !important;
 	}
@@ -113,9 +106,13 @@ CSS
 
 
 
+    .bigButton.lit {
+        box-shadow: 0px 0px 20px 25px cyan;
+    }
+
 	.researchbutton {
 		position: absolute;
-		top: 10%;
+		top: 12%;
 		left: 5%;
 		height: 12%;
 		width: 40%;
@@ -129,7 +126,7 @@ CSS
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		font-size: 1.5em;
+		font-size: 1.4em;
 		line-height: 1.25em;
 	
 	    background-color: hsla(180 40% 80% / 0.8);
@@ -146,7 +143,7 @@ CSS
 
     .evilbutton {
 		position: absolute;
-		top: 10%;
+		top: 12%;
 		right: 5%;
 		height: 12%;
 		width: 40%;
@@ -160,7 +157,7 @@ CSS
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		font-size: 1.5em;
+		font-size: 1.4em;
 		line-height: 1.25em;
 	
 	    background-color: hsla(0 100% 80% / 0.8);
@@ -211,6 +208,7 @@ Layout
 		contains:BulkDisplay, Buildings
 		header:Buildings
 		tooltip origin:left
+		ps:show
 	*upgrades
 		contains:Upgrades
 		header:Upgrades
@@ -237,10 +235,13 @@ Buttons
 				speedup is speedup+3
 				toast Research timed Descreasioned! 3second less,
 				worktimer is 900
+				dim this
 			end
 		end
 		passive:multiply smartness yield of moneybag by 0.2
+		passive:if (worktimer = 0) light this
 		icon:https://file.garden/Y3WCFJOdi23QPQVx/workbutton
+		show clicks
 		class:bigButton
 
 //box-shadow: 0px 0px 20px 25px cyan;
@@ -262,6 +263,7 @@ Buttons
 				lose convertcost smartness
 				lose convertcost*10 money
 				yield 100 convertcost
+				if (convertcost < 5000) toast Ok, well u just made some reserch
 			end
 		end	
 		tag:researchtag, mainButton
@@ -290,6 +292,7 @@ Buttons
 				lose convertcost smartness
 				lose convertcost*20 money
 				yield 100 convertcost
+				if (convertcost < 5000) toast Ok, well u just made some reserch
 			end
 		end
 		tag:mainButton
@@ -310,6 +313,7 @@ Buttons
 				lose evilcost research
 				lose evilcost*1e5 smartness
 				yield 5 evilcost
+				if (evilcost < 250) toast Ok,WOW,  well lets just say that u pretty wellMuch just made some Evilness Points
 			end
 		end	
 		tag:eviltag, mainButton
@@ -469,16 +473,16 @@ Buildings
 		desc:if we get a ticket then we have a chance of earning bIg bucks.<//><q>May or may not give you boatloads of money<//><q>+0 MPS</q><//><q>Upgrades unlock at: 50,</q>
 		cost:5 money
 		on earn:
-			if (chance(100%)) toast well, better luck next time. Guess we didn't get mone
-//igm sucks so this is disabled for now
-//(i have Completely Forgotten what went wrong here)
-			else if (chance(0%))
-			 yield 20 money
-			 toast yoU WNO!!!!! 20 do,laer!!!!
-			else if (chance(0%))
-			 yield 1e5 money
-			 toast yoU WNO!!!!1!!!!!!111@!!!! 100 HUNRER AED THOAUSANDS DOLAER!!@@@
-			 yield lotteryachv
+		    if (chance(80%))
+                toast well, better luck next time. Guess we didn't get mone
+            else if (chance(95%))
+                yield (100/this) money
+                toast yoU WNO!!!!! 100 do,laer!!!!
+			else
+                yield (1e5/this) money
+                toast yoU WNO!!!!1!!!!!!111@!!!! 100 HUNRER AED THOAUSANDS DOLAER!!@@@
+                yield lotteryachv
+            end
 		end
 		req:25 dirt
 		cost increase:105%
@@ -560,7 +564,7 @@ Buildings
 
 	*supercomputer
 		name:SuperDuperComputers           .
-		desc:the computer, makes lot of thinking and proceser. this will smart us for us<//><q>+100 SPS, +1200 MPS (if upgraded)</q><//><q>Upgrades unlock at: 10</q>
+		desc:the computer, makes lot of thinking and proceser. this will smart us for us<//><q>+100 SPS</q><//><q>Upgrades unlock at: 10</q>
 		cost:1.5e6 money, 2 research
 		passive:yield 100 smartness
 		passive:if (have supercomputerup2) yield 1200 money
@@ -703,7 +707,8 @@ Upgrades
 		name:reaserch lab!
 		desc:convert intellegence into RESEARCH !<//><q>Unlocks researching and research points</q>
 		cost:50000 money
-		on earn:show tag:researchtag
+		passive:show tag:researchtag
+		passive:show researchbutton
 		req:10 school1
 		class:glowlightblue halffit
 	*book1up	
@@ -766,9 +771,9 @@ Upgrades
 		req:5 sus
 	*research5
 		name:factory works.
-		desc:We have research factory to make. first, we will getting more clicking working moneying,. and, from basic setting uping, we get 10 less seconds of researcheings.<//><q>x5 click money, does not boost smartness. Reduces research time by 10 seconds. Unlocks new technology</q>
+		desc:We have research factory to make. first, we will getting more clicking working moneying,. and, from basic setting uping, we get 15 less seconds of researcheings.<//><q>x5 click money, does not boost smartness. Reduces research time by 15 seconds</q>
 		cost:9 research, 1000000 money
-		on earn:yield 10 speedup
+		on earn:yield 15 speedup
 		passive:multiply money yield of moneybag by 5
 		req:have research4
 	*school2up
@@ -808,14 +813,13 @@ Upgrades
 		desc:Im mad, and IM SCIENCE@. Wait IM NOT EIVL<//><q>Unlocks production of evil points and numerous upgrades</q><//><q>Hover over the tab on the left of the screen to view an upgrade tree</q>
 		cost:2.5e8 money, 5e6 smartness, 2 ep
 		on earn:show tag:eviltag
-		//load is temp fix
-		on load:show tag:eviltag
+		on tick:show evilbutton
 		req:10 superlab, have evil1
 		class:glowred halffit
 
 	*spinupgrade
 		name:Woah,SpinningUpgrade!
-		desc:Woah,SpinningToolTip!</q><//><q>Research time is 30 seconds shorter</q>
+		desc:Woah,SpinningToolTip! Jk, this ToolTip does NOT SPIN. that is all</q><//><q>Research time is 30 seconds shorter</q>
 		cost:3e8 money
 		on earn:yield 30 speedup
 		req:3e8 money:earned
@@ -833,9 +837,9 @@ Upgrades
 	
 	*dirtup2
 		name:Ultimate Dirt Extracing
-		desc:use the Power OF COOL CONSTURCION MACHINES to get mroe dirt! YeSSSSSS!!!!!<//><q>Sell Dirt gives 100x more money</q>
+		desc:use the Power OF COOL CONSTURCION MACHINES to get mroe dirt! YeSSSSSS!!!!!<//><q>Sell Dirt gives 200x more money</q>
 		cost:1e7 money, 1e6 smartness
-		passive:multiply yield of dirt by 100
+		passive:multiply yield of dirt by 200
 		req:75 dirt, allup1
 	*dogup2
 		name:Ultimate Petting.
@@ -1191,6 +1195,7 @@ Achievements
 		name:Richness
 		desc:We have !))) 1000, DOLLAR !!!!!S You just one the game
 		icon:icons1[8,5]
+		req:1000 money
 	*moneyachv2
 		name:Ok so this is how works.:Evrery 1 bu
 		desc:ilding (or unit, but, I.D.K. what it actually called..) of money two you get, You''re moneying is incresed by 1%. Ok? Thats it. b
