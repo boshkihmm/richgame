@@ -1,7 +1,7 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Hyphen)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.4.0</u></b>! idk what that is!!!<//><//>Special thanks to Hyphen for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Hyphen!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.4.1</u></b>! idk what that is!!!<//><//>Special thanks to Hyphen for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Hyphen!
 	created:5/25/2021
 	updated:6/22/2025
 
@@ -263,7 +263,6 @@ Buttons
 				lose convertcost smartness
 				lose convertcost*10 money
 				yield 100 convertcost
-				if (convertcost < 5000) toast Ok, well u just made some reserch
 			end
 		end	
 		tag:researchtag, mainButton
@@ -292,7 +291,6 @@ Buttons
 				lose convertcost smartness
 				lose convertcost*20 money
 				yield 100 convertcost
-				if (convertcost < 5000) toast Ok, well u just made some reserch
 			end
 		end
 		tag:mainButton
@@ -313,7 +311,6 @@ Buttons
 				lose evilcost research
 				lose evilcost*1e5 smartness
 				yield 5 evilcost
-				if (evilcost < 250) toast Ok,WOW,  well lets just say that u pretty wellMuch just made some Evilness Points
 			end
 		end	
 		tag:eviltag, mainButton
@@ -369,6 +366,7 @@ Resources
  			if (this<=0)
 				research is research+1+(have tree3path2)
  				this is 1e300
+				if (convertcost < 5000) toast Ok, well u just made some reserch
  			end
  		end
 		hidden
@@ -384,6 +382,7 @@ Resources
 			if (this<=0)
 				ep is ep+1
 				this is 1e300
+				if (evilcost < 250) toast Ok,WOW,  well lets just say that u pretty wellMuch just made some Evilness Points
 			end
 		end
 		hidden
