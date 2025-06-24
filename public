@@ -1,9 +1,9 @@
 Let's make a game!
 	name:become Rich !!!!
 	by:boshki0987 (sprites by Hyphen)
-	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.4.1</u></b>! idk what that is!!!<//><//>Special thanks to Hyphen for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Hyphen!
+	desc:oh nose! you are not money! What do you do to rich? become Rich!!!<//>also we are in version <b><u>4.5.0</u></b>! idk what that is!!!<//><//>Special thanks to Hyphen for all of the game's icons! Lottery has been made to be slightly less rigged thanks to Rein and Hyphen!
 	created:5/25/2021
-	updated:6/22/2025
+	updated:6/23/2025
 
 //beta version i guess
 //different site because github has an annoying update delay
@@ -19,6 +19,9 @@ CSS
 
 	.halffit {
 		width: 48%;
+	}
+	.fullfit {
+		width: 96%;
 	}
 	.glowgreen {
 		color: green;
@@ -95,6 +98,12 @@ CSS
 	    	transform: rotateY(360deg);
     	}
     }
+    
+    .papyrus {
+        font-family: Papyrus, fantasy; 
+    }
+    
+    
 
 
 
@@ -244,17 +253,16 @@ Buttons
 		show clicks
 		class:bigButton
 
-//box-shadow: 0px 0px 20px 25px cyan;
-//use if class can be changed
+
 
 	*researchbutton
 		name:makeing RESERCH!
-		text:[?(converttimer < 1e250)|<b><#008299>[converttimer]</#></b> seconds until we earn RESEARCH!|Start Makeing the RESEARCH!]<//>cost Is: <b><#008299>[convertcost]</#></b> smartness, <b><#008299>[(convertcost*10)+(convertcost*10*autoflag)]</#></b> money<//>And The Time to Make: is: <b><#008299>[(pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab)+(10*ep*(have tree3path1)))]</#></b> Second
+		text:[?(converttimer < 1e250)|<b><#008299>[converttimer]</#></b> seconds until we earn RESEARCH!|Start Makeing the RESEARCH!]<//>cost Is: <b><#008299>[convertcost]</#></b> smartness, <b><#008299>[(convertcost*10)+(convertcost*10*autoflag)]</#></b> money<//>And The Time to Make: is: <b><#008299>[(pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab)+(min(10*ep*(have tree3path1),300)))]</#></b> Second
 		// make sure to update time prediction when you update the time below too!!!!!!!! Yeah and also the autoresearch effect. Ok
 		desc:turn smartness into researches here!!! NOW!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		on click:
 			if (smartness >= convertcost and money >= convertcost*10 and converttimer > 1e250)
-				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab)+(10*ep*(have tree3path1)))
+				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab)+(min(10*ep*(have tree3path1),300)))
 				// temporary fix because "yield research" just doesn't work
 				if (converttimer <= 0)
 					research is research+1+(have tree3path2)
@@ -282,7 +290,7 @@ Buttons
 			end
 		passive:
 			if (smartness >= convertcost and money >= convertcost*20 and converttimer > 1e250 and autoflag = 1)
-				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab)+(10*ep*(have tree3path1)))
+				converttimer is (pow(convertcost,0.5))-(speedup+(2*factory)+(5*superlab)+(min(10*ep*(have tree3path1),300)))
 				// temporary fix because "yield research" just doesn't work
 				if (converttimer <= 0)
 					research is research+1+(have tree3path2)
@@ -299,11 +307,11 @@ Buttons
 
 	*evilbutton
 		name:MAKING THE EVIL POINTS AND THE EILNESS
-		text:[?(eviltimer < 1e250)|<b><#910a00>[eviltimer]</#></b> second until EVIL. POINTS.|Start Makeing the EVIL. POINTS.]<//>cost Is: <b><#910a00>[evilcost]</#></b> research, <b><#910a00>[evilcost*1e5]</#></b> smartness<//>And The Time to Make: is: <b><#910a00>[(((pow(evilcost,0.5))*100)-(500*(have tree1path2))-(60*ep*(have tree4path1)))]</#></b> Second
+		text:[?(eviltimer < 1e250)|<b><#910a00>[eviltimer]</#></b> second until EVIL. POINTS.|Start Makeing the EVIL. POINTS.]<//>cost Is: <b><#910a00>[evilcost]</#></b> research, <b><#910a00>[evilcost*1e5]</#></b> smartness<//>And The Time to Make: is: <b><#910a00>[(((pow(evilcost,0.5))*100)-(500*(have tree1path2))-(min(60*ep*(have tree4path1),600))-(100*(ritualup1+ritualup2+ritualup3))-(20*ritual))]</#></b> Second
 		desc:WE MAKEINH THE RESEARCH INTOTHE EVILS
 		on click:
 			if (research >= evilcost and smartness >= evilcost*1e5 and eviltimer > 1e250)
-				eviltimer is (((pow(evilcost,0.5))*100)-(500*(have tree1path2))-(60*ep*(have tree4path1)))
+				eviltimer is (((pow(evilcost,0.5))*100)-(500*(have tree1path2))-(min(60*ep*(have tree4path1),600))-(100*(ritualup1+ritualup2+ritualup3))-(20*ritual))
 				if (eviltimer <= 0)
 					ep is ep+1+(have tree4path2)
 					eviltimer is 1e300
@@ -326,7 +334,6 @@ Buttons
 
 
 
-	
 
 
 
@@ -335,7 +342,9 @@ Resources
 	*money
 		name:moneys
 		desc:this is how much rich you are! wow!
-		passive:multiply yield of this by 1+(0.02*book1)+(0.01*estate)+(0.01*money2building)+(0.02*superlab)
+		passive:multiply yield of this by 1+(0.02*book1)+(0.01*estate)+(0.01*money2building)+(0.02*superlab)+(0.01*social)
+		//example alternate formula that makes more sense but needs balancing if used
+		//passive:multiply yield of this by (1+0.02*book1)*(1+0.01*estate)*(1+0.01*money2building)*(1+0.02*superlab)
 		show earned
 		icon:icons1[0,0]
 	*ep
@@ -370,7 +379,6 @@ Resources
  			end
  		end
 		hidden
-		desc:[converttimer] seconds left (using a desc bc igm number display is weird)
 		//passive:show this
 	*evilcost
 		start with:10
@@ -380,7 +388,7 @@ Resources
 		passive:lose this
 		passive:
 			if (this<=0)
-				ep is ep+1
+				ep is ep+1+(have tree4path2)
 				this is 1e300
 				if (evilcost < 250) toast Ok,WOW,  well lets just say that u pretty wellMuch just made some Evilness Points
 			end
@@ -555,7 +563,7 @@ Buildings
 		
 	*factory
 		name:Research Factory
-		desc:Mass produce for all of research. This will yes. Makes 2 less seconds for research per factory. Very expensiving, though .<//><q>Each factory will reduce research time by 2 seconds</q><//><q>Upgrades unlock at: 5</q>
+		desc:Mass produce for all of research. This will yes. Makes 2 less seconds for research per factory. Very expensiving, though .<//><q>Reduces research time by 2 seconds per factory</q><//><q>Upgrades unlock at: 5</q>
 		cost:150000 money
 		req:have research6
 		cost increase:115%
@@ -586,7 +594,7 @@ Buildings
 		passive:yield 3000 money
 		passive:yield 150 smartness
 		req:superlabup1
-		cost increase:110%
+		cost increase:107%
 		icon:icons1[0,2]
 
 	*tree
@@ -615,7 +623,41 @@ Buildings
 		req:hackingup1
 		cost increase:115%
 		icon:icons1[4,2]
-
+		
+	*ritual
+		name:Crazy Evil Ritual
+		desc:This Rlly bad for people but not us ok<//><q>Reduces evil point time by 20 seconds per ritual</q><//><q>Upgrades unlock at: 10, 25</q>
+		cost:3e8 money
+		req:ritualup1
+		cost increase:110%
+		//icon:icons1[0,0]
+		
+	*food
+		name:Fast Food !
+		desc:Helo Mcdonals can I have: 8 McBurger<//>3 large fry<//>1 large sprite<//>12 McChikens<//>4 MacFLurries<//>2 HappyMeal with chicken nurets<//>McCafé® Iced French Vanilla Coffee<//>10 Creamy Chili McCrispy™ Strip Dip<//>Bacon, Egg & Cheese McGriddles® Meal<//>9 hamburger<//><q>+400,000 MPS</q><//><q>Upgrades unlock at: 10, 25</q>
+		cost:1e9 money
+		passive:yield 4e5 money
+		req:foodup1
+		cost increase:115%
+		//icon:icons1[0,0]
+		
+	*social
+		name:socialn Media
+		desc:Talk abt our company to get advertising and take a good look at theyre data to see the demand in new TickTock app for videoing and whatnots<//><q>+10,000 SPS, +1% money per level</q><//><q>Upgrades unlock at: 10, 25</q>
+		cost:5e8 money, 5e7 smartness
+		passive:yield 10000 smartness
+		req:socialup1
+		cost increase:115%
+		//icon:icons1[0,0]
+		
+	*hunt
+		name:Hunting the Re.
+		desc:Re Search is good and stuff, but how about Re Hunt?<//><q>+1 RPS (research per second)</q><//><q>Upgrades unlock at: 10, 25 (will be added in a later update)</q>
+		cost:5 ep
+		passive:yield 1 research
+		req:huntup1
+		cost increase:140%
+		//icon:icons1[0,0]
 
 
 Upgrades
@@ -951,7 +993,7 @@ Upgrades
 		desc:Why print one bill, WHEN U CAN PRIONT ALL THEM!!!!!!!!!!!!!!!<//><q>Printers give +75% more money</q>
 		cost:2e7 smartness, 1 ep
 		req:25 printer, printerup2
-		passive:multiply yield of tree by 1.75
+		passive:multiply yield of printer by 1.75
 
 	*hackingup1
 		name:Hackinh
@@ -972,24 +1014,87 @@ Upgrades
 		passive:multiply yield of hacking by 1.75
 		
 	*ritualup1
-		name:If you see this, you will turn into an induction stove. Farewell.
-		desc:lets go get hackinh, hack into the mainframe, hacking and stealing all the important datas.<//><q>Unlocks a new EVIL building</q>
-		cost:5e6 smartness, 1 ep
-		req:madlab, 1e300 money
+		name:The Fast Evil
+		desc:yup this eilness is too slow,yea. So , we Doing a Bad Ritual and Speeding the Evils<//><q>Unlocks a new EVIL building, evil point production is 100 seconds faster</q>
+		cost:250 research
+		req:madlab, 5 ep
 	*ritualup2
-		name:If you see this, you will turn into an induction stove. Farewell.
-		desc:Get Hacker Knowledge, Type Away, Type Type Away Your Hacking Skills Into The Green Hacking Text.<//><q>Hacking gives +50% more smartness</q>
-		cost:1e7 smartness, 1 ep
-		req:10 hacking, 1e300 money
-		passive:multiply yield of hacking by 1.5
+		name:The Faster Evil
+		desc:THIS EVIL; IS NOT FAST ENOUGHl LETS MAKE MORE EVILS USING THE RITUALES<//><q>Evil point production is 100 seconds faster</q>
+		cost:200 research
+		req:10 ritual
 	*ritualup3
-		name:If you see this, you will turn into an induction stove. Farewell.
-		desc:We are Anonymous. For more info, visit hackertyper.net<//><q>Hacking gives +75% more smartness</q>
-		cost:2e7 smartness, 1 ep
-		req:25 hacking, hackingup2, 1e300 money
-		passive:multiply yield of hacking by 1.75
+		name:the Fastest Evil
+		desc:Speeding up the ritualings, speeding so fast you getting a speeding ticket because u broke the law and sped too fast<//><q>-120 money, evil point production is 100 seconds faster</q>
+		cost:150 research
+		on earn:lose 120 money
+		req:25 ritual, ritualup2
+		
+	*foodup1
+		name:Fast Ahh Food💀
+		desc:Basically we starting a resturant chain all over th world<//><q>Unlocks a new building</q>
+		cost:5e9 money, 3e8 smartness
+		req:5e9 money:earned
+	*foodup2
+		name:Big food vareity
+		desc:Dont js sell burgers and such.Sell soups,breads,eveneggs (scrambled)<//><q>Fast food gives +50% more money</q>
+		cost:1.5e10 money, 1e9 smartness
+		req:10 food
+		passive:multiply yield of food by 1.5
+	*foodup3
+		name:The MEGABURGER.
+		desc:This Big Burger got 10 slabs of meat, 5 wheel of cheese, 8 bottle o ketchup, and 2 sesame buns! I can't wait to feast on this delicious meal! Yim yum!<//><q>Fast food gives +75% more money</q>
+		cost:5e10 money, 3e9 smartness, 1 ep
+		req:25 food, foodup2
+		passive:multiply yield of food by 1.75
+		
+	*socialup1
+		name:Instagram
+		desc:lets make an app, basically you make pictures, then UOU SEND THEM.  and other people can see them. And give a like button. and yea<//><q>Unlocks a new building</q>
+		cost:2e9 money, 2e8 smartness, 100 research
+		req:5e8 smartness:earned
+	*socialup2
+		name:FunyMemesHumorVidos
+		desc:Follow the trends! Grow your business with these cultivated marketing tricks!<//><q>Social media gives +50% more smartness</q>
+		cost:1e10 money, 1e9 smartness, 100 research
+		req:10 social
+		passive:multiply yield of social by 1.5
+	*socialup3
+		name:1 second vidoes
+		desc:We Use thei Attention spans to make short vidos, making them like the social and our buisness<//><q>Social media gives +75% more smartness</q>
+		cost:3e10 money, 3e9 smartness, 100 research, 1 ep
+		req:25 social, socialup2
+		passive:multiply yield of social by 1.75
+		
+	*huntup1
+	    name:The Purge
+	    desc:Lets be honest here. This search for the Re (Re-Search) is bad. and dumb. we need to search for the Res (Plural of Re) with better methods ok<//><q>Unlocks a new EVIL building</q>
+	    cost:1000 research, 10 ep
+	    req:evil4achv
+		
 		
 	
+	*fontup1
+	    name:Upgrade that uses papyrus as its font for some reason
+	    desc:Hi<//><q>+25% MPS</q>
+	    cost:5e11 money
+	    req:1e11 money:earned
+	    passive:multiply yield of money by 1.25
+	    class:papyrus fullfit
+
+
+
+//wip
+    *businessup1
+        name:MYSTERIOUS UPGRADE!!!! OOOOHH!
+        cost:1e12 money, 5000 research
+        req:150 dirt, 3000 estate
+        //yellow glow css
+    
+    
+    
+    
+    
 
 
 	*TEMPLATE
@@ -998,10 +1103,10 @@ Upgrades
 
 	*tree1path1
 		name:EVIL Pricing.
-		desc:Use the Eilness to make the best and eilest price possible.<//><q>+10% MPS for each evil point you have (spending evil points will decrease your MPS as a result)</q>
+		desc:Use the Eilness to make the best and eilest price possible.<//><q>+10% MPS for each evil point you have, capped at 30 evil points/x4 MPS (spending evil points will decrease your MPS as a result)</q>
 		cost:1 ep
 		req:madlab
-		passive:multiply yield of money by (1+(ep*0.1))
+		passive:multiply yield of money by min((1+(ep*0.1)),4)
 	*tree1path2
 		name:EVIL Evilness.
 		desc:Using our evil, let's get. more. evil.<//><q>Evil point production is 500 seconds faster</q>
@@ -1010,10 +1115,10 @@ Upgrades
 
 	*tree2path1
 		name:EVIL Thinking.
-		desc:Think Bad and in an Bad Way to get more Intelct<//><q>+15% SPS for each evil point you have</q>
+		desc:Think Bad and in an Bad Way to get more Intelct<//><q>+15% SPS for each evil point you have, capped at 20 evil points/x4 SPS</q>
 		cost:2 ep
 		req:madlab
-		passive:multiply yield of smartness by (1+(ep*0.15))
+		passive:multiply yield of smartness by min((1+(ep*0.15)),4)
 	*tree2path2
 		name:EVIL Deals.
 		desc:Give them bad deal, we get good deal.Let get the factory.<//><q>Research factory price reduced by x20</q>
@@ -1023,12 +1128,12 @@ Upgrades
 
 	*tree3path1
 		name:EVIL Time.
-		desc:With The EVILS, we will quicken it all up.<//><q>Research is 10 seconds faster for each evil point you have </q>
+		desc:With The EVILS, we will quicken it all up.<//><q>Research is 10 seconds faster for each evil point you have, capped at 30 evil points/300 seconds faster </q>
 		cost:4 ep
 		req:madlab
 	*tree3path2
 		name:EVIL Research.
-		desc:Our Eilness so strong that we eil search our for the re.<//><q>Doubles the amount of research points earned</q>
+		desc:Our Eilness so strong that we eil search our for the re.<//><q>Doubles the amount of research points earned through normal research (research button and auto researcher)</q>
 		cost:4 ep
 		req:madlab
 		//notes for this and tree4path2
@@ -1038,7 +1143,7 @@ Upgrades
 
 	*tree4path1
 		name:EVIL Affirmations.
-		desc:<u>I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil.</u><//><q>Evil point production is 80 seconds faster for each evil point you have </q>
+		desc:<u>I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil. I am evil.</u><//><q>Evil point production is 60 seconds faster for each evil point you have, capped at 10 evil points/600 seconds</q>
 		cost:8 ep
 		req:madlab
 	*tree4path2
@@ -1151,6 +1256,11 @@ Achievements
 		desc:WE'RE MASTERS OF THINKIG
 		req:1e9 smartness
 		icon:icons1[17,4]
+	*smart4achv
+		name:BIGGES BRAIN EVER!
+		desc:Our Big Brain has an estimated volume of 1259.98 cubic meters and is entirely incomprehensible to the human mind
+		req:1e12 smartness
+		icon:icons1[17,4]
 	*crashachv
 		name:Well
 		desc:the stocks are gone forever. Look what you did. i am mad and angery
@@ -1175,6 +1285,11 @@ Achievements
 		desc:we got 100 total re, yea, alright, yea, good.
 		req:100 research:earned
 		icon:icons1[4,5]
+	*research2achv
+		name:The Great And Evil ReHunter That Tracks, Hunts Down, And Captures The Innocent Re
+		desc:Hiding from me is futile. Any attempt to do so shall be easily thwarted.
+		req:1 hunt
+		icon:icons1[6,5]
 	*evil1achv
 		name:We The Eil
 		desc:We got Evil, We doing eivl
@@ -1189,6 +1304,11 @@ Achievements
 		name:A Good Start To Geting Some Of A The Eil
 		desc:I Feel The Evil, Its Bad And It Make The Monys Tho<//><//>Yea Yea Yea The Eil Here
 		req:10 ep
+		icon:icons1[7,5]
+	*evil4achv
+		name:Eil Overload
+		desc:Using Our Eil: we grow our Mony like never before. What the heck
+		req:(tree1path1+tree2path1+tree3path1+tree4path1+tree1path2+tree2path2+tree3path2+tree4path2)>=8
 		icon:icons1[7,5]
 	*richness
 		name:Richness
