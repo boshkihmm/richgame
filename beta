@@ -480,16 +480,17 @@ Buildings
 		desc:if we get a ticket then we have a chance of earning bIg bucks.<//><q>May or may not give you boatloads of money<//><q>+0 MPS</q><//><q>Upgrades unlock at: 50,</q>
 		cost:5 money
 		on earn:
-		    if (chance(80%))
-                toast well, better luck next time. Guess we didn't get mone
-            else if (chance(95%))
-                yield (100/this) money
-                toast yoU WNO!!!!! 100 do,laer!!!!
-			else
-                yield (1e5/this) money
-                toast yoU WNO!!!!1!!!!!!111@!!!! 100 HUNRER AED THOAUSANDS DOLAER!!@@@
-                yield lotteryachv
-            end
+		    $gambling=random(1,100)
+		    if ($gambling<81)
+                	toast well, better luck next time. Guess we didn't get mone
+	            else if ($gambling>80 and $gambling<94)
+                	yield 100 money
+                	toast yoU WNO!!!!! 100 do,laer!!!!
+		    else
+                	yield 100000 money
+                	toast yoU WNO!!!!1!!!!!!111@!!!! 100 HUNRER AED THOAUSANDS DOLAER!!@@@
+        		yield lotteryachv
+            	    end
 		end
 		req:25 dirt
 		cost increase:105%
