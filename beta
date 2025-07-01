@@ -480,10 +480,10 @@ Buildings
 		desc:if we get a ticket then we have a chance of earning bIg bucks.<//><q>May or may not give you boatloads of money<//><q>+0 MPS</q><//><q>Upgrades unlock at: 50,</q>
 		cost:5 money
 		on earn:
-		    $gambling=random(1,100)
-		    if ($gambling<81)
+		    $gambling=random(1,1000)
+		    if ($gambling<801)
                 	toast well, better luck next time. Guess we didn't get mone
-	            else if ($gambling>80 and $gambling<94)
+	            else if ($gambling>800 and $gambling<996)
                 	yield 100 money
                 	toast yoU WNO!!!!! 100 do,laer!!!!
 		    else
